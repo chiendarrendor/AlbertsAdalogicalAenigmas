@@ -1,0 +1,40 @@
+21 12
+CODE:LETTERS
+TOMONREHTONILFS.DPTIM
+RSAT.HCE...AARM.EBR.T
+EW.ELS.AE.COAOCOAY..S
+DNPLETAWPEAO..NEEFE.E
+M.SW.LE.LLFNWRGW.OANI
+TSLANGTIAE.NEO.NRA.NG
+NL.ATO.FDH.OELKPITITE
+OLHO.NIIEMSNR.IC.PS.F
+N.RNEAR..IRARSMOAHIIT
+I..YEDINUNO.FE.PYO.SO
+N.OVH.TGTR...STR.RLIT
+DWROO.IDIMSOULNASOOUT
+CODE:COLORS
+...............B.....
+....W...WWW....B...B.
+..B...B..W........BB.
+............WW.....B.
+.B..W..B........W....
+..........B...B...B..
+..W...W...B..........
+....B........W..B..W.
+.W.....WW............
+.WW........B..W...W..
+.W...B....BBB...B....
+.....B...............
+CODE:NUMBERS
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  . 4v  .  .  . 3v  . 4>  .  .  .  . 6v  .  .  .  .  .
+  .  . 3v  .  .  . 5v  .  . 3v  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  . 1v  .  .  .  .  .  . 9<  .
+  .  .  .  .  .  .  . 1<  .  .  .  .  .  .  .  . 3<  .  .  .  .
+  .  .  .  .  .  .  .  .  .  . 1^  .  .  . 2>  .  .  .  .  .  .
+  .  . 8>  .  .  .  .  .  .  . 3<  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6<  .  . 1^  .
+  .  .  .  .  .  .  . 6> 1v  .  .  .  .  .  .  .  .  .  .  .  .
+  . 3^  .  .  .  .  .  .  .  .  . 4<  .  . 2^  .  .  . 3^  .  .
+  .  .  .  .  . 6>  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  . 5^  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .

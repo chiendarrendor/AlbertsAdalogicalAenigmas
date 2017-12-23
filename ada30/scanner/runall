@@ -1,0 +1,15 @@
+#! /bin/bash.exe 
+
+java -classpath '../common;.' Ada30Scanner Tile0.png ../puzzle/Tile0.txt
+java -classpath '../common;.' Ada30Scanner Tile1.png ../puzzle/Tile1.txt
+java -classpath '../common;.' Ada30Scanner Tile2.png ../puzzle/Tile2.txt
+java -classpath '../common;.' Ada30Scanner Tile3.png ../puzzle/Tile3.txt
+java -classpath '../common;.' Ada30Scanner Tile4.png ../puzzle/Tile4.txt
+java -classpath '../common;.' Ada30Scanner Tile5.png ../puzzle/Tile5.txt
+java -classpath '../common;.' Ada30Scanner Tile6.png ../puzzle/Tile6.txt
+java -classpath '../common;.' Ada30Scanner Tile7.png ../puzzle/Tile7.txt
+java -classpath '../common;.' Ada30Scanner Tile8.png ../puzzle/Tile8.txt
+java -classpath '../common;.' Ada30Scanner Tile9.png ../puzzle/Tile9.txt
+java -classpath '../common;.' Ada30Scanner TileA.png ../puzzle/TileA.txt
+java -classpath '../common;.' Ada30Scanner TileB.png ../puzzle/TileB.txt
+java -classpath '../common;.' Ada30Scanner Floor.png ../puzzle/Floor.txt

@@ -1,0 +1,17 @@
+7 7
+CODE: LETTERS
+. B O . U . R
+S T R . . O .
+P H E . D E S
+. M O N . R .
+T I . C A . L
+. A A C O U D
+E Y O N N L Y
+CODE: FEATURES
+# . . # . # .
+O . . # # . E
+. . . # . . .
+S . . . # . #
+. O # . . # .
+# . . . . . .
+. . . . . . .

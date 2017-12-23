@@ -1,0 +1,28 @@
+21 12
+CODE:LETTERS
+.RIF.KPEBILALCAAMETDR
+UEQEISOLAF.LZIDC.WHSA
+JH.VYVX.VRFOS.GYHMVGL
+PRLOWURATBYLIALYGY.ND
+OBNBMUYVTLX.OEERUIQHP
+H.WROF.ENENGCBSYASANE
+PKOODVVGDIFAOF.PDWS.J
+PORLRSCEL.JECZOFLTWSJ
+ZA.WGLYMUNJKHLLEZAHIE
+AFHHNFY.OWEVN.ZRLC.FL
+GTJP.ELKWK.IWCLTAULLS
+SNTTIIWFKODQSUIA.EIL.
+CODE:NUMBERS
+ 4  .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  2  .  .  .  .  .  8  .  .  .  .
+ .  .  3  .  .  .  .  5  .  .  .  .  .  6  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  6  .  .
+ .  .  .  .  .  .  .  .  .  .  .  6  .  .  .  .  .  .  .  .  .  
+ .  3  .  .  .  .  9  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  . 12  .  .  .  .  8  .
+ .  .  .  .  .  .  .  .  .  6  .  .  .  .  .  .  .  .  .  .  .
+ .  .  4  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  6  .  .  .  .  .  5  .  .  .  .  6  .  .
+ .  .  .  .  5  .  .  .  .  .  2  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  4  .  .  .  1
+ 

@@ -1,0 +1,42 @@
+21 12
+CODE:REGIONS
+A A N N O O O O T T b b b i x 0 0 0 3 3 3
+A A N N P P P S T T a b i i x x 0 1 2 2 3
+B B M M P Q P S S a a h i w x y 1 1 1 2 3
+B B M M Q Q Q S U c c h h w y y y 1 4 5 5
+B B M M R Q R U U c d h j w w z z 4 4 4 6
+C C C C R R R U Y c d h j j j r t t v 6 6
+D D D D L L L Y Y d d h j r r r t t v v 6
+E E E J J K V V Y d k k k r r s s s u v 6
+E E E K K K V Z Z g g k n n n q q q u v u
+F G H H H K W Z e e g k k m n q q q u u u
+F G H H I I W W X e f l l m n n o o o p u
+F G H I I I I X X f f l m m o o o p p p u
+CODE:LETTERS
+I Y C D E . R B X U P . L . H R . T H D .
+B P . W D X E K . G . F X A . E P A C . F
+H T L K . C B S O . C S T . S J B . E C F
+T . D P U R . S N C B I . G G R A A . Y S
+X V . O W . M . K C . R A C C . H O D . T
+E X A . H O E I . X N . R D . O S Q . N H
+L B . N Z T . B W S B K S Q S Z S P F O . 
+. R E K . Q B Q . F R . O C F . S . B E P
+E . Z L J . F I H M . E A X . H W W . N G
+H M . C L M O . N . B D W . R S . D C . I
+T J S . F A . C M W P C . K F . G X Y B . 
+L P . O O . A S A A . Y C Q E A . L F . Z
+CODE:TRAVELLERS
+. . . . . 0 . . . . . 4 . 0 . . 0 . . . 3
+. . 2 . . . . . 1 . 1 . . . 3 . . . . 0 . 
+. . . . 0 . . . . 3 . . . 2 . . . 3 . . .
+. 3 . . . . 1 . . . . . 0 . . . . . 1 . .
+. . 2 . . 1 . 0 . . 2 . . . . 4 . . . 0 .
+. . . 4 . . . . 1 . . 0 . . 0 . . . 0 . . 
+. . 0 . . . 3 . . . . . . . . . . . . . 0
+3 . . . 2 . . . 1 . . 0 . . . 2 . 3 . . .
+. 2 . . . 3 . . . . 0 . . . 0 . . . 1 . .
+. . 1 . . . . 0 . 0 . . . 2 . . 0 . . 2 .
+. . . 0 . . 0 . . . . . 1 . . 1 . . . . 3
+. . 2 . . 0 . . . . 4 . . . . . 2 . . 0 .
+
+

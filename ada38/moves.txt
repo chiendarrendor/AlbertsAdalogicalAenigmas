@@ -1,0 +1,84 @@
+A 18 11/E E N N/2 4/2 5/2 6
+A 20 9//19 8/19 7/19 6
+A 8 6//5 6/4 6/3 6/3 7
+U 5 7/E
+
+# guess: short D
+D 19 10/N
+D 16 5/E
+A 20 9/N W N N
+G 20 7/N N
+O 20 0/S W
+
+# the J theory ... J is somewhere W of column 17
+J 19 0/W S W
+A 19 6/N N W N W W
+O 18 9/N
+G 18 7/N N
+G 20 5/N N W N W
+P 17 4/W W
+S 17 6/S S W
+Y 17 10/S
+P 16 7/W
+S 16 11/N
+R 17 2/W
+A 16 3/W
+G 15 6/E
+P 15 7/W
+Q 16 9/W
+Y 15 8/W W W/15 11/14 11/13 11/12 11
+X 15 10/W N W
+R 16 2/W W W N N E E E
+J 17 1/W W W
+A 15 3/W W W S W W N N W W N
+P 14 7/W W N N E E E
+J 9 1/N E E E S S
+Z 14 6/W
+Q 9 3/S S S S S
+I 11 5/S
+I 10 5/S
+A 8 6/N W W
+E 7 7/E
+K 11 3/N N
+I 7 4/E
+U 6 7/N
+A 6 5/W S W W S
+K 7 3/W
+U 3 4//5 4/6 4
+B 5 8/S E E N
+L 5 10/E
+N 5 11/E E
+
+# not theory... 7 10 must be N's house, since they can't both get out of it.
+X 13 9/W
+X 13 10/W W N
+Y 12 8/W W S S S E E E E E
+X 9 11/N N
+Q 9 8/W S S S
+A 8 1/N W W W W W W S
+T 7 2/W
+V 4 5/W
+U 3 4/E E E
+H 0 5/S
+K 6 3/W W W N N E E E E
+
+# guess for V path
+V 0 3/S
+M 0 0/E S
+C 1 5/N N N W
+A 2 1/S S S S S
+
+A 3 7/S S
+A 2 6/S
+H 0 6/E
+# guess for end
+A 2 7/W W
+W 0 8/E E
+W 0 10/N E E
+H 1 11/N
+F 3 11/E N
+F 4 7/S
+A 3 9/S W S
+
+
+

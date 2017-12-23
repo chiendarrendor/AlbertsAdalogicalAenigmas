@@ -1,0 +1,42 @@
+9 9
+CODE:STARTS
+ .  .  .  1  .  .  .  2  .
+ .  .  .  .  .  .  .  .  .
+ .  3  .  4  .  5  .  6  .
+ .  .  .  .  .  .  .  .  .
+ 7  .  .  .  8  .  .  .  .
+ .  9  .  .  .  .  .  .  .
+10  .  .  .  .  . 11  . 12
+ .  .  . 13  .  .  .  . 14
+ .  .  .  . 15 16  .  .  .
+CODE:MARKS
+C.S......
+....T..S.
+.T.......
+.C....STS
+.........
+..T..C...
+....T....
+S..T..TC.
+.........
+VARIABLES:
+CLUECOUNT:17
+CLUE1:1 EAST CUTE
+CLUE2:2 EAST CARESS
+CLUE3:3 NORTH DINNER
+CLUE4:4 EAST DARLING
+CLUE17:4 SOUTH DUO
+CLUE5:5 SOUTH FLOWERS
+CLUE6:6 WEST SWEETHEART
+CLUE7:7 EAST VALENTINE
+CLUE8:8 NORTH TRUELOVE
+CLUE9:9 SOUTH CANDLELIGHT
+CLUE10:10 SOUTH DATENIGHT
+CLUE11:11 EAST PERFUME
+CLUE12:12 WEST DEVOTION
+CLUE13:13 SOUTH SERENADE
+CLUE14:14 SOUTH AFFECTION
+CLUE15:15 NORTH HUG
+CLUE16:16 WEST CHERUB
+
+

@@ -1,0 +1,27 @@
+21 12
+CODE: LETTERS
+. W A D E . D . O . S . . L F S . R . K .
+O F A L K C E E A U N . Y I A M E . A . T
+H E W N S O N B O . T Y O . K E F E . E .
+. C O C I . . V . E P S B P . . F N T . S
+P R . . A R O E B T . T S A N E I C . N .
+. S I I F I O R Y A . H G O H T D E T . O
+. . T D . S N A R K E E I N E R E . O B .
+T A . S . . O . O T . R D N S A H T N Y R
+. I L D G D O N T . L A E . H D T H D . F
+N . I I . I W . I H . T L D T E L . A . T
+. O . V R . A D . E N . E T . . L E O R .
+R . R . E . N . I O . V . H A . A . R . B
+CODE: FEATURES
+# . . . . # . # . # . # # . . . # . # . #
+. O . . . . . . . . . # . . . . . # . # .
+. . . . . O . . . # . . . # . . . . # . #
+S . . . . # # . # . . . . . # # . . . # .
+. . # # . O . . . . # . . . . . . . # . #
+# . . . . . . . . . # . . . . . . . . # . 
+# # . . # . . . . . . O . . . . . # . . #
+O . # . # # . # . . # . . . O . . . . . .
+# . . . . . . . . # . . . # . . . . . # .
+# # O . # . . # . . # O . . . . . # . # .
+E O # . . # . . # . . # . . # # . . . . #
+O # # # O # . # . . # . # . . # . # . # .

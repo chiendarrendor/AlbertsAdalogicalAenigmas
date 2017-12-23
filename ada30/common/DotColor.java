@@ -1,0 +1,1 @@
+public enum DotColor { WHITE,BLACK,NONE };

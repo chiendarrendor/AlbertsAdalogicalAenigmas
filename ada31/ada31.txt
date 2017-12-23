@@ -1,0 +1,40 @@
+21 12
+CODE:REGIONS
+A A A A A A B B B B B B B C D E F F F F F
+A G G G G A B C C C C C C C D E E E H I F
+A J J J G B B C K K K K D D D D D E H I F
+A J L J G G K K K M M M M M D E E E H I F
+J J L J N G K O P P P P P M D E H H H I F
+J L L J N G K O P Q Q Q Q M R E H S H I F
+T L N J N U K O P P P P Q M R V H S I I S
+T L N N N U X O Q Q Q Q Q M R V H S I S S
+T L N U U U X O O O O O R R R V V S I S Y
+T L N U X X X X X R R R R Z a a V S S S Y
+T L N U U U X Z Z Z Z Z Z Z a Y V V V V Y
+T T T T T U X Z a a a a a a a Y Y Y Y Y Y
+CODE:LETTERS
+M . . . . . . . . . . . . . . . . R . J O
+C . . . . . . . . J K . . . . . . . . . .
+. . . . M T . T . . . . . . . . . R . . R
+V . . . . . . K . Q . K . . . . . . . . .
+. . . U . . . I . . . . . Z J . . P . . .
+H C . . V . . . . . I I . . . . D . . . .
+. . . . . . . B A . . . . . Z G . S . . .
+. . . . F U . E . . E E . . . . P . G . G
+W . . . . B L . . . . . . . . Y . . . . .
+. . . . L . . . . . . . . . . . Q . O . . 
+W . . . . L . N . . . . . X . X . Y . D .
+A H . F . N . . . X . . . . . . S . A . .
+CODE:NUMBERS
+   .   . -10   .   .   .   .   . -12   .   .   .   .   .  -5   .  +5   .   .   .   .
+   .  +5   .   .   .   .   .  +4   .   .   .   .   .   .   .  +4   .   .   . -10   .
+   .   .   . +13   .   .   .   .   .  +4   .   .   .   .   .   .   .   .  -2   .   .
+   .   .  -7   .   .   .  -3   .   .   .   .   .  -7   .   .   .   .   .   .   .   .
+   .   .   .   . +11   .   .   .  -8   .   .   .   .   .   .   .   .   .   .   .   .
+   .   .   .   .   .   .   .   .   .   .   .   .  -1   .   .   .   .  -2   .   .   .
+  +4   .   .   .   .   .   .   .   .   .  -4   .   .   .   .   .   .   .   .   .   .
+   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  -5   .   .   .   .   .
+   .   .   .   .   .   .   .   .   .  +4   .   .   .  -6   .   .   .   .   .   .   .
+   .   .   .  +9   .   .   .   .   .   .   .   .   .   .   .  -4   .   .   .   .  +9
+   .   .   .   .   .   .  +3   .   .   .   .  -1   .   .   .   .   .   .   .   .   .
+   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  +6   .   .   .

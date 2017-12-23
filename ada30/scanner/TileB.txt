@@ -1,0 +1,22 @@
+12 6
+CODE:CELLS
+.........###
+.........###
+.........###
+############
+############
+############
+CODE:COLORS
+. . . . . . . . . B W W
+. . . . . . . . . B W W
+. . . . . . . . . W B .
+W . . . B B . . W W B .
+. W W B W W B W W . B B
+. . . B W W B . . . B B
+CODE:DIRS
+. . . . . . . . . S SE SW
+. . . . . . . . . N NE NW
+. . . . . . . . . SW S .
+C . . . C C . . NE NW N .
+. E W S E W S C C . SE SW
+. . . N E W N . . . NE NW

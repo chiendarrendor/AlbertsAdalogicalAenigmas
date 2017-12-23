@@ -1,0 +1,36 @@
+9 9
+CODE:STARTS
+  .  .  .  1  .  .  .  .  .
+  .  2  .  .  .  .  .  .  3
+  .  .  .  .  4  .  5  .  .
+  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  6  7  .
+  8  .  .  .  .  .  .  .  .
+  .  .  9  .  .  .  .  .  .
+  .  .  .  .  .  . 10  .  .
+  .  .  .  .  . 11 12  .  .
+CODE:MARKS
+T.S......
+C....C.T.
+.STS.....
+....S....
+C...TS.C.
+..T......
+....T..T.
+.......C.
+C.CS.....
+VARIABLES:
+CLUECOUNT:13
+CLUE1:1 EAST HEATHCLIFF
+CLUE2:2 EAST FIGARO
+CLUE3:3 NORTH HOBBES
+CLUE4:4 SOUTH SYLVESTER
+CLUE5:5 NORTH SCRATCHY
+CLUE6:6 SOUTH SIMBA
+CLUE13:6 EAST SPOT
+CLUE7:7 NORTH PUSSINBOOTS
+CLUE8:8 SOUTH SHEREKHAN
+CLUE9:9 WEST SNOWBALLII
+CLUE10:10 NORTH CROOKSHANKS
+CLUE11:11 WEST DINAH
+CLUE12:12 EAST PINKPANTHER

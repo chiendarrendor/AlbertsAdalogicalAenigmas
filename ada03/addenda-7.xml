@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nurikabe>
+    <Dimension x="21" y="12"/>
+    <Board>
+        <Streets>
+            <Street cs="(4,5)"/>
+            <Street cs="(16,6)"/>
+        </Streets>
+        <Building cs="(0,0)" number="4" loc="(0,0)"/>
+        <Building cs="(3,0)" number="1" loc="(3,0)"/>
+        <Building cs="(7,0)" number="4" loc="(7,0)"/>
+        <Building cs="(10,0)" number="2" loc="(10,0)"/>
+        <Building cs="(12,0)" number="4" loc="(12,0)"/>
+        <Building cs="(16,0)" number="1" loc="(16,0)"/>
+        <Building cs="(19,0)" number="4" loc="(19,0)"/>
+        <Building cs="(2,2)" number="5" loc="(2,2)"/>
+        <Building cs="(17,2)" number="5" loc="(17,2)"/>
+        <Building cs="(0,3)" number="1" loc="(0,3)"/>
+        <Building cs="(6,3)" number="1" loc="(6,3)"/>
+        <Building cs="(10,3)" number="2" loc="(10,3)"/>
+        <Building cs="(12,3)" number="1" loc="(12,3)"/>
+        <Building cs="(18,3)" number="1" loc="(18,3)"/>
+        <Building cs="(1,4)" number="6" loc="(1,4)"/>
+        <Building cs="(3,4)" number="5" loc="(3,4)"/>
+        <Building cs="(13,4)" number="6" loc="(13,4)"/>
+        <Building cs="(15,4)" number="5" loc="(15,4)"/>
+        <Building cs="(7,5)" number="7" loc="(7,5)"/>
+        <Building cs="(19,5)" number="6" loc="(19,5)"/>
+        <Building cs="(5,6)" number="1" loc="(5,6)"/>
+        <Building cs="(10,6)" number="2" loc="(10,6)"/>
+        <Building cs="(17,6)" number="1" loc="(17,6)"/>
+        <Building cs="(6,7)" number="4" loc="(6,7)"/>
+        <Building cs="(16,7)" number="9" loc="(16,7)"/>
+        <Building cs="(4,8)" number="6" loc="(4,8)"/>
+        <Building cs="(9,8)" number="4" loc="(9,8)"/>
+        <Building cs="(13,9)" number="1" loc="(13,9)"/>
+        <Building cs="(20,9)" number="2" loc="(20,9)"/>
+        <Building cs="(14,10)" number="5" loc="(14,10)"/>
+        <Building cs="(0,11)" number="1" loc="(0,11)"/>
+        <Building cs="(2,11)" number="5" loc="(2,11)"/>
+        <Building cs="(8,11)" number="3" loc="(8,11)"/>
+        <Building cs="(12,11)" number="1" loc="(12,11)"/>
+        <Building cs="(20,11)" number="3" loc="(20,11)"/>
+        <Buildings>
+        </Buildings>
+    </Board>
+</Nurikabe>

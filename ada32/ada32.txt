@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+ELI.NEXMN.VJASD.FLDZ.
+K.EIY.OSIOLA.HECR.GXR
+HMZEWVT.HNCNRM.OOOJON
+TGT.BJA.SP..WZLFQIL.Y
+.LKZACDQ.JDGQATT.DQDA
+IAMCS.CBHETL.DTDZE.UW
+AI.DTNOF.AENHEI.VOENA
+FRSI.GNMJWSI.AJLTEDG.
+N.ENSMJRT..MD.NSU.KEP
+TRHTOD.OJWAPN.OHZLKSA
+EDL.EUAU.YNOQLZ.KUV.S
+.OFCM.HTAPC.QXMEO.ANI
+CODE:ARROWS
+ .  .  . <0  .  .  .  .  . <2  .  .  .  .  . <4  .  .  .  . <4
+ . >4  .  .  . V5  .  .  .  .  .  . >2  .  .  .  .  X  .  .  .
+ .  .  .  .  .  .  . <5  .  .  .  .  .  . <2  .  .  .  .  .  .
+ .  .  . V5  .  .  . <2  .  . V5 ^3  .  .  .  .  .  .  . <3  .
+V5  .  .  .  .  .  .  . >4  .  .  .  .  .  .  . ^5  .  .  .  .
+ .  .  .  .  . >5  .  .  .  .  .  . <2  .  .  .  .  . <3  .  .
+ .  . V4  .  .  .  .  . >3  .  .  .  .  .  . <5  .  .  .  .  .
+ .  .  .  . V5  .  .  .  .  .  .  . >4  .  .  .  .  .  .  . <1
+ . ^1  .  .  .  .  .  .  .  X ^4  .  . >1  .  .  . ^4  .  .  .
+ .  .  .  .  .  . ^2  .  .  .  .  .  . >2  .  .  .  .  .  .  .
+ .  .  . ^2  .  .  .  . ^5  .  .  .  .  .  . <5  .  .  . ^3  .
+>3  .  .  .  . >2  .  .  .  .  . ^5  .  .  .  .  . <3  .  .  .
+
+

@@ -1,0 +1,105 @@
+25 14
+CODE:REGIONS
+A A A C C C C E E E r r r s s % % % w x x y y z z
+A A B B D C E E E q q r r s s s % % w w w y z z 0
+A B B D D D h i i q q q t s s u u % 1 w y y y 0 0
+G F F F F h h i i q q t t u u u 1 1 1 ! ! ! 0 0 9
+G H H H R h g g i i q t t u u u 1 1 5 5 # ! ! 9 9
+G G G H R S g g j j l l t t v v 1 4 4 5 # # ! ! 9
+I I I H R S g g g j l l m v v 2 3 4 4 @ @ # 8 8 9
+I I J R R S f f f j j k m m 2 2 4 4 4 # # # 8 8 9
+J J J M M S T f f ^ ^ k m m 2 2 4 4 4 6 6 6 8 8 7
+J M M M T T T ^ ^ ^ d k k m n n o o o p p 6 7 7 7
+K L M N T T U U U U d d k e n n n o o o p 6 7 c c
+K L N N O O Q Q Q Q d d e e e n X X X p p a b b c
+K L L N N O P Q P V V V e e e W X X Z Z Z a b b c
+K K L O O O P P P V V V W W W W X Y Y Y Y a a b c
+CODE:LETTERS
+TRDNNPBSAULFNEVRNEEPEMOUV
+RRPYEPQTMOLETETHREEUFIVET
+EOFITOBSYRUIOTEERHTFTRTWO
+AEVOHRSAROGVEENEVREIWFWSP
+TNEJIIMWNTUSRSTTVETVOIOSO
+UALPHAFAMTNJMWBUOFEZEGQFO
+OEHTANNNIWDFOERHSZHKFRREJ
+EEHTPUUGFRTIDWNTWTOTWOISE
+FORFCEMHOQHOOOWREFTSIVDNS
+HOELITEFVUBEEDGEOFFEVTAER
+UOENFRNOETRMFFOGEEONETSHR
+ROTZXHEUTFINVPOUFRFSEHAEV
+CFNEETRHMTLUREUXILCIJTTMT
+IHHREREHWHTMHFRIVEEWVEFWA
+VARIABLES:
+A: 14  T0 B24
+B:  4  T3 T8
+C:  2  T5 B11
+D:  3  T6 L0
+E:  7  T7 L2
+F:  4  T9 B0
+G:  3 T10 L3
+H:  2 T11 T12
+I:  5 T13 R7
+J:  8 T14 B7
+K:  1 T15 R10
+L:  3 T16 R1
+M:  2 T17 B16
+N:  3 T20 R13
+O:  1 T22 R5
+P: 11 T24 L13
+Q:  2  L1 L6
+R:  3  L4 B5
+S:  4  L7 L12
+T:  2  L8 R2
+U:  3 L10 B13
+V:  5 L11 B8
+W:  5  R4 B22
+X:  3  R8 B21
+Y:  3  R9 B15
+Z:  3 R11 B9
+a:  3 R12 B23
+b:  2  B2 B19
+d:  2  B3 B4
+e:  4  B6 B10
+f:  2 B12 B14
+LETTERS:ABCDEFGHIJKLMNOPQRSTUVWXYZabdef
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

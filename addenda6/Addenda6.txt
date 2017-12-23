@@ -1,0 +1,27 @@
+21 12
+CODE:LETTERS
+MRMAUSAAOCNDEMEHTEIHD
+AKREGDELHTEKFAOEOSKDO
+OBEEAOHAMTMOLDNDORFSE
+SRTPEMVTNSOLEAEHTDNAD
+EENLDBWDSUBEHTTENYETG
+DNIIHWLSOEAHTUNLOSAEE
+NSOMNNEDDIEUVKSLEHTSE
+ENJIOEKNPROTESEIAESEN
+LEAERGIOMEHSRTNVAISGE
+ESMIRDNEONGNIOIVTEARR
+SHDEVAAVAUSSIRIOREEWH
+OEVASAXOPGDLLARRRTUOT
+CODE:NUMBERS
+NE1   .   .   .   .   .   .   .   .   .   .   .   .   . NE1 NE2   .   .   . NE1   .
+NE2   .   .   .   . NE3 NE2   . NE2   .   . NE3   .   . NE2   .   .   .   .   .   .
+NE3   . NE2 NE2   . NE3   .   .   . NE3   .   .   .   .   .   .   . NE3   . NE3   .
+  .   .   . NE2   .   .   .   . NE2   . NE3   .   .   .   . NE3   .   .   .   .   .
+NE3   .   . NE2 NE2 NE1 NE3   .   .   .   . NE3   .   . NE3   .   . NE3   . NE3   .
+  . NE1   .   .   .   .   . NE1 NE2 NE3   .   . NE2   . NE2   .   .   .   .   .   .
+  . NE2   .   . NE3   .   . NE2   .   .   . NE3   .   . NE2   . NE4   . NE3   .   .
+  . NE2   .   .   . NE2   . NE3   .   . NE2   .   . NE2 NE1   .   .   . NE2   .   .
+  . NE2   . NE3   . NE1   .   .   . NE3   .   .   .   .   .   . NE3   . NE2   . NE2
+NE2 NE2   . NE4   . NE3   .   . NE3   . NE3   .   . NE3 NE3   .   .   . NE2   .   .
+  . NE3   .   .   .   .   . NE2   . NE3   . NE3   .   .   . NE2   .   . NE3   .   .
+  .   . NE2   . NE2   .   . SE2   .   . SE1   . NE3   . NE0   .   .   .   .   .   .
