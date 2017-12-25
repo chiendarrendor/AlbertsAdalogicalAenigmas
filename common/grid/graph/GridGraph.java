@@ -3,6 +3,7 @@ package grid.graph;
 import org.jgrapht.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.alg.*;
+import org.jgrapht.alg.shortestpath.FloydWarshallShortestPaths;
 import java.awt.Point;
 import java.util.*;
 
@@ -106,7 +107,8 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 	public List<Point> shortestPathBetween(Point p1, Point p2)
 	{
 		makefwsp();
-		return fwsp.getShortestPathAsVertexList(p1,p2);
+		GraphPath<Point,DefaultEdge> gp = fwsp.getPath(p1,p2);
+		return gp.getVertexList();
 	}
 	
 	
