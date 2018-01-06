@@ -10,27 +10,27 @@ import java.util.Vector;
  *  and a valid guess is the boards of the first non-null tuple we come across.
  *
  */
-public abstract class StandardFlattenSolvable<T> extends MultiFlattenSolvable<T>
+public interface StandardFlattenSolvable<T> extends MultiFlattenSolvable<T>
 {
-    abstract public int getWidth();
-    abstract public int getHeight();
+    public int getWidth();
+    public int getHeight();
 
     // required for FlattenSolvable
-    abstract public boolean isComplete();
+    public boolean isComplete();
     // applies a move object returned in a tuple returned by getOneTuple()
     // (required for FlattenSolvable)
-    abstract public void applyMove(Object o);
+    public boolean applyMove(Object o);
 
     // returns null if this particular cell is already solved.
-    abstract public FlattenSolvableTuple<T> getOneTuple(int x,int y);
+    public FlattenSolvableTuple<T> getOneTuple(int x,int y);
 
 
 
+    // implement only the above methods!
 
 
 
-
-    public List<FlattenSolvableTuple<T>> getTuplesForCell(int x,int y)
+    default public List<FlattenSolvableTuple<T>> getTuplesForCell(int x,int y)
     {
         FlattenSolvableTuple<T> fst = getOneTuple(x,y);
         if (fst == null) return null;

@@ -66,7 +66,7 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
             for(Object antimove : antimoves)
             {
                 result = LogicStatus.LOGICED;
-                thing.applyMove(antimove);
+                if (!thing.applyMove(antimove)) return LogicStatus.CONTRADICTION;
             }
         }
         return result;

@@ -10,23 +10,29 @@ import java.util.Vector;
  *  and a valid guess is the boards of the first non-null tuple we come across.
  *
  */
-public abstract class MultiFlattenSolvable<T> implements FlattenSolvable<T>
+public interface MultiFlattenSolvable<T> extends FlattenSolvable<T>
 {
-    abstract public int getWidth();
-    abstract public int getHeight();
+    public int getWidth();
+    public int getHeight();
 
     // required for FlattenSolvable
-    abstract public boolean isComplete();
+    public boolean isComplete();
     // applies a move object returned in a tuple returned by getOneTuple()
     // (required for FlattenSolvable)
-    abstract public void applyMove(Object o);
+    public boolean applyMove(Object o);
 
     // returns null if this particular cell is already solved.
-    abstract public List<FlattenSolvableTuple<T>> getTuplesForCell(int x,int y);
+    public List<FlattenSolvableTuple<T>> getTuplesForCell(int x,int y);
+
+
+
+
+
+    // implement only the above methods!
 
 
     @Override
-    public List<FlattenSolvableTuple<T>> getSuccessorTuples()
+    default public List<FlattenSolvableTuple<T>> getSuccessorTuples()
     {
         Vector<FlattenSolvableTuple<T>> result = new Vector<>();
 
@@ -43,7 +49,7 @@ public abstract class MultiFlattenSolvable<T> implements FlattenSolvable<T>
     }
 
     @Override
-    public List<T> guessAlternatives()
+    default public List<T> guessAlternatives()
     {
         for (int x = 0 ; x < getWidth() ; ++x)
         {
