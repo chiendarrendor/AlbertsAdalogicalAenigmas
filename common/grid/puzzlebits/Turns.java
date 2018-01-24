@@ -28,4 +28,6 @@ public enum Turns
             default: throw new RuntimeException("Not orthogonal!");
         }
     }
+
+    public static boolean isBend(Turns t) { return t == LEFT || t == RIGHT; }
 }

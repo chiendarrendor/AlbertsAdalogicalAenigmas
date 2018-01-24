@@ -97,4 +97,6 @@ public class GridPathContainer implements Iterable<Path>
 
     @Override
     public Iterator<Path> iterator() { return paths.iterator(); }
+
+    public GridPathCell getCell(int x,int y) { return cells[x][y]; }
 }
