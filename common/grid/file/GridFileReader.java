@@ -135,6 +135,8 @@ public class GridFileReader
 				if (incode)
 				{	
 					String[] cells = line.split("\\s+");
+
+					if (ycount >= height) throw new RuntimeException("block " + code + " has too many lines!");
 					
 					// special case...if there is one string of length width, then spaces aren't necessary.
 					if (cells.length == 1 && width != 1 && line.length() == width)

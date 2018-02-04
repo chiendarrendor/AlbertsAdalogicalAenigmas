@@ -1,0 +1,19 @@
+5 5
+CODE:CELLCLUES
+BO4 BO4   . BO1 BO1
+  .   .   .   .   .
+BO6 BO8 BO8   . BO3
+  .   .   .   .   .
+  . BO3 BO3   .   .
+CODE:LEFTCLUES
+AR2   .   .   .   .
+AR3   .   .   .   .
+AR4   .   .   .   .
+  .   .   .   .   .
+  .   .   .   .   .
+CODE:TOPCLUES
+   . AR4   . AR3 AR1
+   .   .   .   .   .
+   .   .   .   .   .
+   .   .   .   .   .
+   .   .   .   .   .

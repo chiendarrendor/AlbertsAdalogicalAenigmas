@@ -1,0 +1,13 @@
+3 3
+CODE:REGIONS
+.aa
+...
+...
+CODE:STARTINGCELLS
+W..
+W..
+.WW
+CODE:CELLCLUES
+  .   .   .
+  . HE1 BO2
+BO1   .   .

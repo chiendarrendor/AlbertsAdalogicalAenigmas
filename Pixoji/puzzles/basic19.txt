@@ -1,0 +1,15 @@
+6 6
+CODE:CELLCLUES
+  .   .   .   .   .   .
+  . BO8   .   . BO6   .
+  .   .   .   .   .   .
+  .   .   .   .   .   .
+  . BO7   .   . BO5   .
+  .   .   .   .   .   .
+CODE:REGIONS
+aaaaaa
+a.bc.a
+abbcca
+abddca
+a.dd.a
+aaaaaa

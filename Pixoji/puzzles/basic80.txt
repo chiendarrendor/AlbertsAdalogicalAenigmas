@@ -1,0 +1,25 @@
+7 7
+CODE:TOPCLUES
+CR3 CR5 AR7 CR2 AR6 CR1 AR3
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+CODE:LEFTCLUES
+AR3   .   .   .   .   .   .
+CR5   .   .   .   .   .   .
+AR5   .   .   .   .   .   .
+AR7   .   .   .   .   .   .
+AR4   .   .   .   .   .   .
+CR5   .   .   .   .   .   .
+AR3   .   .   .   .   .   .
+CODE:CELLCLUES
+SM0   .   . SM3   .   .   .
+  .   . BO7   .   .   . BO2
+  .   . BO8 SM3   . SM2   .
+  . SM5   .   .   .   .   .
+  .   .   . SM2 BO6 SM1   .
+  . BO6   .   .   . BO4   .
+  .   .   . SM2   .   .   .

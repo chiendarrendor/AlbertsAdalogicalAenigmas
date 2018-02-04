@@ -1,0 +1,30 @@
+6 6
+CODE:STARTINGCELLS
+.....B
+......
+......
+......
+......
+......
+CODE:TOPCLUES
+AR3 AR1 AR1 AR2   . AR2
+  .   .   .   .   .   .
+  .   .   .   .   .   .
+  .   .   .   .   .   .
+  .   .   .   .   .   .
+  .   .   .   .   .   .
+CODE:LEFTCLUES
+AR3   .   .   .   .   .
+  .   .   .   .   .   .
+CR2   .   .   .   .   .
+CR1   .   .   .   .   .
+CR1   .   .   .   .   .
+  .   .   .   .   .   .
+CODE:CELLCLUES
+  . BO1   .   . HE0 PA8
+HE1 BO2 SM0 SM1   .   .
+  .   .   .   .   . SM0
+  . BO3 BO1   . HE0   .
+SM0 BO3 BO0 BO1 HE1   .
+BO2   .   .   .   .   .
+

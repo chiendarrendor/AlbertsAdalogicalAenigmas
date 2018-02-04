@@ -1,0 +1,11 @@
+8 8
+CODE:CELLCLUES
+BO3   . BO4   . BO2   . BO0  .
+  .   .   .   .   .   .   .  .
+BO5   . BO8   . BO3   . BO1  .
+  .   .   .   .   .   .   .  .
+BO2   . BO7   . BO6   . BO4  .
+  . BO3   . BO9   . BO5   .  .
+BO1   . BO7   . BO9   . BO6  .
+  .   .   .   .   .   .   .  .
+

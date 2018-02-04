@@ -1,0 +1,11 @@
+4 4
+CODE:STARTINGCELLS
+.BWB
+....
+....
+....
+CODE:CELLCLUES
+  . PA3 PA9 PA7
+  . CI2   .   .
+  .   . CI2   .
+  .   .   . CI2

@@ -197,24 +197,7 @@ public class GridPanel extends FixedSizePanel
 		// assume that the numbers can be drawn in theparams.INSET space
 
 		g.setColor(Color.black);
-		
-		if (!listener.drawGridNumbers())
-		{
-			for (int x = -1; x <= params.numXCells; ++x) 
-			{
-				DrawCell(g2d,params.cellWidth,params.cellHeight,x,-1);
-				DrawCell(g2d,params.cellWidth,params.cellHeight,x,params.numYCells);
-			}
-			for (int y = 0 ; y < params.numYCells; ++y)
-			{
-				DrawCell(g2d,params.cellWidth,params.cellHeight,-1,y);
-				DrawCell(g2d,params.cellWidth,params.cellHeight, params.numXCells,y);
-			}
-		}
-			
-		
-		
-		
+
 		for (int i = 0; i <= params.numXCells; ++i)
 		{
 			if (((i == 0 || i == params.numXCells) && isDrawBoundary()) ||
@@ -223,7 +206,7 @@ public class GridPanel extends FixedSizePanel
 				g.drawLine(params.INSET + i * params.cellWidth ,params.INSET ,params.INSET + i * params.cellWidth ,params.INSET + params.numYCells * params.cellHeight);
 			}
 			
-			if (i != params.numXCells && listener.drawGridNumbers()) DrawStringInCell((Graphics2D)g,Color.black,params.INSET + i * params.cellWidth,params.INSET-params.cellHeight,params.cellWidth,params.cellHeight,""+i);
+			if (i != params.numXCells && listener.drawGridNumbers()) DrawStringInCorner((Graphics2D)g,Color.black,params.INSET + i * params.cellWidth,params.INSET-params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.SOUTH);
 		}
 		
 		for (int i = 0 ; i <= params.numYCells ; ++i)
@@ -234,7 +217,7 @@ public class GridPanel extends FixedSizePanel
 				g.drawLine(params.INSET ,params.INSET + i * params.cellHeight ,params.INSET + params.numXCells * params.cellWidth,params.INSET + i * params.cellHeight);
 			}
 			
-			if (i != params.numYCells && listener.drawGridNumbers()) DrawStringInCell((Graphics2D)g,Color.black,params.INSET - params.cellWidth,params.INSET + i * params.cellHeight,params.cellWidth,params.cellHeight,""+i);
+			if (i != params.numYCells && listener.drawGridNumbers()) DrawStringInCorner((Graphics2D)g,Color.black,params.INSET - params.cellWidth,params.INSET + i * params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.EAST);
 		}
 
 		for (int x = 0; x < params.numXCells; ++x)

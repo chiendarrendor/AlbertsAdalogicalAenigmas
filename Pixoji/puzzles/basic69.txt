@@ -1,0 +1,34 @@
+7 7
+CODE:TOPCLUES
+AR3 AR3 AR3 AR7 AR3 AR2 AR2
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+CODE:LEFTCLUES
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+SM1   .   .   .   .   .   .
+SM3   .   .   .   .   .   .
+SM1   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+  .   .   .   .   .   .   .
+CODE:REGIONS
+.......
+a.....b
+a.....b
+ccc.ddd
+ee.....
+e.f.g.h
+..f.ggh
+CODE:CELLCLUES
+BO2 HE2   .   .   . HE2   .
+  .   . BO5   . BO5 BO3   .
+  . BO5 HE1   . HE1 BO5   .
+  .   .   . HE0   .   .   .
+  .   . HE1   . HE0 BO4   .
+  . BO3   .   .   . HE0   .
+  . HE2   .   .   .   .   .
+

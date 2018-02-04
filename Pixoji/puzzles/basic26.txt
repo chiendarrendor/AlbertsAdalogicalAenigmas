@@ -1,0 +1,13 @@
+5 5
+CODE:TOPCLUES
+AR1 AR2 AR3 AR2 AR1
+  .   .   .   .   .
+  .   .   .   .   .
+  .   .   .   .   .
+  .   .   .   .   .
+CODE:LEFTCLUES
+HE1   .   .   .   .
+HE2   .   .   .   .
+HE3   .   .   .   .
+HE2   .   .   .   .
+HE1   .   .   .   .
