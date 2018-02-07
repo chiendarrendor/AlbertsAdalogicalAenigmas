@@ -12,6 +12,7 @@ public abstract class LogicerBase<T>
     private Vector<T> solutions = new Vector<T>();
     protected boolean debug = false;
 
+    public List<LogicStep<T>> getSteps() { return steps; }
     public void debug() { debug = true;}
     public List<T> GetSolutions() { return solutions; }
     public void addLogicStep(LogicStep<T> ls) { steps.add(ls); }

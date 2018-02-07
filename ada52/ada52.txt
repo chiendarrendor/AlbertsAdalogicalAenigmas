@@ -1,0 +1,23 @@
+23 12
+CODE:GRID
+ 8  G  W  G  W 14  W  #  G  6  W  W  W  W  9  #  G 10  W  W  W 17  W
+ W  G  G 16 12  G  W  #  5  W  G  W  G 25  W  #  8  G  W  G  G  G 13
+ G  W 19  G  W 19  G  #  W 22  W 22  W  G  W  #  W  W  G 21  G 21  W
+ W  W  G 19  G  W 13  #  G  W  W  W 11 19  G  #  G 21 17  W  W  G  G
+11 15  W  W  W  W  G  #  W  G 20 13  W  W  W  #  W  W  G 18 23  G  W
+ G  W 17  G  W  G 11  W 17  G  W  G  W  W 15  G 19  G  W  G  G  G 11
+ W 13  W  G 15  G  W  W  W  W 17  W 15  G  G  W  W  G 16  W 15  W  W
+ #  #  #  #  W  W  G 24 24  W  W  #  W  W 15  W 17  W  W  #  #  #  #
+ #  #  #  #  W 21  G  W  W  G 12  #  W  W  G 18  G 17  G  #  #  #  #
+ #  #  #  #  W  W 26  G  W 14  G  #  W 23  W  G  W  G 13  #  #  #  #
+ #  #  #  # 13  G  W  W  G 18  W  #  W 19  W 25  G  W  G  #  #  #  #
+ #  #  #  #  G 14  W 17  G  W  G  #  6  G  W  G  W 14  W  #  #  #  #
+ VARIABLES:
+ MAXV:5
+ LETTERS:LNJFENLCVHPGQAMWBHGTHVV
+ NUMBOXES:5
+ BOX0:0 0 7 7
+ BOX1:8 0 7 7
+ BOX2:16 0 7 7
+ BOX3:4 5 7 7
+ BOX4:12 5 7 7
