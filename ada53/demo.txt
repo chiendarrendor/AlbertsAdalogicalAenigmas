@@ -1,0 +1,17 @@
+7 7
+CODE:LETTERS
+.GNP..I
+UO.CCWA
+.N.RAN.
+PDY.OFU
+.ERD.R.
+AJCH.OR
+U..CQS.
+CODE:CIRCLES
+1...@0.
+..2....
+1.@...@
+...@...
+1...1.@
+....4..
+.1@...1
