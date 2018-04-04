@@ -38,3 +38,6 @@ CODE:BALLS
 . . @ . . @ . . . . . . . . . . . 4 . . . .
 . @ . . . . 4 . . . . . . . 4 . . . . 2 . .
 4 . . . . . 3 . . @ . . 3 . . . . @ . . 3 .
+VARIABLES:
+SOLUTIONTYPE:SIMPLEEMPTY
+COOKEDSOLUTION:Silly sounding name for the golf club from olden days that most closely resembles today's nine iron: NIBLICK

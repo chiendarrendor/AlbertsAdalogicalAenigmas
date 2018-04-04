@@ -1,0 +1,30 @@
+21 12
+CODE:LETTERS
+.DIHTMDWJKAFJFYI.KHZJ
+PT.UVUFFARCDOV.JCC.SX
+FSCE.IYYDOHTAITMFGARI
+.DBAXP.AHWKRAP.EALAV.
+BNAQPJ.E.WONMHHIKDD..
+LSLZSETF.H.XKEZKYEE.F
+CP.F.BQLBX.Q.EWAC.ICM
+L.EOI.BXLNPD.D.RTGAQN
+DCYZOJ.VSNTAAI.IBRNOO
+O..JPLLKGEJMBGDO.EOQH
+OZNKCIYLYIXZXMHZHE.CX
+ESNP.SUFFUIIWZMGIWJB.
+CODE:BALLS
+A...............4....
+..D...........@...@..
+....A................
+@.....@.......4.....@
+......L.@..........4@
+........O.@........@.
+..@.@.....V.@....@...
+.4...@......E.@......
+......3.......L......
+.@@.............A....
+..................C..
+....6...............E
+VARIABLES:
+SOLUTIONTYPE:ROTATELIES
+COOKEDSOLUTION:Roman game that might be precursor to golf: PAGANICA
