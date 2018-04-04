@@ -1,5 +1,6 @@
 package grid.puzzlebits;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -25,6 +26,7 @@ public enum Direction
     public int DY() { return dy;}
     public String getShort() { return shorthand; }
     public char getSymbol() { return symbol; }
+    public Point delta(Point p,int dist) { return new Point(p.x+dx*dist,p.y+dy*dist); }
 
     public static Direction[] orthogonals()
     {
@@ -60,6 +62,20 @@ public enum Direction
             case SOUTHEAST: return NORTHWEST;
             case NORTHWEST: return SOUTHEAST;
             case SOUTHWEST: return NORTHWEST;
+            default: throw new RuntimeException("Bwah?");
+        }
+    }
+
+    public Direction right() {
+        switch(this) {
+            case NORTH: return EAST;
+            case NORTHEAST: return SOUTHEAST;
+            case EAST: return SOUTH;
+            case SOUTHEAST: return SOUTHWEST;
+            case SOUTH: return WEST;
+            case SOUTHWEST: return NORTHWEST;
+            case WEST: return NORTH;
+            case NORTHWEST: return NORTHEAST;
             default: throw new RuntimeException("Bwah?");
         }
     }

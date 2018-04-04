@@ -1,9 +1,7 @@
 package grid.spring;
 
-import javax.swing.*;
-import java.util.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JFrame;
+import java.awt.Component;
 
 public class SinglePanelFrame extends JFrame
 {

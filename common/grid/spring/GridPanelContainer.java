@@ -1,6 +1,7 @@
 package grid.spring;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -11,6 +12,7 @@ public class GridPanelContainer extends JPanel
 	GridPanel.MultiGridListener mgl = null;
 	JButton prevButton = new JButton("<");
 	JButton nextButton = new JButton(">");
+	JLabel answer = new JLabel();
 	
 	private class PrevHandler implements ActionListener
 	{
@@ -50,8 +52,13 @@ public class GridPanelContainer extends JPanel
 		
 		gp = new GridPanel(width,height,listener,edgeListener);
 		add(gp, BorderLayout.CENTER);
-		
-		if (mgl != null)
+		add(answer,BorderLayout.SOUTH);
+		answer.setText(listener.getAnswerText());
+        Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
+        answer.setBorder(border);
+
+
+        if (mgl != null)
 		{
 			add(new VerticalCenterPanel(prevButton),BorderLayout.WEST);
 			add(new VerticalCenterPanel(nextButton),BorderLayout.EAST);
