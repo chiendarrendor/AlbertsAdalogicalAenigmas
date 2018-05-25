@@ -1,0 +1,427 @@
+------
+LOGIC
+------
+1 7 true PATH
+LOGIC
+------
+2 7 true PATH
+LOGIC
+------
+3 7 true PATH
+LOGIC
+------
+0 10 false PATH
+LOGIC
+------
+2 10 true PATH
+LOGIC
+------
+1 9 true PATH
+LOGIC
+------
+0 11 false PATH
+LOGIC
+------
+1 11 true PATH
+LOGIC
+------
+2 11 true PATH
+LOGIC
+------
+3 8 false WALL
+LOGIC
+------
+3 7 false PATH
+LOGIC
+------
+3 11 false PATH
+LOGIC
+------
+3 10 true PATH
+LOGIC
+------
+20 7 false PATH
+LOGIC
+------
+20 6 false PATH
+LOGIC
+------
+18 1 false PATH
+LOGIC
+------
+20 1 true PATH
+20 2 false PATH
+LOGIC
+------
+20 3 false PATH
+LOGIC
+------
+19 2 true PATH
+LOGIC
+------
+18 1 true PATH
+LOGIC
+------
+18 2 true PATH
+LOGIC
+------
+17 1 true PATH
+LOGIC
+------
+19 0 true PATH
+LOGIC
+------
+20 10 false PATH
+LOGIC
+------
+20 9 true WALL
+20 9 false PATH
+LOGIC
+------
+20 8 false WALL
+LOGIC
+------
+20 8 true PATH
+19 9 false WALL
+LOGIC
+------
+20 7 true PATH
+LOGIC
+------
+19 7 true PATH
+LOGIC
+------
+18 7 true PATH
+LOGIC
+------
+19 8 true PATH
+LOGIC
+------
+18 8 true PATH
+LOGIC
+------
+18 9 true PATH
+LOGIC
+------
+18 10 true PATH
+18 10 false WALL
+LOGIC
+------
+17 7 false PATH
+LOGIC
+------
+17 11 true PATH
+LOGIC
+------
+4 11 false PATH
+LOGIC
+------
+5 11 true PATH
+6 11 true PATH
+LOGIC
+------
+6 10 true PATH
+LOGIC
+------
+7 10 true PATH
+7 11 true PATH
+LOGIC
+------
+8 11 true PATH
+LOGIC
+------
+8 11 false PATH
+LOGIC
+------
+7 10 false PATH
+LOGIC
+------
+6 9 false PATH
+LOGIC
+------
+5 7 true WALL
+5 8 false PATH
+6 8 true WALL
+LOGIC
+------
+4 7 false PATH
+LOGIC
+------
+3 6 false PATH
+LOGIC
+------
+8 10 false PATH
+9 10 true WALL
+9 10 false PATH
+10 10 true WALL
+9 11 false PATH
+LOGIC
+------
+7 9 false PATH
+8 9 false PATH
+LOGIC
+------
+7 8 false PATH
+LOGIC
+------
+15 1 false PATH
+LOGIC
+------
+17 10 true WALL
+LOGIC
+------
+17 11 false PATH
+LOGIC
+------
+14 11 true PATH
+LOGIC
+------
+14 11 false PATH
+LOGIC
+------
+14 9 true PATH
+LOGIC
+------
+3 5 false PATH
+LOGIC
+------
+3 4 false PATH
+LOGIC
+------
+8 8 false PATH
+LOGIC
+------
+6 9 true PATH
+LOGIC
+------
+5 7 false WALL
+6 7 true PATH
+5 8 true PATH
+LOGIC
+------
+3 8 true PATH
+4 8 true PATH
+3 9 false WALL
+LOGIC
+------
+6 7 false PATH
+LOGIC
+------
+4 6 false PATH
+LOGIC
+------
+13 11 true PATH
+LOGIC
+------
+12 11 false PATH
+LOGIC
+------
+7 6 true PATH
+LOGIC
+------
+8 6 true PATH
+9 6 true PATH
+LOGIC
+------
+19 4 true WALL
+LOGIC
+------
+3 0 true WALL
+(3 0 true PATH)
+GUESS
+------
+3 1 true PATH
+LOGIC
+------
+2 4 false PATH
+LOGIC
+------
+1 8 true PATH
+1 8 false PATH
+LOGIC
+------
+4 3 true PATH
+LOGIC
+------
+2 1 true WALL
+LOGIC
+------
+1 5 true WALL
+(1 5 true PATH)
+GUESS
+------
+1 1 true PATH
+LOGIC
+------
+4 2 false PATH
+LOGIC
+------
+5 2 false PATH
+5 3 false PATH
+LOGIC
+------
+5 4 true PATH
+LOGIC
+------
+6 4 true PATH
+LOGIC
+------
+5 5 true WALL
+LOGIC
+------
+4 5 false WALL
+LOGIC
+------
+8 4 false PATH
+LOGIC
+------
+6 1 false PATH
+LOGIC
+------
+9 5 false PATH
+LOGIC
+------
+9 4 false PATH
+LOGIC
+------
+10 2 true PATH
+LOGIC
+------
+11 4 true WALL
+11 4 false PATH
+12 4 true WALL
+11 5 false PATH
+LOGIC
+------
+11 2 true PATH
+LOGIC
+------
+12 3 true PATH
+LOGIC
+------
+12 3 false PATH
+13 3 true WALL
+LOGIC
+------
+12 2 false PATH
+LOGIC
+------
+9 2 false PATH
+11 2 false PATH
+10 3 false PATH
+LOGIC
+------
+12 1 false PATH
+LOGIC
+------
+15 2 true PATH
+LOGIC
+------
+15 6 false WALL
+LOGIC
+------
+10 9 true PATH
+11 9 true PATH
+12 9 true PATH
+13 9 true PATH
+LOGIC
+------
+13 11 false PATH
+LOGIC
+------
+12 6 true WALL
+(12 6 true PATH)
+GUESS
+------
+10 8 false PATH
+LOGIC
+------
+10 7 true PATH
+9 8 false PATH
+LOGIC
+------
+11 8 true WALL
+LOGIC
+------
+11 8 false PATH
+LOGIC
+------
+12 7 true WALL
+LOGIC
+------
+13 7 true WALL
+(13 7 true PATH)
+GUESS
+------
+12 6 false PATH
+LOGIC
+------
+14 4 false PATH
+LOGIC
+------
+15 3 true WALL
+LOGIC
+------
+13 5 false PATH
+LOGIC
+------
+16 4 true WALL
+LOGIC
+------
+15 3 false PATH
+LOGIC
+------
+15 4 false PATH
+LOGIC
+------
+15 5 false PATH
+LOGIC
+------
+14 5 false PATH
+LOGIC
+------
+13 6 false PATH
+14 6 false PATH
+LOGIC
+------
+13 7 false PATH
+LOGIC
+------
+16 10 true PATH
+LOGIC
+------
+18 5 false PATH
+LOGIC
+------
+18 5 true WALL
+LOGIC
+------
+18 4 false PATH
+LOGIC
+------
+20 5 false WALL
+(20 5 false PATH)
+GUESS
+------
+20 4 true PATH
+LOGIC
+------
+20 4 false PATH
+LOGIC
+------
+18 3 true PATH
+(18 3 true WALL)
+GUESS
+------
+17 2 true PATH
+16 3 false PATH
+16 4 false PATH
+LOGIC
+------
+17 5 true PATH
+LOGIC
+------
+18 4 true PATH
+17 5 false WALL
+LOGIC
+------
