@@ -21,6 +21,8 @@ public class CellContainer<T> {
     private void makeNewCells() { cells = (T[][]) new Object[width][height]; }
 
 
+    public CellContainer(int width,int height,Creator<T> cr) { this(width,height,cr,(x,y,r)->r); }
+
     public CellContainer(int width,int height,Creator<T> cr,Copier<T> cop)
     {
         this.width = width;
