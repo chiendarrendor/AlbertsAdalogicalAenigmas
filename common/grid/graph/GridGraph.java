@@ -68,7 +68,9 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 		fwsp = new FloydWarshallShortestPaths<Point,DefaultEdge>(this);
 	}
 
-
+	public boolean hasCycle() {
+		return !GraphTests.isForest(this);
+	}
 
 
 	public boolean isConnected()
@@ -108,6 +110,7 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 	{
 		makefwsp();
 		GraphPath<Point,DefaultEdge> gp = fwsp.getPath(p1,p2);
+		if (gp == null) return null;
 		return gp.getVertexList();
 	}
 	
