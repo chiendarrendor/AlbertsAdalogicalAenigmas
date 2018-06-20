@@ -1,0 +1,44 @@
+21 12
+CODE:SYMBOLS
+T...C................
+..........T.....T....
+..T....C.....C.......
+..................C..
+.....................
+.C....T..............
+..............C....T.
+.....................
+..T..................
+.......T.....T....C..
+....C.....C..........
+................T...C
+CODE:LETTERS
+.RLG.TWGEEDASZYCBPJCO
+GGODDLZTOX.AHMVK.AMZM
+VZ.AGKP.EYBNE.GUMJOAJ
+KLYDLJANMSHLSQRIEK.MJ
+DZLSMWDPZFB.OHBFNJYMN
+Z.VIGG.DOYBIQWAGECPYQ
+FMPVZEBQIJUMKK.ZWLF.C
+PUFSDWJQD.AGDCMEROAZZ
+CD.VQNQNABCGQRKIMQEZJ
+DKADLKT.LCRQD.NVBM.MW
+NRXL.KDMTO.DUDQFYRTDH
+RFDQIJUMXAGLRFCF.NBA.
+VARIABLES:
+START:9 7
+END:11 4
+SOLUTION:He wrote "Not all those who wander are lost..." -- TOLKIEN
+CODE:REGIONS
+..aa..bbcc.ee......ff
+gg.hhiijj.........kkf
+...llmm.......nnoopp.
+.qr.stuvv...wwxy...zz
+.qrAstuu.B.CDDxy..EE.
+...AA...FBGCHD..IJJK.
+LLM...NNFOGPHH..I..KQ
+RRM..SS..O.PTTUUV...Q
+...W....XYY.Z11.V....
+.22W33..X...Z...4....
+..2..3.5.6......4....
+77.....566...........
