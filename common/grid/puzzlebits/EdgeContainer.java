@@ -2,6 +2,49 @@ package grid.puzzlebits;
 
 public class EdgeContainer<T>
 {
+    public static class CellCoord {
+        public int x;
+        public int y;
+        public Direction d;
+        public CellCoord(int x,int y,Direction d) { this.x = x; this.y = y; this.d = d; }
+    }
+
+    public static class EdgeCoord {
+        public int x;
+        public int y;
+        public boolean isV;
+        public EdgeCoord(int x,int y,boolean isV) { this.x = x; this.y = y; this.isV = isV; }
+    }
+
+    public static CellCoord getCellCoord(int x,int y, boolean isV) {
+        Direction d;
+        if (isV) {
+            d = Direction.EAST;
+            --x;
+            if (x < 0) {
+                ++x;
+                d = Direction.WEST;
+            }
+        } else {
+            d = Direction.SOUTH;
+            --y;
+            if (y < 0) {
+                ++y;
+                d = Direction.NORTH;
+            }
+        }
+        return new CellCoord(x,y,d);
+    }
+
+    public static EdgeCoord getEdgeCoord(int x,int y, Direction d) {
+        boolean isV = d == Direction.EAST || d == Direction.WEST;
+        if (d == Direction.EAST) ++x;
+        if (d == Direction.SOUTH) ++y;
+        return new EdgeCoord(x,y,isV);
+    }
+
+
+
     // width and height are the count of cells around and between which are the edges.
     private int width;
     private int height;
