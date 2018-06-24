@@ -1,0 +1,32 @@
+21 12
+CODE:LETTERS
+RGKHTODTROFTHBENL.SH.
+EESO.E.DRAHLTSFOODEHA
+WO.RGGWG.CNRYYSR.AITL
+GNKAIFV.NIGRAQWLDOALL
+SSALKHSLIVINEUL.RGRLB
+D.COL.ORRNEFILNCORGIE
+HUIHGUCWTPRRGPIUCOMAL
+RAOYCFIBH.TH.ASQLECEO
+QSLIOT..NHG.RHIT.HPW.
+ITRTHCWBFOMORS.RFA.RW
+SMHOQ.WMLQ.YUONQTBALE
+HHTETEPMURAURITOE.HYT
+CODE:ARROWS
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 0S  .  . 2W
+  .  .  .  . 4S  . 0S  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  . 3S  .  .  .  .  . 2S  .  .  .  .  .  .  . 4W  .  .  .  .
+  .  .  .  .  .  .  . 3S  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 3S  .  .  .  .  .
+  . 6E  .  .  . 2S  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  . 2N  .  . 0N  .  .  .  .  .  .  .  .
+  .  .  .  .  .  . 2E 1W  .  .  . 3N  .  .  .  . 0S  .  .  . 1N
+  .  .  .  .  .  .  .  .  .  .  .  .  .  . 1N  .  .  . 2N  .  .
+  .  .  .  .  . 4E  .  .  .  . 3W  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 2W  .  .  .
+VARIABLES:
+GUESS1:4 0 PATH
+GUESS2:2 5 WALL
+SOLUTION1:"His arrow shall go forth as the lightning, and the Lord God shall blow the trumpet" -- Zechariah 9:14
+SOLUTION2:"How blunt are all the arrows of thy quiver in comparison with those of guilt." -- Robert Blair
