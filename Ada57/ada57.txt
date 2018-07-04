@@ -1,0 +1,29 @@
+20 12
+CODE:LETTERS
+H.MZQ.BRS.XKE.RKU.LH
+CRT.GLC.RLD.QMP.HJF.
+.BIS.GBA.USQ.RQC.UQI
+DZ.ULR.BPY.GYC.ZOK.F
+C.ZCB.RMF.KBR.XGV.BH
+QGJ.HFM.ASA.UBU.GXX.
+.PDO.GLH.MTB.SME.IIG
+QN.BBZ.DOK.FYZ.SYI.X
+G.QLV.KBB.FQQ.DMQ.DZ
+BLE.BSR.SGY.GUY.YQD.
+.PBK.FUQ.QRN.KAD.GNE
+BQ.SMS.KFL.GDV.ZKR.K
+CODE:CLUES
+.1...3...3...4...5..
+...4...3...2...1...5
+2...4...5...2...2...
+..1...5...3...5...5.
+.1...5...2...3...4..
+...3...4...5...4...4
+5...3...5...3...3...
+..5...7...6...3...4.
+.4...7...4...2...4..
+...4...3...6...2...2
+3...5...2...2...1...
+..4...3...4...2...1.
+VARIABLES:
+SOLUTION:In "A Midsummer Night's Dream"'s play-within-a-play, he acts the role of THE WALL: Tom Snout
