@@ -1,0 +1,39 @@
+21 12
+CODE:LETTERS
+PF.E.JQUXS.QZ.XG.M.FG
+I.JX.XF.JU.ZT.LL.GX.X
+TEXM.YW.T...M.ZW.MVWM
+X...G.LQNQRA.K..G...A
+LIUU.ANBOR.QV.T..VIJZ
+XUGNORP.VA.NBG.RESZGB
+S...H.GENC.M..B.H...E
+JKIJQ.GAQRSRTG.MUQIRG
+SPPSA.BTW...AWYJXYZYX
+GTCWCKNF.YPX.FT.XTKKK
+J...S.CK.KIG.TGBY...N
+GTGVQTGX.EZH.LT.XLMRH
+CODE:NUMBERS
+..3.5.....1..1..5.4..
+.1..4..3..2..5..4..5.
+....2..1.234.1..3....
+.424.3......2.25.241.
+....2.....4..1.31....
+.......1..5...2......
+.354.3....1.31.1.425.
+.....5........2......
+.....4...522.........
+........4...3..3.....
+.231.5..3...4....534.
+........5...1..5.....
+VARIABLES:
+LOWTERMINAL:1
+HIGHTERMINAL:5
+LINECOUNT:5
+LINE1:1 1
+LINE2:9 2
+LINE3:16 2
+LINE4:8 9
+LINE5:17 10
+SOLUTION:Theseus traced the path out of the labyrinth with her aid: Ariadne
+SOLUTION2:Everyone has a spirit that can be refined, a body that can be trained ..., a suitable path to follow.
+SOLUTION3:You are here to realize your ... divinity and manifest your ... enlightenment. -- Morihei Ueshiba
