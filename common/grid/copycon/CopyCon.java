@@ -31,6 +31,7 @@ public class CopyCon {
 
         try {
             for (Field f : clazz.getDeclaredFields()) {
+                if (java.lang.reflect.Modifier.isStatic(f.getModifiers())) continue;
                 f.setAccessible(true);
                 switch(getAnnoType(f)) {
                     case DEEP:
