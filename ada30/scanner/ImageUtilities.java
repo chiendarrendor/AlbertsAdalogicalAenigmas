@@ -173,6 +173,7 @@ public class ImageUtilities
 		{
 			double[] lines = getLineStructureScore(img,pi.getLowPoint(),pi.getHighPoint(),pi.getDelta());
 			double score = lines != null ? scorer.Score(lines) : 0.0;
+
 			
 			if (score < scorer.Threshhold())
 			{
@@ -237,12 +238,20 @@ public class ImageUtilities
 	public static DotColor GetDotColor(BufferedImage img, Point center, int octants, int distance)
 	{
 		int[] scancircle = GetSignals(img,center,octants,distance,4);
+		System.out.print("ScanCircle:");
+		for (int i : scancircle) System.out.print(" " + i);
+		System.out.println("");
 		int whitecount=0;
 		int blackcount=0;
-		for (int i : scancircle) if (i < 125) ++blackcount; else ++whitecount; 
-		if (blackcount == 0) return DotColor.NONE;
-		if (blackcount > distance/2) return DotColor.BLACK;
-		return DotColor.WHITE;
+		for (int i : scancircle) if (i < 125) ++blackcount; else ++whitecount;
+
+		DotColor result = DotColor.WHITE;
+		if (blackcount == 0) result =  DotColor.NONE;
+		if (blackcount > distance/2) result =  DotColor.BLACK;
+
+		System.out.println("Dot Color: " + center.x + "," + center.y + " oct: " + octants + " dist: " + distance + " result: " + result);
+
+		return result;
 	}
 	
 	

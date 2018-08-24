@@ -1,0 +1,13 @@
+15 3
+CODE:CELLS
+10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+CODE:COLORS
+W W B . W . . . . B . . . W W
+B B . . . . . B B B . W W W .
+W . W W W W W B B B . W W . W
+CODE:DIRS
+NE NW C . C . . . . S . . . S NE
+E W . . . . . SE SW N . SE SW N .
+C . E W SE SW C NE NW S . NE NW . S

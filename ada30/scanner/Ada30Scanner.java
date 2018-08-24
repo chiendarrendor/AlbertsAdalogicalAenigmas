@@ -1,7 +1,5 @@
 
 import java.awt.image.*;
-import java.io.*;
-import javax.imageio.*;
 import java.util.*;
 import java.awt.*;
 import java.util.regex.*;
@@ -13,7 +11,7 @@ public class Ada30Scanner
 		public double Score(double[] components) 
 		{ 
 			if (components[3] < 80) return 0;
-			if (components[2] > 300) return 500; // special case for the 'Floor' image with a solid outline.
+			if (components[2] > 200) return 500; // special case for the 'Floor' image with a solid outline.
 			return components[0] * components[1] * components[1] / components[3]; 
 		}
 		public double Threshhold() { return 100; }
@@ -120,16 +118,18 @@ public class Ada30Scanner
 		if (args.length != 2) { System.out.println("Bad Command Line"); System.exit(1); }
 		MakeRuledImage(args[0]);
 		BufferedImage img = ImageUtilities.LoadImage(args[0]);
-		boolean isFloor = args[0].equals("Floor.png");
+
+		Pattern p = Pattern.compile("Tile(.*)\\.png");
+		Matcher m = p.matcher(args[0]);
+		boolean isFloor = true;
 		int tileid = 16;
-		
-		if (!isFloor)
-		{
-			Pattern p = Pattern.compile("Tile(.*)\\.png");
-			Matcher m = p.matcher(args[0]);
-			if (!m.find()) throw new RuntimeException("Invalid Tile image name: " + args[0]);
+		if (m.find()) {
+			isFloor = false;
 			tileid = Integer.parseInt(m.group(1),16);
 		}
+
+		boolean edgeOnlyCells = false;
+		boolean skipOuterEdges = true;
 		
 		
 		Rectangle bounding = ImageUtilities.GetBounding(img);
@@ -154,11 +154,13 @@ public class Ada30Scanner
 		
 			for (int y = 0 ; y < height ; ++y)
 			{
-				if (isFloor && y != 0 && y != height-1 && x != 0 && x != width-1) continue;
+				if (edgeOnlyCells && y != 0 && y != height-1 && x != 0 && x != width-1) continue;
 				int uy = hlines.get(y);
 				int dy = hlines.get(y+1);
 				
-				
+				System.out.println("Doing Cell " + x + "," + y);
+
+
 				boolean doInfo = false;
 				
 				boolean le = ImageUtilities.IsEdgelet(img,new Point(lx,uy),new Point(lx,dy),new Point(0,1),doInfo);
@@ -171,7 +173,7 @@ public class Ada30Scanner
 				if (!le || !de || !ue || !re) continue;
 				b.setCellOn(x,y);
 				
-				CellDotDetector(img,x,y,lx,uy,rx,dy,b,isFloor);
+				CellDotDetector(img,x,y,lx,uy,rx,dy,b, skipOuterEdges);
 				
 				for (int dx = lx+5 ; dx < rx-5 ; ++dx)
 				{

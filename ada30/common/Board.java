@@ -1,4 +1,6 @@
 
+import grid.file.GridFileReader;
+
 import java.io.*;
 import java.util.*;
 
@@ -205,7 +207,7 @@ public class Board
 	{
 		if (color == DotColor.NONE) throw new RuntimeException("Why make a blank dot?");
 		if (!isCellOn(x,y)) throw new RuntimeException("That cell is inactive!");
-		if (cellColors[x][y] != DotColor.NONE) throw new RuntimeException("That cell's already been dotted!");
+		if (cellColors[x][y] != DotColor.NONE) throw new RuntimeException("Cell " + x + "," + y + " has already been dotted with color " + cellColors[x][y] + "!");
 		cellColors[x][y] = color;
 		dotLoc[x][y] = loc;
 	}
