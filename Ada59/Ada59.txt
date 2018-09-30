@@ -1,0 +1,40 @@
+19 9
+CODE:LETTERS
+HCESNDL.SGPKCXV....
+QZRZPZG.RMKHVCE....
+MMUUCMZXEJFVPHUARDE
+NABZDHACFSOHSEWNRQC
+ZRLZDLSEMNWUQMDHAHM
+BMUEGOILLBMCHYAJZPC
+XNHLMRQCQDMPADURMZH
+....EUMTHBA.WFSVZQH
+....SDXGLVW.DZHCLPA
+CODE:VERTICALS
+5 ? 4 15 10 ? 3 ? 12 7 ? 9 ? 1 7 ? ? 13 ?
+5 ? 5 ? 10 7 ? ? ? ? ?  ? 15 10 ? ? 6 ? ?
+? ? . . . 11 ? ? ? 8 13 . . 10 ? ?  . . .
+...................
+...................
+...................
+...................
+...................
+...................
+CODE:HORIZONTALS
+10 10 10 . . . . . . . . . . . . . . . .
+? 9 ? ? ? . . . . . . . . . . . . . .
+33 26 . . . . . . . . . . . . . . . . .
+13 ? ? 13 8 . . . . . . . . . . . . . .
+12 21 8 . . . . . . . . . . . . . . . .
+10 13 ? 13 14 . . . . . . . . . . . . . .
+4 ? 21 . . . . . . . . . . . . . . . .
+10 9 9 6 . . . . . . . . . . . . . . .
+12 7 9 . . . . . . . . . . . . . . . .
+VARIABLES:
+MAXNUM:6
+BOXCOUNT:4
+BOXSIZE:7
+BOX1:0 0
+BOX2:4 2
+BOX3:8 0
+BOX4:12 2
+SOLUTION:Pioneer of Elasticity Theory for whom a math prize is named: SOPHIE GERMAIN
