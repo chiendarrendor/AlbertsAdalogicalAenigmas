@@ -2,18 +2,15 @@ package grid.assistant;
 
 import grid.logic.LogicStatus;
 import grid.logic.flatten.FlattenLogicer;
-import grid.puzzlebits.Direction;
 
-import java.awt.Point;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public class BoardQueue<T extends AssistantBoard<T>> {
     private SolverAssistantConfig<T> config;
@@ -34,102 +31,81 @@ public class BoardQueue<T extends AssistantBoard<T>> {
         }
     }
 
+    private enum ItemState {
+        OPEN(false),   //  if we haven't tried to apply logic to this
+        LOGIC(false),  // non-guess, logic successfully applied
+        GUESS(false),  //  this is a guess, logic status unknown (very short lived state)
+        GUESSED(true), // this is a guess, and we have successfully applied logic to it.
+        CONTRADICTION(true), // this is a guess, and the immediate logic for it failed
+        DEAD(false),   // non-guess, logic failed
+        DONE(false); // current state is a solution
+        private boolean guessResult;
+        private ItemState(boolean gr) { guessResult = gr; }
+        public boolean isGuessResult() { return guessResult; }
+    }
+    // OPEN, CONTRADICTION, DEAD, and DONE are the only allowed states for the end of the queue
+    // LOGIC and GUESSED _must_ be followed up immediately by adding another state
+    // GUESS _must_ be followed up immediately by a transition to either GUESSED or CONTRADICTION
 
 
     private class BoardItem {
-        private boolean isGuess = false;
+        private ItemState state = ItemState.OPEN;
         T orig;
         T cur;
 
-        Map<Point,MovePair<T>> cellMovePairs = new HashMap<>();
-        Map<EdgeKey,MovePair<T>> edgeMovePairs = new HashMap<>();
+        List<MovePair<T>> movePairs = new ArrayList<>();
+
+        public ItemState getState() {
+            return state;
+        }
+        public void setState(ItemState state) { this.state = state; }
 
         public BoardItem(T b) { orig = b.clone(); cur = b.clone(); }
 
-        public void addCellAntiMove(int x, int y, MovePair<T> pair) {
-            Point k = new Point(x,y);
-            if (pair.isNoOp()) cellMovePairs.remove(k);
-            else cellMovePairs.put(k,pair);
-        }
-
-        public void addEdgeAntiMove(int x, int y, Direction d, MovePair<T> pair) {
-            EdgeKey ek = new EdgeKey(x,y,d);
-            if (pair.isNoOp()) edgeMovePairs.remove(ek);
-            else edgeMovePairs.put(ek,pair);
+        public void addAntiMove(MovePair<T> pair) {
+            movePairs.add(pair);
         }
 
         public void clear() {
-            cellMovePairs.clear();
-            edgeMovePairs.clear();
+            movePairs.clear();
             cur = orig.clone();
+            state = ItemState.OPEN;
         }
 
         public void clearContradiction() {
             cur = orig.clone();
-            isGuess = false;
+            state = ItemState.OPEN;
 
-            if (cellMovePairs.size() > 0) {
-                Map.Entry<Point,MovePair<T>> ment = cellMovePairs.entrySet().iterator().next();
-                cellMovePairs.remove(ment.getKey());
-                MovePair<T> newpair = new MovePair<T>(ment.getValue().antimove,ment.getValue().move);
-                cellMovePairs.put(ment.getKey(),newpair);
-                ment.getValue().antimove.applyMove(cur);
-            }
-
-            if (edgeMovePairs.size() > 0) {
-                Map.Entry<EdgeKey,MovePair<T>> ment = edgeMovePairs.entrySet().iterator().next();
-                edgeMovePairs.remove(ment.getKey());
-                MovePair<T> newpair = new MovePair<T>(ment.getValue().antimove,ment.getValue().move);
-                edgeMovePairs.put(ment.getKey(),newpair);
-                ment.getValue().antimove.applyMove(cur);
+            // we do a contradiction only on a guess, which should only have one entry.
+            if (movePairs.size() > 0) {
+                MovePair<T> ment = movePairs.get(0);
+                movePairs.clear();
+                MovePair<T> newment = new MovePair<T>(ment.antimove,ment.move);
+                movePairs.add(newment);
+                ment.antimove.applyMove(cur);
             }
         }
 
         public void save(PrintWriter pw,boolean hasNext) {
             pw.println("------");
-            for (Map.Entry<EdgeKey,MovePair<T>> ent : edgeMovePairs.entrySet()) {
-                pw.format("%d,%d,%s/%s/%s%n",
-                        ent.getKey().getX(),ent.getKey().getY(),ent.getKey().getD(),
-                        config.serialize(ent.getValue().move),
-                        config.serialize(ent.getValue().antimove));
+            for (MovePair<T> mp : movePairs) {
+                pw.format("%s/%s%n",config.serialize(mp.move),config.serialize(mp.antimove));
             }
-            for (Map.Entry<Point,MovePair<T>> ent : cellMovePairs.entrySet()) {
-                pw.format("%d,%d/%s/%s%n",
-                        ent.getKey().x,ent.getKey().y,
-                        config.serialize(ent.getValue().move),
-                        config.serialize(ent.getValue().antimove));
-            }
-
-
-            if (hasNext) {
-                pw.println(isGuess() ? "GUESS" : "LOGIC");
-            }
+            pw.println(state);
         }
 
         public void load(String line) {
             String[] parts = line.split("/");
-            String[] keyparts = parts[0].split(",");
-            AssistantMove<T> move = config.deserialize(parts[1]);
-            AssistantMove<T> antimove = config.deserialize(parts[2]);
+            AssistantMove<T> move = config.deserialize(parts[0]);
+            AssistantMove<T> antimove = config.deserialize(parts[1]);
             MovePair<T> pair = new MovePair<T>(move,antimove);
             move.applyMove(cur);
-            if (keyparts.length == 2) {
-                Point key = new Point(Integer.parseInt(keyparts[0]),Integer.parseInt(keyparts[1]));
-                cellMovePairs.put(key,pair);
-            } else if (keyparts.length == 3) {
-                EdgeKey key = new EdgeKey(Integer.parseInt(keyparts[0]),Integer.parseInt(keyparts[1]),
-                        Enum.valueOf(Direction.class,parts[2]));
-                edgeMovePairs.put(key,pair);
-            }
+            addAntiMove(pair);
+            // state is loaded by higher-level process.
         }
 
 
-        public int deltaCount() { return cellMovePairs.size() + edgeMovePairs.size(); }
-        public boolean isGuess() { return isGuess; }
-        public void setGuess() { isGuess = true; }
-
-
-
+        public int deltaCount() { return movePairs.size(); }
     }
 
     private List<BoardItem> queue = new ArrayList<>();
@@ -139,10 +115,12 @@ public class BoardQueue<T extends AssistantBoard<T>> {
     public T getCurCur() { return getLast().cur; }
     public BoardHolder<T> getHolder() { return ()->getCurCur(); }
 
-    public void addCellMovePair(int x, int y, MovePair<T> pair) {
-        getLast().addCellAntiMove(x,y,pair);
+
+    public void addMovePair(MovePair<T> pair) {
+        if (getLast().getState() != ItemState.OPEN) return;
+        getLast().addAntiMove(pair);
+        pair.move.applyMove(getCurCur());
     }
-    public void addEdgeMovePair(int x, int y, Direction d, MovePair<T> pair) { getLast().addEdgeAntiMove(x,y,d,pair); }
 
     public String clearCur() {
         getLast().clear();
@@ -153,28 +131,46 @@ public class BoardQueue<T extends AssistantBoard<T>> {
         if (getLast().deltaCount() > 0) { return clearCur();  }
         if (queue.size() == 1) return "Don't delete the initial board!";
         queue.remove(queue.size() - 1);
+        getLast().setState(ItemState.OPEN);
         return "State Removed";
     }
 
     public String doLogic() {
         T newboard = getLast().cur.clone();
         FlattenLogicer.RecursionStatus status = applyLogic(newboard);
-        if (status != FlattenLogicer.RecursionStatus.DEAD) queue.add(new BoardItem(newboard));
+        switch(status) {
+            case DEAD:
+                if (getLast().getState() == ItemState.OPEN) getLast().setState(ItemState.DEAD);
+                else if (getLast().getState() == ItemState.GUESS) getLast().setState(ItemState.CONTRADICTION);
+                else throw new RuntimeException("How did we get state " + getLast().getState() + " in doLogic?");
+                break;
+            case DONE:
+            case GO:
+                if (getLast().getState() == ItemState.OPEN) getLast().setState(ItemState.LOGIC);
+                else if (getLast().getState() == ItemState.GUESS) getLast().setState(ItemState.GUESSED);
+                else throw new RuntimeException("How did we get state " + getLast().getState() + " in doLogic?");
 
-        if (newboard.isComplete()) config.displaySolution(newboard);
+                queue.add(new BoardItem(newboard));
+                if (newboard.isComplete()) {
+                    getLast().setState(ItemState.DONE);
+                    config.displaySolution(newboard);
+                }
+                break;
+        }
+
 
         return  "Logic Status: " + status + (newboard.isComplete() ? "(ISCOMPLETE)" : "(NOTCOMPLETE)");
     }
 
     public String doGuess() {
         if (getLast().deltaCount() != 1) return "Guess requires exactly one delta";
-        getLast().setGuess();
+        getLast().setState(ItemState.GUESS);
         return doLogic();
     }
 
     public String doContradiction() {
-        if (queue.stream().noneMatch(qi->qi.isGuess())) return "Must have guess to select contradiction";
-        while(!getLast().isGuess()) queue.remove(queue.size()-1);
+        if (queue.stream().noneMatch(qi->qi.getState().isGuessResult())) return "Must have guess to select contradiction";
+        while(!getLast().getState().isGuessResult()) queue.remove(queue.size()-1);
 
         getLast().clearContradiction();
         return doLogic();
@@ -194,14 +190,44 @@ public class BoardQueue<T extends AssistantBoard<T>> {
         return "saved";
     }
 
+    private ItemState parseState(String s) {
+        try {
+            return ItemState.valueOf(s);
+        } catch(IllegalArgumentException iae) {
+            return null;
+        }
+    }
+
+
     public void load() {
         try {
             Files.lines(Paths.get(SAVEFILE)).forEach(line->{
                 System.out.println("Processing " + line);
-                if (line.equals("GUESS")) doGuess();
-                else if (line.equals("LOGIC")) doLogic();
-                else if (line.equals("------")) return;
-                else getLast().load(line);
+                if (line.equals("------")) return;
+                ItemState is = parseState(line);
+                if (is == null) {
+                    getLast().load(line);
+                    return;
+                }
+
+                switch (is) {
+                    case OPEN:
+                    case CONTRADICTION:
+                    case DEAD:
+                    case DONE:
+                        // these don't require any work...either logic has not been applied, or it has and it has failed.
+                        getLast().setState(is);
+                        break;
+                    case GUESS:
+                        // this should never exist long enough to be written to a file.
+                        throw new RuntimeException("How did GUESS end up in the save file?");
+                    case LOGIC:
+                        doLogic();
+                        break;
+                    case GUESSED:
+                        doGuess();
+                        break;
+                }
             });
         } catch(IOException ioe) {
            throw new RuntimeException("Can't load save file: " + ioe);

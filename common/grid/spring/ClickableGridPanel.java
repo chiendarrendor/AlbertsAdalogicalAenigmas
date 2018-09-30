@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClickableGridPanel extends GridPanel implements MouseListener {
+
     public interface EdgeClicked {
-        void clicked(int x,int y,Direction d);
+        void clicked(ClickInfo ci);
     }
 
     public interface CellClicked {
-        void clicked(int x,int y);
+        void clicked(ClickInfo ci);
     }
 
     List<EdgeClicked> edgeclickers = new ArrayList<>();
@@ -43,13 +44,14 @@ public class ClickableGridPanel extends GridPanel implements MouseListener {
 
         int cellx = (e.getX()-dp.INSET)/dp.cellWidth;
         int celly = (e.getY()-dp.INSET)/dp.cellHeight;
+        int relx = e.getX() - (dp.INSET + cellx * dp.cellWidth);
+        int rely = e.getY() - (dp.INSET + celly * dp.cellHeight);
+
         Direction d = null;
         if (e.getX() < dp.INSET || e.getY() < dp.INSET || cellx >= dp.numXCells || celly >= dp.numYCells) {
             cellx = OUTOFBOUNDS;
             celly = OUTOFBOUNDS;
         } else {
-            int relx = e.getX() - (dp.INSET + cellx * dp.cellWidth);
-            int rely = e.getY() - (dp.INSET + celly * dp.cellHeight);
             boolean xset = false;
             boolean yset = false;
 
@@ -59,11 +61,20 @@ public class ClickableGridPanel extends GridPanel implements MouseListener {
             if (rely > dp.cellHeight - BORDER) { xset = true; d = Direction.SOUTH; }
             if (xset && yset) { cellx = INCORNER; celly = INCORNER; d = null; }
         }
+        ClickInfo ci = new ClickInfo();
+        ci.cellx = cellx;
+        ci.celly = celly;
+        ci.d = d;
+        ci.cellwidth = dp.cellWidth;
+        ci.cellheight = dp.cellHeight;
+        ci.dxloc = relx;
+        ci.dyloc = rely;
+        ci.me = e;
 
         if (cellx == OUTOFBOUNDS || cellx == INCORNER) return;
-        for (CellClicked cc : cellclickers) cc.clicked(cellx,celly);
+        for (CellClicked cc : cellclickers) cc.clicked(ci);
         if (d == null) return;
-        for (EdgeClicked ec : edgeclickers) ec.clicked(cellx,celly,d);
+        for (EdgeClicked ec : edgeclickers) ec.clicked(ci);
     }
 
     public void mousePressed(MouseEvent e) {}

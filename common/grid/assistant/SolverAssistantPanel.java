@@ -54,19 +54,19 @@ public class SolverAssistantPanel<T extends AssistantBoard<T> > extends JPanel {
         buttonPanel.add(new LambdaButton("Save", ()-> status(queue.save()) ));
 
         if (config.getCellClicker() != null) {
-            cgp.addCellClicker((x,y)-> {
-                MovePair<T> movepair = config.getCellClicker().click(queue.getCurOrig(),queue.getCurCur(),x,y);
+            cgp.addCellClicker((ci)-> {
+                MovePair<T> movepair = config.getCellClicker().click(queue.getCurOrig(),queue.getCurCur(),ci);
                 if (movepair == null) return;
-                queue.addCellMovePair(x,y,movepair);
+                queue.addMovePair(movepair);
                 update();
             });
         }
 
         if (config.getEdgeClicker() != null) {
-            cgp.addEdgeClicker((x,y,d)->{
-                MovePair<T> movepair = config.getEdgeClicker().click(queue.getCurOrig(),queue.getCurCur(),x,y,d);
+            cgp.addEdgeClicker((ci)->{
+                MovePair<T> movepair = config.getEdgeClicker().click(queue.getCurOrig(),queue.getCurCur(),ci);
                 if (movepair == null) return;
-                queue.addEdgeMovePair(x,y,d,movepair);
+                queue.addMovePair(movepair);
                 update();
             });
         }
