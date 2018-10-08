@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+.QBQ.Z.OO.S.CG.J.AKE.
+X..L.Z.X.....L.Q....M
+I.Q.FY..D.B.F..E..O.W
+.C..XPVN.Q...JSII..Q.
+E.UO.X.CK...GR.F..N.L
+....W.N.JU.AC.M.D.FR.
+...DJ.M.WL.O..S.A.HH.
+H.TN.N.UW...YW.V.ML.J
+.T..ZM.D.N.Z.BODB..P.
+C.Q.KB..D.D....YJ.R.J
+G..O.T.J.....SZJ.A..A
+.EDJ.I..F.B.BX.Z.FPK.
+CODE:COLORS
+W...W.W..W.B..B.B...B
+.BB.W.W.BWWBW.W.WWWW.
+.B.B..WW.W.B.BB.BB.W.
+W.BW....W.BWW....WW.W
+.W..B.W..BBW..W.WW.W.
+BWBW.B.W..W..B.B.B..W
+BWB..W.W..W.BB.W.W..W
+.W..B.B..BWW..B.B..W.
+B.BW..W.W.B.B....BW.B
+.B.W..BB.W.WWBB..B.B.
+.BB.W.W.WWBBW...B.BB.
+W...W.WW.W.B..B.B...B
+VARIABLES:
+SOLUTION:She's the youngest person ever awarded a Nobel Peace Prize: Malala Yousafzai
