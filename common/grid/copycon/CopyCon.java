@@ -26,13 +26,18 @@ public class CopyCon {
 
 
 
-    public static <T> void copy(T thing, T right) {
-        Class<T> clazz = (Class<T>)thing.getClass();
+
+    public static <T> void copy(T thing, T right) { copy(thing,right,thing.getClass()); }
+
+
+    private static <T> void copy(T thing, T right,Class clazz) {
+        if (clazz.getName().equals("java.lang.Object")) return;
 
         try {
             for (Field f : clazz.getDeclaredFields()) {
                 if (java.lang.reflect.Modifier.isStatic(f.getModifiers())) continue;
                 f.setAccessible(true);
+
                 switch(getAnnoType(f)) {
                     case DEEP:
                         if (!f.getType().toString().startsWith("class"))
@@ -71,6 +76,6 @@ public class CopyCon {
             throw new RuntimeException("CopyCon Failure: ",e);
         }
 
-
+        copy(thing,right,clazz.getSuperclass());
     }
 }
