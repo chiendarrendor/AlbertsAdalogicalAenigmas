@@ -30,4 +30,17 @@ public enum Turns
     }
 
     public static boolean isBend(Turns t) { return t == LEFT || t == RIGHT; }
+
+    // given a direction of entry to the cell "into" the cell
+    // what is the direction of exit?
+    public Direction exitDir(Direction from) {
+        if (this == STRAIGHT) return from;
+        switch(from) {
+            case NORTH: return this == RIGHT ? Direction.EAST : Direction.WEST;
+            case SOUTH: return this == RIGHT ? Direction.WEST : Direction.EAST;
+            case WEST: return this == RIGHT ? Direction.NORTH : Direction.SOUTH;
+            case EAST: return this == RIGHT ? Direction.SOUTH : Direction.NORTH;
+            default: throw new RuntimeException("Not orthogonal!");
+        }
+    }
 }
