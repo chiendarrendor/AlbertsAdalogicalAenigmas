@@ -1,0 +1,21 @@
+22 13
+CODE:DOTS
+  .  . 2G  .  .  .  . 3I  .  .  .  .  . 1A  .  .  .  . 2N  . 2G  .
+ 2R  .  .  .  . 3M  .  .  .  .  . 4F  .  .  . 2H  .  .  .  .  .  .
+  .  .  . 2X  .  . 1C  . 1C 3A  .  .  .  . 4V  .  . 3S  . 3R  .  .
+  .  3C  .  . 2E  .  . 2C  .  . 2L  . 2S  .  .  .  .  .  .  . 4O .
+  .  .  . 1O  . 3T  . 2W  . 1R  . 2H  . 2E  .  . 2N  . 2G  .  .  .
+  .  .  .  . 2I  .  .  . 1D  . 4?  . 2I  .  . 3S  . 1I  .  .  . 2C
+  . 3P 3Q  .  .  .  .  .  . 2A  . 1N  .  . 2R  .  .  .  .  .  .  .
+  .  .  .  . 4Z  . 2C  . 2U  . 3T  .  . 2Y  . 1G  . 3R  . 3R  .  .
+  .  .  .  .  . 1T  . 3Q  .  .  .  . 3B  .  . 1O  .  . 2S  .  . 2Y
+ 2F  . 1B  .  . 3I  .  . 2Y  .  . 2V  .  . 1R  .  . 3P  . 3A  . 2E
+  . 2L  .  . 2L  .  . 2I  .  . 3A  .  . 2N  . 2X  .  .  .  .  .  .
+ 1U  .  . 2T  .  .  .  . 2W  . 2Z  .  .  . 3G  .  . 4A  .  . 1E  .
+  .  . 3N  .  . 3G  .  .  .  .  .  . 3Z  .  .  .  .  . 2Q  .  .  .
+VARIABLES:
+START: 0 1 S
+END: 4 3
+PATHORDER:R S L
+SOLUTION:The minotaur's maze was conceived by this man: DAEDALUS!
+
