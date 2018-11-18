@@ -80,6 +80,36 @@ public enum Direction
         }
     }
 
+    public Direction clockwise() {
+        switch(this) {
+            case NORTH: return NORTHEAST;
+            case NORTHEAST: return EAST;
+            case EAST: return SOUTHEAST;
+            case SOUTHEAST: return SOUTH;
+            case SOUTH: return SOUTHWEST;
+            case SOUTHWEST: return WEST;
+            case WEST: return NORTHWEST;
+            case NORTHWEST: return NORTH;
+            default: throw new RuntimeException("how?");
+        }
+    }
+
+    public Direction counterclockwise() {
+        switch(this) {
+            case NORTH: return NORTHWEST;
+            case NORTHEAST: return NORTH;
+            case EAST: return NORTHEAST;
+            case SOUTHEAST: return EAST;
+            case SOUTH: return SOUTHEAST;
+            case SOUTHWEST: return SOUTH;
+            case WEST: return SOUTHWEST;
+            case NORTHWEST: return WEST;
+            default: throw new RuntimeException("why?");
+        }
+    }
+
+
+
     public static Direction fromTo(int x1, int y1, int x2, int y2)
     {
         for (Direction d : Direction.values())

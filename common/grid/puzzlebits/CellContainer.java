@@ -44,8 +44,8 @@ public class CellContainer<T> {
     }
 
 
-    int getWidth() { return width; }
-    int getHeight() { return height; }
+    public int getWidth() { return width; }
+    public int getHeight() { return height; }
     public T getCell(int x,int y) { return cells[x][y]; }
     public void setCell(int x,int y,T val) { cells[x][y] = val; }
 
