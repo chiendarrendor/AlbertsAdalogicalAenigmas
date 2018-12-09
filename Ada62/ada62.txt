@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+HH..LRLYL.H.YKIBH..MW
+R.JP..FXYA.FRUS..WR.Q
+Q.CBIS.LBAKYPV.CGZP.X
+FY.MYD.ENENBOP.DQA.JT
+XRYJ.GM..D.J..QF.QGBM
+..CWQ.BPF.M.CAC.QFL..
+..KBN.XOB.F.OBR.CZA..
+JZJA.PH..R.Q..HL.LYVD
+QA.JKE.YRFDJIK.YKD.BM
+A.NAMN.SQDAPME.SSLA.L
+G.OB..SBXF.XGXI..SC.G
+YO..ZBJXJ.V.NKZLC..NC
+CODE:DOTS
+..3@.....1.4.....@@..
+.4..23....5....32..5.
+.5....@.......4....3.
+..@...2.......2...2..
+....4..27.5.2@..8....
+35...@...@.@...@...@@
+4@...7...@.@...2...3@
+....4..3@.5.47..3....
+..4...@.......4...3..
+.@....2.......4....2.
+.@..34....5....3@..3.
+..7@.....@.5.....43..
+VARIABLES:
+SOLUTION:In MMIX (2009), she was select the first female president of the International Co-Operative Alliance: Pauline Green
