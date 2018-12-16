@@ -34,7 +34,7 @@ public class GridPanel extends FixedSizePanel
 		boolean drawGridLines();
 		boolean drawBoundary();
 		boolean drawCellContents(int cx,int cy, BufferedImage bi); // bi provides width,height,and a graphics.
-		default String getAnswerText() { return "Answer goes here!"; }
+		String[] getAnswerLines();
 	}
 	
 	public interface MultiGridListener extends GridListener

@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 
 
 public class GridPanelContainer extends JPanel
@@ -53,7 +54,14 @@ public class GridPanelContainer extends JPanel
 		gp = new GridPanel(width,height,listener,edgeListener);
 		add(gp, BorderLayout.CENTER);
 		add(answer,BorderLayout.SOUTH);
-		answer.setText(listener.getAnswerText());
+
+		String[] lines = listener.getAnswerLines();
+		StringBuffer sb = new StringBuffer();
+		sb.append("<html><font size=\"5\">");
+		Arrays.stream(lines).forEach(line->sb.append(line).append("<br>"));
+		sb.append("</font></html>");
+		answer.setText(sb.toString());
+
         Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
         answer.setBorder(border);
 
