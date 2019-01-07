@@ -88,6 +88,8 @@ public class GridFileReader
 			{	
 				line = line.trim();
 				if (line.length() == 0) continue;
+				// adding ability to put in comments
+				if (line.charAt(0) == '#') continue;
 				
 				if (codeBlocks == null)
 				{
