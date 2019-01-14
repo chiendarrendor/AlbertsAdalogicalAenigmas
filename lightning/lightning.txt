@@ -1,0 +1,15 @@
+20 10
+CODE:GRID
+riff cyst   gay     1 mint  app wing stir fall four     1 tally hair  odd rally    .  miss  fun pull sack
+tide  sum     2     .    . form beau    0 cape prom  haul     .  tea sent  hull    2 table turn full hide
+ bee soft   ten     2  pet  two    1    .    .  toe  bull  bean    .  par  dock lick  shin peer quay    1
+   .  doe   ton   new  red  sue poor    . past sigh   rye   age  let fish   one fell     3 come  add feat
+ car    2 eight  blue    1    .  rug  men tent inns chair     1 dash  gee  mitt    .  cull  dot    . pick
+ may  all  ride  cess    .    . nerd  ink    4 core   see     2  owe  met    .  prim  high dull    1  lei
+aunt  day     .  tuck boar crow tell laps bear    2  rain  faux pill    2  you   sit   wee shop  now gray
+ lay    .     .     0  pro eyes    .  cue khan  fin     .  urge  son tear love   wet  home    . free purr
+fizz tree     2 sieve  pew    .    .    . rate  pen   oak  tick  moo sill    2   are  disk ring    1 rice
+ sin coal   con  true  axe mike    1  ill  rip clue   jay   kit flag  buy    .  sick   ice shun dent    .
+VARIABLES:
+SOLUTION:CORRELATION
+SOURCE:http://www.pavelspuzzles.com/aenigmas/LightningStrikesTwice.pdf
