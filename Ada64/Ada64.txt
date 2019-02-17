@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+.RFK.FPTOD.PLJXA.ODM.
+ZVJS.PZ.OK.N.ROS.JUEH
+JA.UAAJ.HKAIG.PJOQ.DY
+KP.PODXEZHQKWQIOSP.RN
+PPQXDWPRP.O.AKXALJDAU
+G.WAWW.ABJOXDP.WXEA.C
+S.ZENO.RQHJOLE.JBPK.I
+ADRAGWDNR.I.ANDLHODCA
+HD.UHCODAQDKVDPAJP.PZ
+AW.PMBD.HAUWI.ZOIK.JQ
+KRQK.ARK.H.MS.DA.RUZK
+.KNA.YEDNS.QLAHU.ECP.
+CODE:ENDS
+  6  .  .  .  9  .  .  .  .  .  H  .  .  .  .  .  7  .  .  .  H
+  .  .  .  .  H  .  .  H  .  . 13  .  H  .  .  .  H  .  .  .  .
+  .  . 17  .  .  .  . 10  .  .  .  .  .  9  .  .  .  .  H  .  .
+  .  .  H  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  6  .  .
+  .  .  .  .  .  .  .  .  .  H  . 15  .  .  .  .  .  .  .  .  .
+  . 21  .  .  .  . 15  .  .  .  .  .  .  .  H  .  .  .  .  H  .
+  .  H  .  .  .  .  H  .  .  .  .  .  .  . 23  .  .  .  . 11  .
+  .  .  .  .  .  .  .  .  . 10  .  H  .  .  .  .  .  .  .  .  .
+  .  .  8  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  H  .  .
+  .  .  H  .  .  .  .  3  .  .  .  .  . 12  .  .  .  . 18  .  .
+  .  .  .  .  H  .  .  .  H  . 11  .  .  H  .  .  H  .  .  .  .
+  H  .  .  .  7  .  .  .  .  .  H  .  .  .  .  .  8  .  .  . 13
+VARIABLES:
+SOLUTION:This woman was the first star to make a hit single of the song "Everybody Loves A Lover" -- Doris Day

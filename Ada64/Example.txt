@@ -1,0 +1,17 @@
+7 7
+CODE:LETTERS
+KZE.DDK
+D.JRU.L
+.NBESA.
+SOJHTDJ
+.JO.UO.
+ATJRNPF
+P.EMO.D
+CODE:ENDS
+  .  .  .  6  .  .  .
+  .  H  .  .  .  H  .
+  7  .  .  .  .  .  5
+  .  .  .  .  .  .  .
+  H  .  .  H  .  .  H
+  .  .  .  .  .  .  .
+  . 18  .  .  . 13  .
