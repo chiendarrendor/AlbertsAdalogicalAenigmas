@@ -73,28 +73,33 @@ public class GridPanel extends FixedSizePanel
 
 	public static boolean DrawStringInCell(BufferedImage bi,Color c,String s)
 	{
-		return DrawStringInCell((Graphics2D)bi.getGraphics(),c,0,0,bi.getWidth(),bi.getHeight(),s);
+		Graphics2D g = (Graphics2D)bi.getGraphics();
+		g.setColor(c);
+		return DrawStringInCell(g,0,0,bi.getWidth(),bi.getHeight(),s);
 	}
 	
 	public static boolean DrawStringUpperLeftCell(BufferedImage bi,Color c,String s)
 	{
-		return DrawStringUpperLeftCell((Graphics2D)bi.getGraphics(),c,0,0,bi.getWidth(),bi.getHeight(),s);
+		Graphics2D g = (Graphics2D)bi.getGraphics();
+		g.setColor(c);
+		return DrawStringUpperLeftCell(g,0,0,bi.getWidth(),bi.getHeight(),s);
 	}	
 
 	public static boolean DrawStringInCorner(BufferedImage bi,Color c,String s,Direction d)
 	{
-		return DrawStringInCorner((Graphics2D)bi.getGraphics(),c,0,0,bi.getWidth(),bi.getHeight(),s,d);
+		Graphics2D g = (Graphics2D)bi.getGraphics();
+		g.setColor(c);
+		return DrawStringInCorner(g,0,0,bi.getWidth(),bi.getHeight(),s,d);
 	}
 
 	
-	public static boolean DrawStringUpperLeftCell(Graphics2D g,Color c,int ulx,int uly, int width,int height, String s)
+	public static boolean DrawStringUpperLeftCell(Graphics2D g,int ulx,int uly, int width,int height, String s)
 	{
-		return DrawStringInCorner(g,c,ulx,uly,width,height,s,Direction.NORTHWEST);
+		return DrawStringInCorner(g,ulx,uly,width,height,s,Direction.NORTHWEST);
 	}
 
-	public static boolean DrawStringInCorner(Graphics2D g, Color c, int ulx, int uly, int width, int height, String s, Direction d)
+	public static boolean DrawStringInCorner(Graphics2D g,int ulx, int uly, int width, int height, String s, Direction d)
 	{
-		g.setColor(c);
 		int sHeight = g.getFontMetrics().getHeight();
 		int sWidth = g.getFontMetrics().stringWidth(s);
 		if (sHeight > height || sWidth > width) return false;
@@ -139,18 +144,12 @@ public class GridPanel extends FixedSizePanel
 				break;
 		}
 
-		g.drawString(s,sx,sy);
+		g.drawString(s,sx,sy-g.getFontMetrics().getDescent());
 		return true;
 	}
 
-
-
-	
-	
-	
-	public static boolean DrawStringInCell(Graphics2D g,Color c,int ulx,int uly, int width,int height, String s)
+	public static boolean DrawStringInCell(Graphics2D g,int ulx,int uly, int width,int height, String s)
 	{
-		g.setColor(c);
 		int sHeight = g.getFontMetrics().getHeight();
 		int sWidth = g.getFontMetrics().stringWidth(s);
 		if (sHeight > height || sWidth > width) return false;
@@ -158,7 +157,8 @@ public class GridPanel extends FixedSizePanel
 		int cy = uly + height/2;
 		int sx = cx - sWidth/2;
 		int sy = cy + sHeight/2;
-		g.drawString(s,sx,sy);
+		g.drawString(s,sx,sy-g.getFontMetrics().getDescent());
+
 		return true;
 	}
 
@@ -207,7 +207,7 @@ public class GridPanel extends FixedSizePanel
 				g.drawLine(params.INSET + i * params.cellWidth ,params.INSET ,params.INSET + i * params.cellWidth ,params.INSET + params.numYCells * params.cellHeight);
 			}
 			
-			if (i != params.numXCells && listener.drawGridNumbers()) DrawStringInCorner((Graphics2D)g,Color.black,params.INSET + i * params.cellWidth,params.INSET-params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.SOUTH);
+			if (i != params.numXCells && listener.drawGridNumbers()) DrawStringInCorner(g2d,params.INSET + i * params.cellWidth,params.INSET-params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.SOUTH);
 		}
 		
 		for (int i = 0 ; i <= params.numYCells ; ++i)
@@ -218,7 +218,7 @@ public class GridPanel extends FixedSizePanel
 				g.drawLine(params.INSET ,params.INSET + i * params.cellHeight ,params.INSET + params.numXCells * params.cellWidth,params.INSET + i * params.cellHeight);
 			}
 			
-			if (i != params.numYCells && listener.drawGridNumbers()) DrawStringInCorner((Graphics2D)g,Color.black,params.INSET - params.cellWidth,params.INSET + i * params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.EAST);
+			if (i != params.numYCells && listener.drawGridNumbers()) DrawStringInCorner(g2d,params.INSET - params.cellWidth,params.INSET + i * params.cellHeight,params.cellWidth,params.cellHeight,""+i,Direction.EAST);
 		}
 
 		for (int x = 0; x < params.numXCells; ++x)
