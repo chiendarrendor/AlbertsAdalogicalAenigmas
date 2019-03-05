@@ -19,6 +19,14 @@ public class PointAdjacency
         return false;
     }
 
+    public static Direction adjacentDirection(Point p1,Point p2) {
+        for (Direction dir: Direction.values()) {
+            if (p1.x+dir.DX() == p2.x && p1.y+dir.DY() == p2.y) return dir;
+        }
+        return null;
+    }
+
+
     public static boolean adjacentToAny(Point p1,Collection<Point> set,boolean allowDiagonal)
     {
         for (Point p : set) if (adjacent(p, p1, allowDiagonal)) return true;
