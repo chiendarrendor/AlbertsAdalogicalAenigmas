@@ -6,6 +6,7 @@ import org.jgrapht.alg.*;
 import org.jgrapht.alg.shortestpath.FloydWarshallShortestPaths;
 import java.awt.Point;
 import java.util.*;
+import java.util.stream.Collectors;
 
 // this class will take a GridReference interface and build an 
 // undirected graph out of the implied grid, assuming that:
@@ -31,10 +32,14 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 		boolean edgeExitsEast(int x, int y);
 		boolean edgeExitsSouth(int x,int y);
 	}
-		
+
+	GridReference ref;
+	public GridReference getGridReference() { return ref; }
+
 	public GridGraph(GridReference ref)
 	{
 		super(DefaultEdge.class);
+		this.ref = ref;
 		width = ref.getWidth();
 		height = ref.getHeight();
 		
@@ -114,56 +119,158 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 		return gp.getVertexList();
 	}
 	
-	
-	
+
 	// This block of stuff here is all private variables for calculating articulation points....
 	// maybe its own class in a separate file? 
-	
-	Set<Point> visited = new HashSet<Point>();
-	Map<Point,Integer> discovered = new HashMap<Point,Integer>();
-	Map<Point,Integer> low = new HashMap<Point,Integer>();
-	Map<Point,Point> parent = new HashMap<Point,Point>();
-	Set<Point> isArticulation = null;
-	int time=0;
 
-	private void aputil(Point p)
+
+    private Map<Point,ArticulationSetNode> nodesByPoint = new HashMap<>();
+	private Set<Point> articulationPoints = null;
+	private int time = 0;
+    ArticulationSetNode masternode = null;
+
+	private boolean visited(Point p) { return nodesByPoint.containsKey(p); }
+	private ArticulationSetNode getVisited(Point p) { return nodesByPoint.get(p); }
+
+    private class ArticulationSetNode {
+
+	    boolean iAmArticulationPoint = false;
+	    Point me;
+	    Point parent;
+	    Set<Point> childrenPoints = new HashSet<>();
+
+	    List<ArticulationSetNode> articulateChildren = new ArrayList<>();
+	    List<ArticulationSetNode> inarticulateChildren = new ArrayList<>();
+
+	    int discovered;
+	    int low;
+
+	    public ArticulationSetNode(Point me,Point parent) {
+	        int now = ++time;
+	        discovered = now;
+	        low = now;
+	        nodesByPoint.put(me,this);
+	        this.me = me;
+	        this.parent = parent;
+	        childrenPoints.add(me);
+        }
+
+        public boolean isParent(Point p) { return p.equals(parent); }
+        public boolean hasParent() { return parent != null; }
+        public int low() { return this.low; }
+        public int discovered() { return this.discovered; }
+        public void decrementLow(int newval) { if (newval < low) low = newval; }
+
+        private void addArticulateChild(ArticulationSetNode child) {
+	        articulateChildren.add(child);
+	        childrenPoints.addAll(child.childrenPoints);
+        }
+
+        private void addInarticulateChild(ArticulationSetNode child) {
+	        inarticulateChildren.add(child);
+	        childrenPoints.addAll(child.childrenPoints);
+        }
+
+
+
+
+        public void addChildNode(ArticulationSetNode child) {
+	        if (!hasParent()) {
+	            addArticulateChild(child);
+	            if (articulateChildren.size() > 1) iAmArticulationPoint = true;
+	            return;
+            }
+
+            if (child.low() >= discovered()) {
+	            addArticulateChild(child);
+	            iAmArticulationPoint = true;
+            } else {
+	            addInarticulateChild(child);
+            }
+	    }
+
+	    private Map<ArticulationSetNode,Set<Point>> parentSets = new HashMap<>();
+	    public Set<Point> getParentSet(ArticulationSetNode child) {
+	        if (!parentSets.containsKey(child)) {
+	            Set<Point> result = new HashSet<>();
+	            result.add(me);
+
+	            for (ArticulationSetNode arnode : articulateChildren) {
+	                if (arnode == child) continue;
+	                result.addAll(arnode.childrenPoints);
+                }
+
+                for (ArticulationSetNode arnode : inarticulateChildren) {
+                    if (arnode == child) continue;
+                    result.addAll(arnode.childrenPoints);
+                }
+
+                if (parent != null) result.addAll(getVisited(parent).getParentSet(this));
+	            parentSets.put(child,result);
+            }
+            return parentSets.get(child);
+        }
+
+        Set<Point> myparentset = null;
+
+        public Set<Point> getMyParentSet() {
+            if (myparentset == null) {
+                myparentset = new HashSet<>();
+
+                for (ArticulationSetNode child : inarticulateChildren) {
+                    myparentset.addAll(child.childrenPoints);
+                }
+                if (parent != null) myparentset.addAll(getVisited(parent).getParentSet(this));
+            }
+	        return myparentset;
+        }
+
+
+
+
+
+
+
+
+	    List<Set<Point>> arsets = null;
+	    public List<Set<Point>> getArticulationSets() {
+	        if (!iAmArticulationPoint) throw new RuntimeException("Can't get Articulation Sets of a non-articulation point");
+
+	        if (arsets == null) {
+	            arsets = new ArrayList<>();
+	            if (parent != null) arsets.add(getMyParentSet());
+	            for (ArticulationSetNode arch : articulateChildren) {
+	                arsets.add(arch.childrenPoints);
+                }
+            }
+            return arsets;
+        }
+    }
+
+
+
+
+	private ArticulationSetNode aputil(Point me,Point parent)
 	{
-		int children = 0;
-		visited.add(p);
-		int now = ++time;
-		discovered.put(p,now);
-		low.put(p,now);
-		Set<DefaultEdge> edges = edgesOf(p);
+	    ArticulationSetNode result = new ArticulationSetNode(me,parent);
+
+		Set<DefaultEdge> edges = edgesOf(me);
 		for (DefaultEdge de : edges)
 		{
-			Point v = getEdgeTarget(de);
-			if (v.equals(p)) v = getEdgeSource(de);
-			
-			if (!visited.contains(v))
-			{
-				children++;
-				parent.put(v,p);
-				aputil(v);
-				low.put(p,Math.min(low.get(p),low.get(v)));
-				
-				if (!parent.containsKey(p) && children > 1) isArticulation.add(p);
-				if (parent.containsKey(p) && low.get(v) >= discovered.get(p)) isArticulation.add(p);
-			}
-			else if (!v.equals(parent.get(p)))
-			{
-				low.put(p,Math.min(low.get(p),discovered.get(v)));
-			}
+			Point child = getEdgeTarget(de);
+			if (child.equals(me)) child = getEdgeSource(de);
+
+			if (result.isParent(child)) continue;
+		    if (visited(child)) {
+		        result.decrementLow(getVisited(child).discovered());
+            } else {
+		        ArticulationSetNode childnode = aputil(child,me);
+		        result.decrementLow(childnode.low());
+		        result.addChildNode(childnode);
+            }
 		}
-	}
-		
-	private void CalculateArticulationPoints()
-	{
-		isArticulation = new HashSet<Point>();
-	
-		for (Point p : vertexSet() )
-		{
-			if (!visited.contains(p)) aputil(p);
-		}
+
+		return result;
 	}
 
 	// returns the set of points that, if removed, would break the graph into two or more disconnected sets.
@@ -171,12 +278,17 @@ public class GridGraph extends SimpleGraph<Point,DefaultEdge>
 	{ 
 		if (!isConnected()) throw new RuntimeException("Invalid to request Articulation Points of a Disconnected Set");
 		
-		if (isArticulation == null)
+		if (masternode == null)
 		{
-			CalculateArticulationPoints();
+            masternode = aputil(vertexSet().iterator().next(),null);
+			articulationPoints = nodesByPoint.keySet().stream().filter(k->nodesByPoint.get(k).iAmArticulationPoint).collect(Collectors.toSet());
 		}
 	
-		return isArticulation;
+		return articulationPoints;
+	}
+
+	public List<Set<Point>> getArticulationSet(Point p) {
+		return nodesByPoint.get(p).getArticulationSets();
 	}
 	
 
