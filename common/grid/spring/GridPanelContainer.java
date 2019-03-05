@@ -10,11 +10,23 @@ import java.util.Arrays;
 public class GridPanelContainer extends JPanel
 {
 	GridPanel gp = null;
+	GridPanel.GridListener gl = null;
 	GridPanel.MultiGridListener mgl = null;
 	JButton prevButton = new JButton("<");
 	JButton nextButton = new JButton(">");
 	JLabel answer = new JLabel();
-	
+
+	private void setAnswer() {
+		String[] lines = gl.getAnswerLines();
+		StringBuffer sb = new StringBuffer();
+		sb.append("<html><font size=\"5\">");
+		Arrays.stream(lines).forEach(line->sb.append(line).append("<br>"));
+		sb.append("</font></html>");
+		answer.setText(sb.toString());
+	}
+
+
+
 	private class PrevHandler implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -22,6 +34,7 @@ public class GridPanelContainer extends JPanel
 			mgl.moveToPrev();
 			prevButton.setEnabled(mgl.hasPrev());
 			nextButton.setEnabled(mgl.hasNext());
+			setAnswer();
 			gp.repaint();
 		}
 	}
@@ -33,6 +46,7 @@ public class GridPanelContainer extends JPanel
 			mgl.moveToNext();
 			prevButton.setEnabled(mgl.hasPrev());
 			nextButton.setEnabled(mgl.hasNext());
+			setAnswer();
 			gp.repaint();
 		}
 	}	
@@ -45,7 +59,9 @@ public class GridPanelContainer extends JPanel
 	public GridPanelContainer(int width, int height,GridPanel.GridListener listener,GridPanel.EdgeListener edgeListener)
 	{
 		super(new BorderLayout());
-		
+
+		gl = listener;
+
 		if (listener instanceof GridPanel.MultiGridListener)
 		{
 			mgl = (GridPanel.MultiGridListener)listener;
@@ -55,12 +71,7 @@ public class GridPanelContainer extends JPanel
 		add(gp, BorderLayout.CENTER);
 		add(answer,BorderLayout.SOUTH);
 
-		String[] lines = listener.getAnswerLines();
-		StringBuffer sb = new StringBuffer();
-		sb.append("<html><font size=\"5\">");
-		Arrays.stream(lines).forEach(line->sb.append(line).append("<br>"));
-		sb.append("</font></html>");
-		answer.setText(sb.toString());
+		setAnswer();
 
         Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
         answer.setBorder(border);
