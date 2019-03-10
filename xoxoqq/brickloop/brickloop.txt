@@ -1,0 +1,28 @@
+7 9
+# even numbered rows starting from 0 at the top have <width> cells
+# odd numbered rows actually have <width>-1 cells, but GridFileReader is adamant about consistent width,
+# so it's easy to just add a dummy cell at the (right) end of the even rows
+
+
+CODE:LETTERS
+W O V R V U C
+ N T X C R O .
+C O C L Q X V
+ S Q O L X K .
+B C J G A O I
+ R U G C Y Q .
+X M E X A X N
+ B K F R R W .
+B F H Q L O B
+CODE:CLUES
+. 0 1 . . . 3
+ . 1 . . 2 . .
+. . . 3 0 . 2
+ 4 . . . . 3 .
+. . . . 4 . 3
+ 3 4 4 . . . .
+3 . . . 1 . .
+ . 1 . . . . .
+4 . 1 . . 2 3
+VARIABLES:
+SOLUTION: "sweet potato" and "H.P.'s has a phoenix core" "yam" and "wand"
