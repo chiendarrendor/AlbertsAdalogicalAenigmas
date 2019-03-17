@@ -7,6 +7,22 @@ public class EdgeContainer<T>
         public int y;
         public Direction d;
         public CellCoord(int x,int y,Direction d) { this.x = x; this.y = y; this.d = d; }
+        @Override public boolean equals(Object o) {
+            if (o == null) return false;
+            if (!this.getClass().equals(o.getClass())) return false;
+            CellCoord right = (CellCoord)o;
+            if (x != right.x) return false;
+            if (y != right.y) return false;
+            if (d != right.d) return false;
+            return true;
+        }
+        @Override public int hashCode() {
+            int result = 17;
+            result = 31 * result + x;
+            result = 31 * result + y;
+            result = 31 * result + d.getShort().hashCode();
+            return result;
+        }
     }
 
     public static class EdgeCoord {
@@ -14,6 +30,22 @@ public class EdgeContainer<T>
         public int y;
         public boolean isV;
         public EdgeCoord(int x,int y,boolean isV) { this.x = x; this.y = y; this.isV = isV; }
+        @Override public boolean equals(Object o) {
+            if (o == null) return false;
+            if (!this.getClass().equals(o.getClass())) return false;
+            EdgeCoord right = (EdgeCoord)o;
+            if (x != right.x) return false;
+            if (y != right.y) return false;
+            if (isV != right.isV) return false;
+            return true;
+        }
+        @Override public int hashCode() {
+            int result = 17;
+            result = 31 * result + x;
+            result = 31 * result + y;
+            result = 31 * result + (isV ? 1 : 0);
+            return result;
+        }
     }
 
     public static CellCoord getCellCoord(int x,int y, boolean isV) {
