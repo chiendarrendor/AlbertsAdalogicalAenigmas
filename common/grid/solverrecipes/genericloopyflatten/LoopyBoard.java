@@ -15,6 +15,9 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
     private Map<String,Set<String>> vertices = new HashMap<>();
     private Map<String,LineState> edges = new HashMap<>();
     private Map<String,Set<String>> edgeends = new HashMap<>();
+    private List<CluePair> clues = new ArrayList<>();
+    private int unknowns = 0;
+    private Set<String> demandedVertices = new HashSet<>();
 
     private class CluePair {
         int size;
@@ -23,8 +26,7 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
     }
 
 
-    private List<CluePair> clues = new ArrayList<>();
-    private int unknowns = 0;
+
 
     private void addVertex(String vname,String ename) {
         if (!vertices.containsKey(vname)) {
@@ -40,6 +42,7 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
         edges = new HashMap<String,LineState>(right.edges);
         edgeends = right.edgeends;
         clues = right.clues;
+        demandedVertices = right.demandedVertices;
     }
 
     public void addEdge(String v1name,String v2name,String ename) {
@@ -57,6 +60,10 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
     public void addClue(int size,Set<String> edges) {
         clues.add(new CluePair(size,edges));
     }
+    public void demandVertex(String vname) {
+        if (!vertices.containsKey(vname)) throw new RuntimeException("Can't demand unknown vertex");
+        demandedVertices.add(vname);
+    }
 
 
     public LineState getEdge(String ename) {
@@ -72,6 +79,8 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
     public Set<String> getVertexNames() { return vertices.keySet(); }
     public Set<String> getEdgeEnds(String ename) { return edgeends.get(ename); }
     public Set<String> getEdgeNames() { return edges.keySet(); }
+    public boolean hasEdge(String ename) { return edges.containsKey(ename); }
+    public boolean hasVertex(String vname) { return vertices.containsKey(vname); }
 
 
     private static class MyMove {
@@ -112,7 +121,7 @@ public class LoopyBoard implements FlattenSolvable<LoopyBoard> {
 
     public List<LogicStep<LoopyBoard>> getLogic() {
         List<LogicStep<LoopyBoard>> result = new ArrayList<>();
-        for (String ename : vertices.keySet()) result.add(new VertexPathLogicStep(ename,vertices.get(ename)));
+        for (String vname : vertices.keySet()) result.add(new VertexPathLogicStep(vname,vertices.get(vname),demandedVertices.contains(vname)));
         for (CluePair clue : clues) result.add(new RegionBoundaryLogicStep(clue.size,clue.edges));
         result.add(new SingleLoopLogicStep());
         return result;

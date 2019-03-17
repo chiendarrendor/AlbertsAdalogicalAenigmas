@@ -9,10 +9,15 @@ import java.util.Set;
 public class VertexPathLogicStep implements LogicStep<LoopyBoard> {
     String vname;
     Set<String> enames;
+    boolean demanded;
 
     @Override public String toString() { return "LoopyBoard VertexPathLogicStep " + vname; }
 
-    public VertexPathLogicStep(String vname, Set<String> enames) { this.vname = vname; this.enames = enames; }
+    public VertexPathLogicStep(String vname, Set<String> enames,boolean demanded) {
+        this.vname = vname;
+        this.enames = enames;
+        this.demanded = demanded;
+    }
 
     @Override public LogicStatus apply(LoopyBoard thing) {
         int pathcount = 0;
@@ -41,6 +46,16 @@ public class VertexPathLogicStep implements LogicStep<LoopyBoard> {
             return LogicStatus.LOGICED;
         }
         // if we get here, we have no paths....it's a combination of NOPATH and unknowns.
+        if (demanded) {
+            if (unknowns.size() < 2) return LogicStatus.CONTRADICTION;
+            if (unknowns.size() == 2) {
+                unknowns.stream().forEach(e->thing.setEdge(e,LineState.PATH));
+                return LogicStatus.LOGICED;
+            }
+            return LogicStatus.STYMIED;
+        }
+
+
         if (unknowns.size() == 1) {
             thing.setEdge(unknowns.iterator().next(),LineState.NOTPATH);
             return LogicStatus.LOGICED;
