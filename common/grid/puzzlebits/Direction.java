@@ -27,6 +27,7 @@ public enum Direction
     public String getShort() { return shorthand; }
     public char getSymbol() { return symbol; }
     public Point delta(Point p,int dist) { return new Point(p.x+dx*dist,p.y+dy*dist); }
+    public Point delta(int x,int y,int dist) { return new Point( x + dx*dist, y + dy*dist); }
 
     public static Direction[] orthogonals()
     {
