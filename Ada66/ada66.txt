@@ -1,0 +1,43 @@
+21 12
+CODE:REGIONS
+AAAABBCCDDEEEFFGGHHHH
+AAAABBCCDDEEEFFGGIIJJ
+AAAABBMMDDEEEFFGGIIJJ
+KKKLLLMMDDZZaaddgghhh
+KKKLLLMMWWZZaaddgghhh
+NNNNOOMMWWZZaaddiiijj
+NNNNOOVVVYYYaaeeiiijj
+PPQQOOVVVYYYaaeeiiijj
+PPQQRRVVVXXbbbeeiiijj
+PPQQRRUUUXXbbbffiiikk
+SSSTTTUUUXXcccffmmmkk
+SSSTTTUUUXXcccffmmmkk
+CODE:LETTERS
+.G.TLB..O.T..VOMM.PT.
+HD.Q..QXZ.TOF.....LA.
+.S.CFJ..S.P..NLZDX..T
+.MM.P..NCZFT...B...M.
+S...K..X.F.IHKH.VD.C.
+IFQDBU.JS.D...FSM.LHH
+.S..J..M.B.TTA.M.S.R.
+PO.BN.PFUA.Q..KD.P.Q.
+..DN.V.JI.R.XO.TDP..S
+MH.NM.I..E..P.GT..H.B
+.K.S.R.IPN.SH....D..F
+F.FZF..U.M..SGFD.Q.T.
+CODE:COSMIC
+S.M...SM.M.SM....M..S
+..S.SM...S...SMSMS..M
+S.M...SM.M.MS.....MS.
+M..M.MS.....SMM.MSS.S
+.SMS.SM.M.M....S..M.M
+......M..S.SMS...M...
+M.SM.MM.M.M...S.M.S.S
+..M..S....S.SM..S.M.M
+MS..M.S..M.M..M...MS.
+..S..S.SM.SS.M..MS.S.
+S.S.M.M...S..MSMS.MS.
+.M...SS.M.MS....M.S.M
+VARIABLES:
+SOLUTION: Her diary was published as "One Woman's West: Recollections of the Oregon Trail" -- Martha Gay Masterson
+EE1: "I'll tell you how the sun rose -- A ribbon at a time..." -- Emily Dickinson
