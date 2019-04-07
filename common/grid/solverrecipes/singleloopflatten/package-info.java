@@ -9,6 +9,7 @@ package grid.solverrecipes.singleloopflatten;
 // to use:
 // make your Board object subclass of SingleLoopBoard
 // implement required getWidth() and getHeight()
+// call init() to construct fields of SingleLoopBoard
 // implement methods of FlattenSolvable, or have your class implement Simple/MultiFlattenSolvable
 // SingleLoopBoard will automatically keep track of edges still unused in getUnusedCount()
 // add to your Flatten Logicer Logic Step addition logic:
