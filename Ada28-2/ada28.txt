@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+. E . E . B W W E N P N A A A B K N P D .
+P B O U L M I I V E . R G D G B L . D D K
+P O L T E I X . L A P . E L . N B U X F .
+S X M . F D T I . E Q H S . N . Q L . U I
+N N B R . Y Z O I T . A N N M A I . F E .
+R . C G Y O G L Y . H P S Q N F W X F J K
+X O A I W C Z S Z R A . O I Q V A N A . I
+. J T . H D A Z T M . E B Q I V . R O O K
+F P . Y F . D . L M C O . B A I B . X J G
+. L I E I O . I Z . M H Y . C K Q E E N V
+U Z N . I I F M U M . N Y Z K V F Y R U F
+. Q M U H X N N I T N B R Y Y U . S . Z .
+CODE:NUMBERS
+  5  .  3  .  4  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  9
+  .  .  .  .  .  .  .  .  .  .  5  .  .  .  .  .  .  4  .  .  .
+  .  .  .  .  .  .  .  5  .  .  .  7  .  .  6  .  .  .  .  .  7
+  .  .  .  5  .  .  .  .  2  .  .  .  .  6  .  2  .  .  6  .  .
+  .  .  .  .  7  .  .  .  .  .  6  .  .  .  .  .  .  9  .  .  5
+  .  6  .  .  .  .  .  .  .  4  .  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  .  .  4  .  .  .  .  .  .  . 10  .
+  5  .  .  5  .  .  .  .  .  .  3  .  .  .  .  .  3  .  .  .  .
+  .  .  5  .  .  5  .  6  .  .  .  .  4  .  .  .  .  8  .  .  .
+  4  .  .  .  .  .  5  .  .  7  .  .  .  3  .  .  .  .  .  .  .
+  .  .  .  6  .  .  .  .  .  .  9  .  .  .  .  .  .  .  .  .  .
+  6  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  4  .  6  .  8
+VARIABLES:
+SOLUTION:Hero who planted the first White Tree of Gondor: ISILDUR

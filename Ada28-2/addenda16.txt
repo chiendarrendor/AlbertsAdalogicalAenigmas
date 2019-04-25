@@ -1,0 +1,30 @@
+21 12
+CODE:LETTERS
+C.R.UUEFAMH.E.LD.IPN.
+ZK.RCSX..BUQEVNCJRD.Y
+.QODPXYJC.EIAEOMZROY.
+IQUTIAJXSZ.QPZ.AYEJYP
+LRTXH.V.HVEDVVOJRL..L
+ACDM.UKT.ENYRNVOJ.VKW
+MPU.LABEHOED.SWX.ERRE
+V..NEHBCCNILD.F.LTUAO
+THKZXS.RSD.IOMIVUJLYP
+.MTGHQGTLJS.AHSXHHUU.
+T.VGKDBNDIII..LRUG.KW
+.RHC.SM.S.HZXTDIY.I.W
+CODE:NUMBERS
+  .  2  .  5  .  .  .  .  .  .  . 10  .  5  .  .  8  .  .  .  3
+  .  . 10  .  .  .  . 11 12  .  .  .  .  .  .  .  .  .  .  6  .
+  5  .  .  .  .  .  .  .  .  5  .  .  .  .  .  .  .  .  .  .  4
+  .  .  .  .  .  .  .  .  .  .  6  .  .  .  8  .  .  .  .  .  .
+  .  .  .  .  . 10  . 11  .  .  .  .  .  .  .  .  .  . 10  7  .
+  .  .  .  . 11  .  .  . 12  .  .  .  .  .  .  .  . 13  .  .  .
+  .  .  .  8  .  .  .  .  .  .  .  .  5  .  .  . 10  .  .  .  .
+  .  3  8  .  .  .  .  .  .  .  .  .  .  7  .  9  .  .  .  .  .
+  .  .  .  .  .  . 18  .  .  . 10  .  .  .  .  .  .  .  .  .  .
+  3  .  .  .  .  .  .  .  .  .  . 12  .  .  .  .  .  .  .  .  8
+  .  5  .  .  .  .  .  .  .  .  .  . 11 13  .  .  .  . 13  .  .
+  2  .  .  . 10  .  . 10  . 13  .  .  .  .  .  .  . 12  .  5  .
+VARIABLES:
+PATHHINTS:0 11 13 0 20 9
+SOLUTION:Tallest standing Coast Redwood tree: HYPERION
