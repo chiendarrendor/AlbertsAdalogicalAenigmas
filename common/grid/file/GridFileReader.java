@@ -90,7 +90,7 @@ public class GridFileReader
 				if (line.length() == 0) continue;
 				// adding ability to put in comments
 				if (line.charAt(0) == '#') continue;
-				
+
 				if (codeBlocks == null)
 				{
 					Matcher start = startPattern.matcher(line);
@@ -153,7 +153,7 @@ public class GridFileReader
 					++ycount;
 				}
 			}
-			if (ycount != height) throw new RuntimeException("Terminal Block " + code + " has too few lines! " + ycount + " vs " + height);
+			if (incode && ycount != height) throw new RuntimeException("Terminal Block " + code + " has too few lines! " + ycount + " vs " + height);
 		}
 		catch (Exception ex)
 		{
