@@ -33,6 +33,16 @@ public class PointAdjacency
         return false;
     }
 
+    public static boolean adjacentToAny(Collection<Point> set1,Collection<Point> set2,boolean allowDiagonal) {
+        for (Point p : set1) {
+            if (adjacentToAny(p,set2,allowDiagonal)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public static boolean allAdjacent(Collection<Point> points,boolean allowDiagonal)
     {
         if (points == null || points.size() < 2) return true;
