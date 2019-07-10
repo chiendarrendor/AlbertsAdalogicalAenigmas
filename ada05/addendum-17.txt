@@ -1,0 +1,83 @@
+32 18
+CODE:BLOCKS
+.  .  .  .  .  .  .  .  .  *  .  .  .  .  .  .  .  .  .  .  .  *  .  .  .  .  .  .  .  .  .  *  
+.  *  .  *  .  *  .  *  .  .  .  *  .  *  .  *  *  .  *  .  .  *  .  *  .  *  .  *  .  *  .  *  
+.  .  .  .  .  .  .  *  *  .  .  .  .  .  .  .  .  .  .  .  .  .  .  *  .  .  .  *  .  .  .  .  
+.  *  .  .  .  .  .  .  .  .  .  *  *  .  *  .  *  .  .  .  .  .  .  .  .  *  .  .  .  .  *  .  
+.  *  .  *  .  *  .  *  .  *  .  .  *  .  .  .  *  .  *  .  *  .  *  *  .  .  .  .  *  .  .  .  
+.  .  .  *  .  .  .  .  .  .  .  .  .  .  *  .  *  .  .  .  .  .  .  .  .  .  .  .  *  .  *  .  
+.  *  .  .  .  *  *  .  *  *  .  .  *  .  .  .  *  .  *  .  .  *  .  *  *  .  *  .  *  .  .  .  
+.  .  .  *  .  .  .  .  .  .  .  .  .  .  .  .  *  .  .  .  .  .  .  .  .  .  .  .  .  .  *  .  
+.  *  .  .  .  *  .  .  .  *  *  .  *  .  *  .  .  .  *  .  *  .  *  .  .  *  *  .  *  .  .  .  
+.  .  .  .  .  .  .  .  .  .  .  .  *  .  .  .  *  .  .  .  .  .  .  .  .  .  *  .  .  .  *  .  
+.  *  .  *  .  .  .  *  .  *  .  .  .  .  *  .  .  .  .  *  .  .  .  .  *  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  .  *  .  *  *  .  .  .  *  .  .  *  *  .  *  .  *  *  .  *  .  *  *  .  
+.  *  .  .  *  .  .  *  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+.  .  .  .  .  .  .  .  .  .  .  .  *  *  .  *  *  .  .  .  *  .  .  .  *  .  *  .  *  .  .  .  
+*  .  .  *  *  .  *  .  *  *  .  *  .  .  .  .  *  .  .  .  *  .  *  .  .  .  .  .  .  .  .  *  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  *  .  .  *  *  .  .  .  
+.  *  *  .  *  .  *  *  *  *  .  *  .  *  .  *  .  *  .  *  .  *  .  .  .  .  .  .  .  .  *  .  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  *  *  .  .  .  .  .  .  .  
+CODE:LETTERS
+STPDKXHQE.C.HORSMZQG..WHMBKLSMY.
+..Q.D...S.L.T....Q.F..Q...E...A.
+YBP.D.F...M.RXYR.D.L.CK.DKB.PRLJ
+J.D.O.ZXX.R..X.K.Z.P.Y.AQ.......
+W...R.A...YQ.YPJ.E.F.B.......KFD
+SCM.UKRSMLLD.Q.Y.S.GXST.SRQC...A
+P.BFS.....QD.....Z....X....Q.DKL
+M.Y.HKSQC.DNDEBR.ZSBRJBNTDRT.D.N
+N..............NCK.S.......X.HSH
+RIJJSXUQX.BR.PKF.MGZDDZDML.....E
+G.......M.SRYR.F.XG......ZRQXB.S
+HZEAYQNNX.R..UGJ.....P.L....Q..R
+E.......A.FM.GRPGCLN.T.LBYZDBPDX
+X.HDKRDGD.ZJ.........N.Z...D....
+..O..B.I....C.VF.....B.RXHQM.CS.
+T.WCLQAOBXKKM.UPYJQPRGWJ.....AFG
+N..C......F.K.M.......HHMRLLML..
+GYPADCSRTODQH.LZZHXAREH..GCDDCBM
+CODE:GATES
+.  .  .  .  .  .  .  .  .  *  .  |  .  .  .  .  .  .  .  .  |  *  .  .  .  .  .  .  .  .  .  *
+-  *  .  *  .  *  -  *  .  |  .  17 .  *  -  *  *  .  *  .  |  *  .  *  -  *  .  *  -  *  .  *
+.  .  .  |  .  |  .  *  *  |  .  |  .  .  .  .  |  .  |  .  |  .  .  *  .  .  .  *  .  .  .  .
+.  *  .  |  .  |  .  .  .  |  .  17 *  .  *  .  *  .  |  .  |  .  .  .  .  *  -  -  -  -  *  -
+.  *  -  *  .  *  .  *  -  *  .  .  *  .  .  .  *  .  *  .  *  .  *  *  -  -  -  -  *  .  .  .
+.  .  .  *  .  .  .  .  .  .  .  .  |  .  *  .  *  .  |  .  .  .  .  |  .  .  .  .  *  -  *  .
+.  *  .  .  .  *  *  -  *  *  .  .  *  -  -  -  *  .  *  -  -  *  .  *  *  -  *  .  *  .  .  .
+.  |  .  *  .  .  .  .  .  |  .  .  .  .  .  .  *  .  .  .  .  .  .  .  .  .  .  .  |  .  *  .
+.  27 -  -  -  27 -  -  -  *  *  -  *  -  *  .  .  .  *  .  *  -  *  -  -  *  *  .  *  .  .  .
+.  .  .  .  .  .  .  .  .  |  .  .  *  .  .  .  11 .  .  .  .  .  .  .  .  .  *  -  -  -  *  .
+.  *  -  *  -  -  -  *  .  *  .  .  .  .  *  .  |  .  .  *  -  -  -  -  *  .  .  .  .  .  |  .
+.  .  .  .  .  .  .  .  .  *  .  *  *  .  .  .  11 -  -  *  43 .  *  .  *  *  -  *  .  *  *  .
+.  *  -  -  *  -  -  *  .  |  .  .  |  .  .  .  .  .  .  .  |  .  |  .  .  .  .  .  .  .  .  .
+.  |  .  .  .  .  .  .  .  |  .  .  *  *  -  *  *  -  -  -  43 .  |  .  *  -  *  .  *  -  -  -
+*  |  .  *  *  .  *  .  *  *  -  *  .  |  .  .  *  -  -  -  *  .  *  .  .  .  .  .  |  .  .  *
+.  |  .  .  .  .  .  .  .  .  .  .  .  |  .  .  .  .  .  .  .  .  .  .  *  -  -  *  *  .  .  .
+.  *  *  .  *  -  *  *  *  *  .  *  .  *  .  *  -  *  -  *  -  *  .  .  .  .  .  .  .  .  *  -
+.  .  .  .  .  .  .  .  .  .  .  .  .  |  .  .  .  .  .  .  .  .  .  *  *  .  .  .  .  .  .  .
+CODE:SOLUTION
+ES E  E  E  S  .  ES E  S  .  ES E  S  .  ES E  E  E  E  S  .  .  ES E  S  .  .  .  ES E  S  .
+S  .  .  .  S  .  S  .  E  E  .  .  S  .  S  .  .  .  .  S  .  .  S  .  S  .  .  .  S  .  S  .
+S  .  .  .  E  E  .  .  .  .  ES E  .  .  E  E  E  S  .  E  E  S  S  .  S  .  .  .  E  S  E  S
+S  .  ES E  S  .  ES E  S  .  S  .  .  .  .  .  .  E  E  S  .  E  .  .  S  .  .  .  .  S  .  S
+S  .  S  .  S  .  S  .  S  .  S  .  .  ES E  S  .  .  .  S  .  .  .  .  S  .  .  .  .  S  .  S
+E  E  .  .  S  .  E  S  E  E  .  ES E  .  .  S  .  ES E  .  ES E  E  E  .  ES E  S  .  S  .  S
+.  .  ES E  .  .  .  S  .  .  ES .  .  .  .  S  .  S  .  .  S  .  .  .  .  S  .  S  .  S  .  S
+ES E  .  .  ES E  S  E  E  E  .  ES E  S  .  S  .  E  E  S  E  S  .  .  ES .  .  E  E  .  .  S
+S  .  .  .  S  .  S  .  .  .  .  S  .  S  .  E  E  S  .  S  .  S  .  .  S  .  .  .  .  ES E  .
+S  .  ES E  .  .  S  .  ES E  E  .  .  S  .  .  .  S  ES .  .  E  E  S  E  S  .  .  .  S  .  .
+S  .  S  .  .  .  S  .  S  .  ES E  E  .  .  ES E  .  S  .  .  .  .  S  .  E  S  .  .  E  E  S
+E  E  .  ES E  S  E  E  .  .  S  .  .  ES E  .  .  .  S  .  .  .  .  S  .  .  S  .  .  .  .  S
+.  .  .  S  .  S  .  .  ES E  .  ES E  .  ES E  E  E  .  ES E  S  .  E  E  S  E  S  .  .  ES .
+.  .  ES .  .  E  E  E  .  .  ES .  .  .  S  .  .  .  .  S  .  E  E  S  .  S  .  S  .  .  S  .
+.  .  S  .  .  .  .  .  .  .  S  .  ES E  .  .  .  .  .  S  .  .  .  S  .  E  S  E  E  S  S  .
+ES E  .  ES E  S  .  .  .  .  E  E  .  .  ES E  S  .  ES .  ES E  E  .  .  .  S  .  .  S  E  S
+S  .  .  S  .  S  .  .  .  .  .  .  .  .  S  .  S  .  S  .  S  .  ES E  E  S  E  E  E  .  .  S
+E  E  E  .  .  E  E  E  E  E  E  E  E  E  .  .  E  E  .  .  E  E  .  .  .  E  E  E  E  E  E  .
+VARIABLES:
+STARTLOC:22 3
+STARTSIZE:66
+SOLUTION:American woman whose "Essay: On the equality of the sexes" was published in 1790: Judith Sargent Murray
+
+

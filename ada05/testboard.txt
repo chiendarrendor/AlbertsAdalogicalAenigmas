@@ -1,0 +1,19 @@
+12 4
+CODE:BLOCKS
+. . . . . . . . . . . .
+. * . . * * * * . . * .
+. * * * . . . * * * * .
+. . . . . . . . . . . .
+CODE:GATES
+. . . . . . . . . . . .
+- . . . . . . . . . . -
+. 7 . 5 . . . . 4 . 2 .
+. | | | . . . . | | | .
+VARIABLES:
+STARTSIZE:8
+STARTLOC:6 0
+CODE:LETTERS
+A B C D E F G H I J K L
+M . . . . . . . . . . .
+O . . . . . . . . . . P
+Q . R . S T U V . W . X
