@@ -1,0 +1,25 @@
+7 7
+CODE:REGIONS
+aabbccc
+aabbccc
+ddbbccc
+ddeeeff
+ggghhff
+ggghhii
+ggghhii
+CODE:LETTERS
+N.T.RSG
+M.EP.M.
+.BGRB.Q
+H.NJOHR
+..EBLL.
+G.R.RST
+NR.K.X.
+CODE:POSSESSIONS
+.0.2...
+.0..3.1
+0....1.
+.0.....
+00....0
+.0.0...
+..1.0.1
