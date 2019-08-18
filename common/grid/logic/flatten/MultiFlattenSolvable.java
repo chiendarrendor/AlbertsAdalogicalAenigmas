@@ -1,5 +1,8 @@
 package grid.logic.flatten;
 
+import grid.logic.ContainerRuntimeException;
+
+import java.awt.Container;
 import java.util.List;
 import java.util.Vector;
 
@@ -60,6 +63,6 @@ public interface MultiFlattenSolvable<T> extends FlattenSolvable<T>
                 return fstlist.get(0).choices;
             }
         }
-        throw new RuntimeException("guessAlternatives called on solved board!");
+        throw new ContainerRuntimeException("guessAlternatives called on solved board!",null,this);
     }
 }
