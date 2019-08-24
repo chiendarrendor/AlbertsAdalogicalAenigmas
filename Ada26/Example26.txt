@@ -1,0 +1,21 @@
+7 7
+CODE:LETTERS
+MCMQC.A
+LDNI.FM
+..OSLWV
+VNM.LOE
+GWFKI..
+OP.ZZJY
+A.YIYRH
+CODE:NUMBERS
+.....6.
+....8..
+54.....
+...3...
+.....94
+..6....
+.4.....
+VARIABLES:
+SOLVER:NEARCENTER1
+SOLUTION1:Winter Solstice
+

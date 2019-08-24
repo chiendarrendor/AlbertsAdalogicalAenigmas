@@ -1,0 +1,35 @@
+18 12
+CODE:LETTERS
+.K.C.V.ZLZN.X.W.S.
+LOIHDWU.PG.QAAJALL
+C.JCZDEE.BBF.ZAY.F
+MWBQ.S.WB.PKD.U.LK
+.YY.E.Q.OED.DBZF.Z
+HABH.XNF.E.CGLFFW.
+.MOAJXE.O.GQE.WRUK
+K.AYPY.HMZ.W.X.OM.
+ZO.U.XLU.PQ.U.OJIB
+C.ICY.UNA.DQLYZH.Y
+DXOEKYG.PL.CNAKJLM
+.A.K.X.LLTB.Q.L.R.
+CODE:NUMBERS
+6.6.8.3....6.8.5.8
+.......2..4.......
+.4......3...3...4.
+....2.4..4...3.2..
+3..6.3.4...4....9.
+....6...3.2......3
+5......3.3...3....
+.3....4...8.6.6..3
+..3.6...3..6.4....
+.2...6...4......6.
+.......3..8.......
+3.4.7.4....3.5.8.2
+VARIABLES:
+ALLOWLIARS:1
+ROWMINLIARS:1
+ROWMAXLIARS:1
+COLMINLIARS:0
+COLMAXLIARS:1
+SOLVER:LIARSOLVER
+SOLUTION:Team with fans watching from the "Crawford Boxes" ...  Houston Astros
