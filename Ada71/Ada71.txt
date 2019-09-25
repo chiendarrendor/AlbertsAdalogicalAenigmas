@@ -1,0 +1,45 @@
+19 11
+CODE:LETTERS
+OCNIGWP.TJRPIAQ....
+EDEDUZZ.DLRQZCW....
+PAHRIQB.JMSEUAK....
+NTOTBHG.KZGFQVI....
+SLSBMMJRMAHKTJDZSHL
+SBLODADPHJIZACCUNFS
+IJRONLEFNQOHFOLLPAO
+....VPSVKAP.QGWZXNA
+....NYRCDLA.RLPXTIA
+....YAQBECF.MDBVATD
+....CAIDZAT.ZWDUPSP
+CODE:TOPCLUES
+? 4 12 ? 13  ? ?  . 11 ? ? 7  8 12 7 . .  . .
+. .  . .  ? 10 ? 12 12 ? 2 . 10  8 0 ? ? 11 ?
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+. .  . .  .  . .  .  . . . .  .  . . . .  . .
+CODE:LEFTCLUES
+?  . 12 . . . . . . . . . . . . . . . .
+5  . 10 ? . . . . . . . . . . . . . . .
+?  .  ? . . . . . . . . . . . . . . . .
+9  .  8 . . . . . . . . . . . . . . . .
+1  ?  5 ? . . . . . . . . . . . . . . .
+?  3 13 2 . . . . . . . . . . . . . . .
+?  ?  4 6 . . . . . . . . . . . . . . .
+.  8  . 8 . . . . . . . . . . . . . . .
+.  ?  . ? . . . . . . . . . . . . . . .
+.  ?  . ? . . . . . . . . . . . . . . .
+. 13  . 2 . . . . . . . . . . . . . . .
+VARIABLES:
+MAXNUM:5
+NUMBOXES:4
+BOX1: 0 0
+BOX2: 8 0
+BOX3: 4 4
+BOX4: 12 4
+SOLUTION: His much better known twin had prominent roles in "Lost in Translation" and "The Avengers": HUNTER JOHANSSON
