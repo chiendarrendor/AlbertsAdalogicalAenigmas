@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+.C.RMRR..QCTCPWR.PDE.
+AJAA.RG.HC.YDQEB.AP.H
+JE.APLOMGBYFL.HNALJQH
+.ODD..XCMN...APP..NPD
+WOPPW.XPOKDAMZ.CL.Z..
+EKBPHWPJ.ZEANPIAPKQEF
+HHAW..RAENPDBKP.JPGES
+N.KLKO..PANXW.R.E..UC
+NL.FCFCB.ZUM.RLXVLRR.
+RWVFHFCBKZAFKJJB.PJFE
+DAK.GKZ.B.HE.UIB.NXJZ
+.UFWG.U.NZ.HDR.B.QNJ.
+CODE:CLUES
+0.2....20.......2...0
+....0..0..0.....3..1.
+..4..........4.......
+4...03....610...24...
+.....0........0..0.20
+........4............
+....04.........3.....
+.8....43.....3.0.02..
+..0.....4...0.......0
+................0....
+...0...0.0..0...4....
+4....2.1..7...0.3...9
+VARIABLES:
+SOLUTION:"To everything there is a season, and a time to every purpose under the heaven" per this Bible book -- ECCLESIASTES 3:1-8
