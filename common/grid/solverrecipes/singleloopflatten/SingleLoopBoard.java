@@ -15,7 +15,7 @@ import java.awt.Point;
 
 public abstract class SingleLoopBoard<T> implements FlattenSolvable<T> {
     @Deep private EdgeContainer<EdgeState> edges;
-    @Deep private GridPathContainer paths;
+    @Deep protected GridPathContainer paths;
     @Shallow private int unknowns;
 
     public SingleLoopBoard() {}
