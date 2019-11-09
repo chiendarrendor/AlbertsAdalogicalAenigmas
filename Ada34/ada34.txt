@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+.NBYWP.LCXO.NCJMBBO.Q
+CHI.AFAW.PQCLW.BF.LDI
+ZL.VIYPOTXBTKMYU.H.HY
+YAK.CIHK.FR.KD.OUWRQE
+VTKC.YWWWV.KAAFMAJYUI
+G.WOZ.EJC.LMZ.K.YKXHA
+TEILWH.KJCEKJFKDMU.DD
+ZZHP..TBSNB.AT..AGKQI
+.AVOBLUHB.IC.KAD.CDE.
+DP.VIY.RCX.QEOOVB.OYW
+M.N.MOD.DLHHOOLCDEO.D
+DGGXVMQBLBI.WJ.PBGZLB
+CODE:CLUES
+v.....3....5.......v.
+...>....0.....<..0...
+..5.............6.0..
+...3....<..^..>......
+....4.....5..........
+.4...5...6...<.3.....
+......0...........6..
+....<^.....6..vv.....
+^........7..3...4...0
+..5...0...0......3...
+.0.3...0...........>.
+...........>..7......
+VARIABLES:
+SOLUTION: The Carpenter's walking and dining companion in Lewis Carroll's silly poem: The Walrus!
