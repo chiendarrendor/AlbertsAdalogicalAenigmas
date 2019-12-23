@@ -13,7 +13,9 @@ public class Solver extends FlattenLogicer<LogicBoard>
     public Solver(LogicBoard b)
     {
         b.forEachCell( (x,y) -> {
-            addLogicStep(new CellLogicStep(x,y));
+            addLogicStep(new CellLogicStep(x,y,b.getSolverID() == 74));
+            if (b.getSolverID() == 74 && b.getClue(x,y) == '.') addLogicStep(new NoQuadLogicStep(x,y));
+            if (b.getSolverID() == 74 && b.hasNumericClue(x,y)) addLogicStep(new NumericClueLogicStep(x,y,b.getNumericClue(x,y)));
             return true;
         });
 

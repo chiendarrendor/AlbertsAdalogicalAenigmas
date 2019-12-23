@@ -1,7 +1,10 @@
+import com.sun.org.apache.bcel.internal.generic.NOP;
 import grid.logic.LogicStatus;
 import grid.logic.LogicStep;
 import grid.puzzlebits.Direction;
 
+import javax.management.relation.RoleUnresolved;
+import java.awt.Point;
 import java.util.Vector;
 
 /**
@@ -11,14 +14,18 @@ public class CellLogicStep implements LogicStep<LogicBoard>
 {
     int x;
     int y;
+    boolean allowempty;
 
-    public CellLogicStep(int x, int y) { this.x = x ; this.y = y;}
+    public CellLogicStep(int x, int y,boolean allowempty) { this.x = x ; this.y = y; this.allowempty = allowempty; }
+
+    private void apply(Vector<Direction> dirs, LogicBoard thing,EdgeType edge) { dirs.stream().forEach(d->thing.setEdge(x,y,d,edge));  }
 
     @Override
 
     // so, the things that are legal:
     // 1 inbound, 1 outbound (i.e. 2 paths, 2 walls)
     // 2 crossing paths (4 paths, no walls)
+    // if allowempty is true...no paths at all
     public LogicStatus apply(LogicBoard thing)
     {
         Vector<Direction> unknowns = new Vector<>();
@@ -54,27 +61,56 @@ public class CellLogicStep implements LogicStep<LogicBoard>
         //      3   ?  ?   x   x   x
         //      4   ?  x   x   x   x
 
-        // row 0
-        if (unknowns.size() == 0)
-        {
-            return (pathcount == 2 || pathcount == 4) ? LogicStatus.STYMIED : LogicStatus.CONTRADICTION;
-        }
-        // row 3 and 4
-        if (unknowns.size() == 3 || unknowns.size() == 4) return LogicStatus.STYMIED;
+        // if empty cells are allowed:
+        //      pathcount
+        // unk      0  1   2   3   4
+        //      0  C*  b   C   b   C
+        //      1  w*  p   w   p   x
+        //      2  ?*  ?   ?   x   x
+        //      3  ?   ?   x   x   x
+        //      4  ?   x   x   x   x
 
-        // only rows left are 1,2
-        // this is the last 'bad' entry (row 1, col 0)
-        if (pathcount == 0 && unknowns.size() ==1 ) return LogicStatus.CONTRADICTION;
-        // last two not-enough-info on row 2
-        if (unknowns.size() == 2 && pathcount > 0) return LogicStatus.STYMIED;
-        // everything left is either a make-all-unknowns-walls or make-all-unknowns-paths
-        EdgeType unknownsto = EdgeType.PATH;
-        if (unknowns.size() == 1 && pathcount == 2) unknownsto = EdgeType.NOTPATH;
-
-        for (Direction d : unknowns)
-        {
-            thing.setEdge(x,y,d,unknownsto);
+        if (pathcount == 0) {
+            if (allowempty) {
+                switch(unknowns.size()) {
+                    case 0: return LogicStatus.STYMIED;
+                    case 1: apply(unknowns,thing,EdgeType.NOTPATH); return LogicStatus.LOGICED;
+                    default: return LogicStatus.STYMIED;
+                }
+            } else {
+                switch(unknowns.size()) {
+                    case 0:
+                    case 1:
+                        return LogicStatus.CONTRADICTION;
+                    case 2:
+                        apply(unknowns,thing,EdgeType.PATH); return LogicStatus.LOGICED;
+                    default:
+                        return LogicStatus.STYMIED;
+                }
+            }
         }
-        return LogicStatus.LOGICED;
+
+        switch(pathcount) {
+            case 0: throw new RuntimeException("Shouldn't get here!");
+            case 1:
+                if (unknowns.size() == 0) return LogicStatus.CONTRADICTION;
+                if (unknowns.size() == 1) {
+                    apply(unknowns,thing,EdgeType.PATH);
+                    return LogicStatus.LOGICED;
+                }
+                return LogicStatus.STYMIED;
+            case 2:
+                if (unknowns.size() == 1) {
+                    apply(unknowns, thing, EdgeType.NOTPATH);
+                    return LogicStatus.LOGICED;
+                }
+                return LogicStatus.STYMIED;
+            case 3:
+                if (unknowns.size() == 0) return LogicStatus.CONTRADICTION;
+                apply(unknowns,thing,EdgeType.PATH); return LogicStatus.LOGICED;
+            case 4:
+                return LogicStatus.STYMIED;
+            default: throw new RuntimeException("DEfINITELY shouldn't get here!");
+        }
     }
 }

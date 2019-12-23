@@ -1,5 +1,7 @@
+import grid.letter.LetterRotate;
 import grid.logic.flatten.FlattenLogicer;
 import grid.puzzlebits.Direction;
+import grid.puzzlebits.Turns;
 import grid.spring.GridFrame;
 import grid.spring.GridPanel;
 
@@ -13,8 +15,9 @@ public class Ada47
     private static class MyListener implements GridPanel.GridListener
     {
         Board b;
+        String[] lines;
 
-        public MyListener(Board b) { this.b = b;}
+        public MyListener(Board b,String[] lines) { this.b = b; this.lines = lines;}
 
 
         public int getNumXCells()
@@ -37,6 +40,9 @@ public class Ada47
         {
             return true;
         }
+        public String[] getAnswerLines() { return lines; }
+
+
         public boolean drawCellContents(int cx, int cy, BufferedImage bi)
         {
             Graphics2D g = (Graphics2D)bi.getGraphics();
@@ -63,7 +69,11 @@ public class Ada47
             if (b.hasWall(cx,cy,Direction.WEST)) g.drawLine(INSET,INSET,INSET,unyi);
 
 
-
+            if (b.getSolverID() == 74) {
+                if (b.hasNumericClue(cx,cy)) {
+                    GridPanel.DrawStringInCorner(bi,Color.BLACK,""+b.getNumericClue(cx,cy),Direction.SOUTHEAST);
+                }
+            }
 
 
 
@@ -71,18 +81,10 @@ public class Ada47
         }
     }
 
-
-    public static void main(String[] args)
-    {
-        LogicBoard b = new LogicBoard("ada47.txt");
-
-        Solver s = new Solver(b);
-
-        s.Solve(b);
-        System.out.println("# of Solutions: " + s.GetSolutions().size());
-        if (s.GetSolutions().size() != 1) System.exit(1);
-
-        b = s.GetSolutions().iterator().next();
+    public static String getClue47(Board b) {
+        StringBuffer lsb = new StringBuffer();
+        StringBuffer rsb = new StringBuffer();
+        StringBuffer ssb = new StringBuffer();
 
         Path p = b.ps.paths.iterator().next();
         Vector<Point> mycells = new Vector<Point>();
@@ -91,7 +93,6 @@ public class Ada47
         mycells.remove(0);
         int sidx = mycells.indexOf(new Point(0,11));
         int nidx = mycells.indexOf(new Point(0,10));
-        System.out.println("Start: " + sidx + " next: " + nidx);
         if (sidx > nidx) Collections.reverse(mycells);
         while(mycells.indexOf(new Point(0,11)) > 0)
         {
@@ -100,11 +101,6 @@ public class Ada47
 
         sidx = mycells.indexOf(new Point(0,11));
         nidx = mycells.indexOf(new Point(0,10));
-        System.out.println("Start: " + sidx + " next: " + nidx);
-
-        StringBuffer lsb = new StringBuffer();
-        StringBuffer rsb = new StringBuffer();
-        StringBuffer ssb = new StringBuffer();
 
         for (int i = 0 ; i < mycells.size() ; ++i)
         {
@@ -121,16 +117,89 @@ public class Ada47
             else if (isLeft(bp,cp,np)) lsb.append(letter);
             else ssb.append(letter);
         }
+        return rsb.toString();
+    }
 
-        System.out.println("Right: " + rsb.toString());
-        System.out.println("Left: " + lsb.toString());
-        System.out.println("Straight: " + ssb.toString());
+    public static String getClue74(Board b) {
+        StringBuffer sb = new StringBuffer();
+        Path p = b.ps.paths.iterator().next();
+        p.cells.remove(0);
+        PathCursor pc = new PathCursor(p,0,0);
+        Point next = pc.getNext();
+        if (next.x != 1 || next.y != 0) {
+            p.reverse();
+            pc = new PathCursor(p,0,0);
+        }
+        pc.next();
 
-        System.out.println("");
+        while(true) {
+            Point curp = pc.getCur();
+            if (b.hasLetter(curp.x,curp.y)) {
+                Turns t = Turns.makeTurn(pc.getPrev(), pc.getCur(), pc.getNext());
+
+                if (t == Turns.RIGHT) {
+                    int sum = -1;
+                    for (Direction d : Direction.orthogonals()) {
+                        if (b.getEdge(curp.x, curp.y, d) != EdgeType.PATH) continue;
+                        sum += b.getStraightMinMax(curp.x, curp.y, d).max;
+                    }
+
+                    sb.append(LetterRotate.Rotate(b.getLetter(curp.x, curp.y), sum));
+                }
+            }
+
+            if (pc.atEnd()) break;
+            pc.next();
+        }
 
 
 
-        GridFrame gf = new GridFrame("Adalogical Aenigma #47",1200,900,new MyListener(b));
+
+
+
+
+        return sb.toString();
+    }
+
+
+
+    public static void main(String[] args)
+    {
+        if (args.length != 1) {
+            System.out.println("Bad command line");
+            System.exit(1);
+        }
+
+
+        LogicBoard b = new LogicBoard(args[0]);
+
+        Solver s = new Solver(b);
+
+        s.Solve(b);
+        System.out.println("# of Solutions: " + s.GetSolutions().size());
+        if (s.GetSolutions().size() != 1) System.exit(1);
+        b = s.GetSolutions().iterator().next();
+
+        String rawclue = null;
+        switch(b.getSolverID()) {
+            case 47:
+                rawclue = getClue47(b);
+                break;
+            case 74:
+                rawclue = getClue74(b);
+                break;
+            default:
+                throw new RuntimeException("Unknown clue type " + b.getSolverID());
+        }
+
+
+
+
+
+
+
+        String[] lines = new String[] {  rawclue, b.gfr.getVar("SOLUTION") };
+        GridFrame gf = new GridFrame("Adalogical Aenigma #" + b.getSolverID(),1200,900,new MyListener(b,lines));
 	}
 
     private static boolean isRight(Point bp, Point cp, Point np)

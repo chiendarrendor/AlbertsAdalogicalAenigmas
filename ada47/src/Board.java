@@ -1,20 +1,33 @@
 import grid.file.GridFileReader;
 import grid.puzzlebits.Direction;
 
+import java.awt.Point;
+
 /**
  * Created by chien on 9/2/2017.
  */
 public class Board
 {
-    private GridFileReader gfr;
+    GridFileReader gfr;
     private EdgeType[][] hedges;
     private EdgeType[][] vedges;
     int unknowns;
     PathSet ps;
-    
+    int aenigma = 47;
+
+    public int getSolverID() { return aenigma; }
+    // This only needs to work if solverId is 74...
+    public boolean hasNumericClue(int x,int y) { return !gfr.getBlock("CLUENUMBERS")[x][y].equals("."); }
+    public int getNumericClue(int x,int y) { return Integer.parseInt(gfr.getBlock("CLUENUMBERS")[x][y]); }
+
     public Board(String s)
     {
         gfr = new GridFileReader(s);
+        if (gfr.hasVar("SOLVER")) {
+            aenigma = Integer.parseInt(gfr.getVar("SOLVER"));
+        }
+
+
         hedges = new EdgeType[getWidth()][getHeight()-1];
         vedges = new EdgeType[getWidth()-1][getHeight()];
         unknowns = getWidth()*(getHeight()-1) + (getWidth()-1) * getHeight();
@@ -33,6 +46,7 @@ public class Board
         hedges = new EdgeType[getWidth()][getHeight()-1];
         vedges = new EdgeType[getWidth()-1][getHeight()];
         unknowns = right.unknowns;
+        aenigma = right.aenigma;
 
         forEachEdge( (e,iv,x,y) -> iv ? right.vedges[x][y] : right.hedges[x][y]);
 
@@ -132,6 +146,23 @@ public class Board
         if (et == EdgeType.PATH) ps.AddPath(cx,cy,dir);
 
         --unknowns;
+    }
+
+    public CluePair getStraightMinMax(int x, int y, Direction d) {
+        CluePair result = new CluePair();
+
+        if (getEdge(x,y,d) != EdgeType.PATH) throw new RuntimeException("Only call getStraight if you know you've got one!");
+
+        boolean onpath = true;
+
+        while(true) {
+            Point p = d.delta(x,y,result.max);
+            ++result.max;
+            if (onpath) ++result.min;
+            if (getEdge(p.x,p.y,d) == EdgeType.NOTPATH) break;
+            if (getEdge(p.x,p.y,d) == EdgeType.UNKNOWN) onpath = false;
+        }
+        return result;
     }
 
 

@@ -3,6 +3,7 @@ import grid.logic.flatten.FlattenSolvableTuple;
 import grid.puzzlebits.Direction;
 import sun.rmi.runtime.Log;
 
+import java.awt.Point;
 import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Vector;
@@ -65,17 +66,18 @@ public class LogicBoard extends Board implements FlattenSolvable<LogicBoard>
         Direction d;
         EdgeType et;
         public MyMove(int x,int y,Direction d,EdgeType et) {this.x = x ; this.y = y; this.d = d; this.et = et; }
-        public void Apply(Board b)
+        public boolean Apply(Board b)
         {
-            if (b.getEdge(x,y,d) == et) return;
+            if (b.getEdge(x,y,d) != EdgeType.UNKNOWN) return b.getEdge(x,y,d) == et;
             b.setEdge(x,y,d,et);
+            return true;
         }
     }
 
     @Override
-    public void applyMove(Object o)
+    public boolean applyMove(Object o)
     {
-        ((MyMove)o).Apply(this);
+        return ((MyMove)o).Apply(this);
     }
 
     @Override

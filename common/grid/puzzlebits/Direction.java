@@ -117,6 +117,6 @@ public enum Direction
         {
             if (x2 == x1 + d.DX() && y2 == y1 + d.DY()) return d;
         }
-        throw new RuntimeException("these two points are not adjacent!");
+        throw new RuntimeException("these two points are not adjacent! (" + x1 + "," + y1 + ")->(" + x2 + "," + y2 + ")" );
     }
 }
