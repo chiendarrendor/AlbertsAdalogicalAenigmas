@@ -1,3 +1,7 @@
+import grid.file.GridFileReader;
+import grid.letter.LetterRotate;
+import grid.puzzlebits.Direction;
+
 import java.util.*;
 import java.awt.Point;
 
@@ -56,7 +60,45 @@ public class Ada6
 		int width;
 		int height;
 		CellType cells[][];
-		
+		GridFileReader gfr = null;
+
+		public char getLetter(int x,int y) {
+			if (gfr == null) return '\0';
+			return gfr.getBlock("LETTERS")[x][y].charAt(0);
+		}
+
+		public boolean hasLetter(int x,int y) {
+			char let = getLetter(x,y);
+			return let != '\0' && let != '.';
+		}
+
+		public AdaBoard(String fname) {
+			gfr = new GridFileReader(fname);
+			width = gfr.getWidth();
+			height = gfr.getHeight();
+			cells = new CellType[width][height];
+
+			for (int y = 0 ; y < height ; ++y) {
+				for (int x = 0; x < width ; ++x) {
+					CellType ct = CellType.EMPTY;
+					char clue = gfr.getBlock("CLUES")[x][y].charAt(0);
+					switch(clue) {
+						case '0': ct = CellType.ZERO; break;
+						case '1': ct = CellType.ONE; break;
+						case '2': ct = CellType.TWO; break;
+						case '3': ct = CellType.THREE; break;
+						case '4': ct = CellType.FOUR; break;
+						case '%': ct = CellType.BLOCK; break;
+						case '.': ct = CellType.EMPTY; break;
+						default:
+							throw new RuntimeException("Unknown character " + clue);
+					}
+					setCell(x,y,ct);
+				}
+			}
+
+		}
+
 		public AdaBoard(int width,int height)
 		{
 			this.width = width;
@@ -71,6 +113,8 @@ public class Ada6
 		public AdaBoard(AdaBoard right)
 		{
 			this(right.width,right.height);
+			this.gfr = right.gfr;
+
 			for (int x = 0 ; x < width ; ++x) { for (int y = 0 ; y < height ; ++y) {
 				cells[x][y] = right.cells[x][y];
 			}}
@@ -309,12 +353,16 @@ public class Ada6
 		{
 			System.out.println("Queue Size: " + queue.size() + " Solution Size: " + solutions.size());
 			AdaBoard curb = queue.remove(0);
+
+			LogicStatus lstat = ApplyLogic(curb);
+			if (lstat == LogicStatus.CONTRADICTION) continue;
+
 			if (curb.isSolution())
 			{
 				solutions.add(curb);
 				continue;
 			}
-			LogicStatus lstat = ApplyLogic(curb);
+
 			switch (lstat)
 			{
 			case LOGIC: 
@@ -323,81 +371,86 @@ public class Ada6
 			case STYMIED:
 				MakeGuess(curb,queue);
 				break;
-			case CONTRADICTION:
-				break;
 			}
 		}
 		return solutions;
 	}
-	
+
+	private static int numDirLit(AdaBoard board, int x, int y) {
+		int result = 0;
+		for (Direction d: Direction.orthogonals()) {
+			Point np = d.delta(x,y,1);
+			if (board.onBoard(np.x,np.y) && board.getCell(np.x,np.y) == CellType.LIT) ++result;
+		}
+		return result;
+	}
 	
 	
 	public static void main(String[] args)
 	{
-		AdaBoard theBoard = new AdaBoard(21,12);
-		theBoard.setCell(0,1,CellType.TWO);
-		theBoard.setCell(0,9,CellType.BLOCK);
-		theBoard.setCell(1,2,CellType.ONE);
-		theBoard.setCell(1,9,CellType.TWO);
-		theBoard.setCell(2,7,CellType.BLOCK);
-		theBoard.setCell(3,4,CellType.TWO);
-		theBoard.setCell(3,8,CellType.ONE);
-		theBoard.setCell(3,10,CellType.BLOCK);
-		theBoard.setCell(4,0,CellType.BLOCK);
-		theBoard.setCell(4,1,CellType.ZERO);
-		theBoard.setCell(4,5,CellType.TWO);
-		theBoard.setCell(4,8,CellType.BLOCK);
-		theBoard.setCell(4,10,CellType.BLOCK);
-		theBoard.setCell(5,2,CellType.BLOCK);
-		theBoard.setCell(5,3,CellType.TWO);
-		theBoard.setCell(5,10,CellType.ONE);
-		theBoard.setCell(6,8,CellType.ZERO);
-		theBoard.setCell(7,2,CellType.BLOCK);
-		theBoard.setCell(7,6,CellType.BLOCK);
-		theBoard.setCell(7,9,CellType.BLOCK);
-		theBoard.setCell(8,3,CellType.ONE);
-		theBoard.setCell(8,4,CellType.BLOCK);
-		theBoard.setCell(9,6,CellType.BLOCK);
-		theBoard.setCell(9,7,CellType.ONE);
-		theBoard.setCell(9,11,CellType.ONE);
-		theBoard.setCell(10,1,CellType.ONE);
-		theBoard.setCell(10,2,CellType.BLOCK);
-		theBoard.setCell(10,3,CellType.TWO);
-		theBoard.setCell(10,10,CellType.BLOCK);
-		theBoard.setCell(10,11,CellType.BLOCK);
-		theBoard.setCell(11,6,CellType.TWO);
-		theBoard.setCell(11,7,CellType.BLOCK);
-		theBoard.setCell(11,11,CellType.ONE);
-		theBoard.setCell(12,3,CellType.BLOCK);
-		theBoard.setCell(12,4,CellType.BLOCK);
-		theBoard.setCell(13,2,CellType.ONE);
-		theBoard.setCell(13,6,CellType.BLOCK);
-		theBoard.setCell(13,9,CellType.BLOCK);
-		theBoard.setCell(14,8,CellType.TWO);
-		theBoard.setCell(15,2,CellType.BLOCK);
-		theBoard.setCell(15,3,CellType.BLOCK);
-		theBoard.setCell(15,10,CellType.ONE);
-		theBoard.setCell(16,0,CellType.BLOCK);
-		theBoard.setCell(16,1,CellType.ONE);
-		theBoard.setCell(16,5,CellType.BLOCK);
-		theBoard.setCell(16,8,CellType.ZERO);
-		theBoard.setCell(16,10,CellType.BLOCK);
-		theBoard.setCell(17,4,CellType.THREE);
-		theBoard.setCell(17,8,CellType.BLOCK);
-		theBoard.setCell(17,10,CellType.ONE);
-		theBoard.setCell(18,7,CellType.THREE);
-		theBoard.setCell(19,2,CellType.BLOCK);
-		theBoard.setCell(19,9,CellType.BLOCK);
-		theBoard.setCell(20,1,CellType.ZERO);
-		theBoard.setCell(20,9,CellType.ZERO);
-	
-		theBoard.ShowBoard();
-		
-		Vector<AdaBoard> solutions = Solve(theBoard);
+		if (args.length != 1) {
+			System.out.println("Bad command line");
+			System.exit(1);
+		}
+
+		AdaBoard newboard = new AdaBoard(args[0]);
+
+		Vector<AdaBoard> solutions = Solve(newboard);
+
+		/*
+		AdaBoard commonboard = new AdaBoard(newboard.width,newboard.height);
+		for (int y = 0 ; y < commonboard.height;  ++y) {
+			for (int x = 0 ; x < commonboard.width ; ++x) {
+				if ( x == 20 && y == 3) {
+					System.out.println("Debug:");
+					for (AdaBoard ab : solutions) { System.out.println(ab.getCell(x,y)); }
+					System.out.println("---");
+				}
+				CellType ct = null;
+				for (AdaBoard ab : solutions) {
+					if (ct == null) ct = ab.getCell(x,y);
+					else if (ab.getCell(x,y) != ct) {
+						ct = null;
+						break;
+					}
+				}
+				if (ct == null) continue;
+				commonboard.setCell(x,y,ct);
+			}
+		}
+
+		System.out.println("intersection of all solutions");
+		commonboard.ShowBoard();
+		System.exit(1);
+*/
+
+
 		for (AdaBoard ab : solutions)
 		{
 			System.out.println("");
 			ab.ShowBoard();
+
+			System.out.print("QUOTE: ");
+			for (int y = 0 ; y < ab.height ; ++y) {
+				for (int x = 0 ; x < ab.width ; ++x) {
+					if (ab.getCell(x,y) != CellType.BULB) continue;
+					char c = ab.getLetter(x,y);
+					if (c == '\0') continue;
+
+					int numcount = 0;
+					if (ab.gfr.getVar("CLUETYPE").equals("NUMDIRLIT")) {
+						for (Direction d: Direction.orthogonals()) {
+							Point np = d.delta(x,y,1);
+							if (ab.onBoard(np.x,np.y) && ab.getCell(np.x,np.y) == CellType.LIT) ++numcount;
+						}
+					}
+
+
+
+					System.out.print(LetterRotate.Rotate(c,numcount));
+				}
+			}
+			System.out.println("");
 		}
 	}
 }

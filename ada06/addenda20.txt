@@ -1,0 +1,30 @@
+21 12
+CODE:CLUES
+.........%1..........
+.1.............0..2..
+.1...%2.........%2...
+....1..2....%%.......
+...%....2..%..1....0.
+...2......%....%..%..
+..2..1....%......1...
+.2....1..2..2....%...
+.......1%....%..%....
+...1%.........00...1.
+..2..1.............2.
+..........1%.........
+CODE:LETTERS
+FKQQDULBP..GHDBDQFXDG
+G.FCSDZYCUBYMZH.KF.KB
+H.IGQ..QRGAWDGSG..MSU
+CQML.BD.YJKW..EJRCJDG
+QRQ.CZCD.JG.MU.RNJM.S
+NDK.IQQHFJ.GCQC.DW.VS
+QN.PA.MGCC.FRKFSM.HKM
+C.VNQH.DB.RG.FMQP.SDS
+RKURYAZ..LCQP.DM.GTBJ
+YCU..ZDXFBRDFL..NOC.R
+PK.RR.QPZSGSCRDGSEX.D
+QRJHSKDIQL..UZMDLFRWJ
+VARIABLES:
+CLUETYPE:NUMDIRLIT
+SOLUTION:Michelson and Morley proved there wasn't any ... AETHER

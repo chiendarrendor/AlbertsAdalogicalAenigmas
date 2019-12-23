@@ -1,0 +1,44 @@
+31 18
+CODE:LETTERS
+.WNCGI.REIEC.TINNB.EGLSG.EHTNS.
+T.LE.WH..E..A.PI..R..W.ESN.I.SH
+CDAE.CWTTEE.AO.I.DO..T..H.IR.NK
+NIRETAEILSPEVNAHLIWHLGKEIEEI.LY
+ETM.HLRCS.AASIC.ATEAS.YTTWO.UOD
+Y..E..T.LA..C.TAK.VE.F.EDS.U..F
+IREHF.ON.I.SE..C.PA..EILA..VE.N
+A.VE.EA.TS.EL.TP.FC.TN..PI.O..N
+.EEAGA.TUTPR.SAVRI.TIIOE.NAEIL.
+TES.NFFTC.NALHA.OEHIW.FELCT.AIC
+N.EVA.I.IS.NCM.B..DM.A.YL.ES..S
+TA.O..EHFDC.A.HEN.S.NF..T..NE.O
+ANOE.RBDFI.RAPTP.ON.EUYRA.FCPIE
+.ERAOF.FISUD.HRAEN.CESOE.HPESO.
+D.EH..A.AP..RE.P..I..E..S..Y.NT
+H.EMTGTUFAADT..R.IA..IG.D.NI.OM
+S.PRUSC..I.MSN.TGCTBHS..G.RAILL
+PED.EKEEO.YOBIG.NECML.APNSE.ETA
+CODE:CLUES
+%.....%.....2.....2.....1.....1
+.1..1..11.1%.%..%%.%%.1...1.%..
+....1......1..1.0..1%.%%.%..1..
+............................%..
+...1.....%.....%.....2.....0...
+.11.%%.%..%1.1...1..%.1...%.%%.
+.....0..%.%..%1.%..%1....1%..%.
+.%..%..%..0..%..1..%..%%..1.1%.
+1.....2.....%.....%.....1.....1
+...1.....3.....1.....1.....1...
+.2...1.1..%...2.%%..1.%..%..%%.
+..%.%%.....2.%...%.1..%1.%1..%.
+....1.....1.....2..%.....2.....
+1.....2.....1.....%.....2.....1
+.1..%%.2..%%..1.%1.%%.%1.%%.1..
+.1...........%%.1..%%..1.1..1..
+.1.....%2.1...%.......%%.2.....
+...1.....%.....1.....1.....1...
+VARIABLES:
+CLUETYPE:EACHSIZE
+SOLUTION:He who masters patience is master of everything else -- George Savile
+SOLUTION2: Wise to resolve, patient to perform -- Homer, The Odyssey
+SOLUTION3: "Wait"
