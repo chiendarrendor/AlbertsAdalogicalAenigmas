@@ -5,6 +5,7 @@ import grid.lambda.BooleanXYLambda;
 import grid.lambda.CellLambda;
 import grid.lambda.XYLambda;
 
+import java.awt.Point;
 import java.lang.reflect.Array;
 
 public class CellContainer<T> {
@@ -48,6 +49,8 @@ public class CellContainer<T> {
     public int getHeight() { return height; }
     public T getCell(int x,int y) { return cells[x][y]; }
     public void setCell(int x,int y,T val) { cells[x][y] = val; }
+    public boolean onBoard(int x,int y) { return x >= 0 && x < width && y >= 0 && y < height; }
+    public boolean onBoard(Point p) { return onBoard(p.x,p.y); }
 
     public void forEachCell(XYLambda xyl) { CellLambda.forEachCell(width,height,xyl); }
     public boolean terminatingForEachCell(BooleanXYLambda bxyl) { return CellLambda.terminatingForEachCell(width,height,bxyl); }
