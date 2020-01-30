@@ -45,6 +45,7 @@ public abstract class SingleLoopBoard<T> implements FlattenSolvable<T> {
         CopyCon.copy(this,right);
     }
 
+    protected GridPathContainer getPathContainer() { return paths; }
     public Iterable<Path> getPaths() { return paths; }
     public void cleanPaths() { paths.clean(); }
 
