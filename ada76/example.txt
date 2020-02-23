@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+.HZOKVD
+SS.JCL.
+QEYF.ND
+.LHGGNS
+GKAIGFN
+ROMSEDP
+JQAL.XQ
+CODE:SHAPES
+T......
+..T...S
+....T..
+C......
+.......
+.......
+....T..
+CODE:REGIONS
+aabcccd
+aabbbdd
+abbeefd
+ghhiefj
+ghiiefj
+ggkiefj
+gkkkkjj
