@@ -23,6 +23,7 @@ public class Path implements Iterable<Point>
     public void reverse() { Collections.reverse(cells); }
     public Iterator<Point> iterator() { return cells.iterator(); }
     public int size() { return cells.size(); }
+    public Point cellAt(int index) { return cells.get(index); }
 
     public void Merge(Path other, Point basis)
     {
