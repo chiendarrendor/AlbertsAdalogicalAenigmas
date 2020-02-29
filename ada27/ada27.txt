@@ -1,0 +1,45 @@
+21 12
+CODE:LETTERS
+TAWXM.TC..TP..RC....T
+M..R...I.A...NEYEF.G.
+U..OO.E..AOAA.....EE.
+N.C..DCOO....OLIOY...
+EI.R..RMR.NFL.E...ETR
+E..S.A...N.ND.C.T.A..
+..T.A.A.EA.O...E.U..S
+HMD...Y.TLE.ACA..E.GH
+...KPTFO....MORS..O.R
+.AJ.....FMRT..M.KC..D
+.O.PNLOI...D.T...N..M
+J....DI..CR..DR.ANADQ
+CODE:ICE
+.....X..XX..XX..XXXX.
+.XX.XXX.X.XXX.....X.X
+.XX..X.XX....XXXXX..X
+.X.XX....XXXX.....XXX
+..X.XX...X...X.XXX...
+.XX.X.XXX.X..X.X.X.XX
+XX.X.X.X..X.XXX.X.XX.
+...XXX.X...X...XX.X..
+XXX.....XXXX....XX.X.
+X..XXXXX....XX.X..XX.
+X.X.....XXX.X.XXX.XX.
+.XXXX..XX..XX..X.....
+CODE:ARROWS
+...W...S..E..........
+..............W..W...
+...................W.
+I.....W.W............
+E......E..E..........
+......S.....N........
+...........N........S
+O.N.........E........
+.....W...............
+........E..W..N......
+....................N
+.....E........W....W.
+VARIABLES:
+CLUETYPE:ADA27
+RECLUETYPE:NONPATHPLUSTWO
+SOLUTION: Add two to letters not on path
+SOLUTION2: Ice pellets -- HAIL!

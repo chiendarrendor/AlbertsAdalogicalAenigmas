@@ -1,0 +1,27 @@
+7 7
+CODE:LETTERS
+..L...A
+A.TE...
+...IC.T
+..E.G.O
+ESD....
+.E..N..
+R....K.
+CODE:ICE
+...XXX.
+.X..X.X
+XXX....
+.X.X.X.
+....XXX
+X.X..X.
+.XXX...
+CODE:ARROWS
+E......
+.......
+.....N.
+O......
+...S...
+......S
+....I..
+VARIABLES:
+CLUETYPE:ADDENDA21

@@ -1,0 +1,47 @@
+21 12
+CODE:LETTERS
+.DR.A....Y...IW.N..W.
+..M...O...LN..B..TAL.
+A.FIL...AI....LAEE..I
+OG..WAHM......T..E..R
+OYO.OE..N..H.W..EOH..
+M..X.A.....EI.N...TM.
+.FN....T..G...SP..S.A
+.O..R.TNN..NN.LT..I.Y
+D.R.....M.A....P...R.
+.L..L.I..CS.....E...V
+...M.O....RE.FD...E..
+.I.....TA.EO...LTE.SN
+CODE:ICE
+...X.XX.X...X....XX..
+...XXX..XX..XX.XX...X
+.X....XX..XX.X....X..
+..XX....XX..XX..X....
+.......X..X.X.X....X.
+.XX.X.XXXXX....X.X..X
+X..X..X.X..XX......X.
+X.XX.........X...X.X.
+.X..X.XX.X.X....XXX.X
+X.XX.X..X..X.XXX.X...
+XX..X.X.XX..X...XX.XX
+X.XXXX...X..XXX...X..
+CODE:ARROWS
+I......S...W...S....O
+E....................
+.....E......W........
+...S.......W......NN.
+.........E.....N....S
+......NN........S....
+...E.E...N...N...N...
+.....S...E.......W...
+.............E...W...
+..SN....W...N.....E..
+........W......E.....
+......N..............
+VARIABLES:
+CLUETYPE:ADDENDA21
+SOLUTION:First woman to ever play for an NHL team: Manon Rhéaume
+RECLUETYPE:NONPATH
+SOLUTION2: Easter Egg:  'Forward' spelled backward?
+RERECLUETYPE:REVERSEBY3
+SOLUTION3: The Big Six dominate internationally

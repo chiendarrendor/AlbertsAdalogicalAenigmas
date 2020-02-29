@@ -1,0 +1,27 @@
+7 7
+CODE:LETTERS
+RRS...E
+I.EN.G.
+...ADWE
+T.C.O.M
+YTSI...
+.A.AW.A
+O...UEL
+CODE:ICE
+...XXX.
+.X..X.X
+XXX....
+.X.X.X.
+....XXX
+X.X..X.
+.XXX...
+CODE:ARROWS
+E......
+.......
+.....N.
+O......
+...S...
+......S
+....I..
+VARIABLES:
+CLUETYPE:ADA27
