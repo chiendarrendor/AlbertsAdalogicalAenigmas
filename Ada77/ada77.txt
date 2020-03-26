@@ -1,0 +1,42 @@
+21 12
+CODE:LETTERS
+V..ZP.Z.AN.SJ.I.PM..I
+..FB.Z.BC.Q.BN.J.JL..
+.MB.Q.SP.UJH.TJ.M.IT.
+EJ.S.WB.PW.HX.GK.K.EV
+T.X.FN.YQ.B.RH.PF.Y.G
+.J.SH.TP.B.S.UZ.BA.S.
+.S.CG.PO.J.G.LM.BO.I.
+Q.H.SJ.WX.N.QB.NB.I.J
+FJ.E.SA.KS.QB.ZP.D.CA
+.BF.O.BQ.JZB.TJ.F.WP.
+..MR.T.RB.U.SJ.N.QT..
+O..EX.A.PA.JU.A.GZ..Y
+CODE:BOXES
+.....@....@....@.....
+....@....@.@....@....
+...@....@...@....@...
+..@....@.....@....@..
+.@....@.......@....@.
+@....@.........@....@
+@....@.........@....@
+.@....@.......@....@.
+..@....@.....@....@..
+...@....@...@....@...
+....@....@.@....@....
+.....@....@....@.....
+CODE:CLUES
+ . 4E 2W  .  .  .  . 2S  .  .  .  .  . 2W  .  .  .  . 2E 1E  .
+2S 2S  .  .  .  . 0E  .  .  .  .  .  .  . 2S  .  .  .  . 0N 4S
+1E  .  .  .  . 2S  .  .  .  .  .  .  .  .  . 3S  .  .  .  . 1W
+ .  .  .  . 4S  .  .  .  .  . 6S  .  .  .  .  . 2E  .  .  .  .
+ .  .  . 1W  .  .  .  .  . 1N  . 1W  .  .  .  .  . 3N  .  .  .
+ .  . 1N  .  .  .  .  . 6S  . 8E  . 4E  .  .  .  .  . 1E  .  .
+ .  . 4E  .  .  .  .  . 0N  . 5S  . 5E  .  .  .  .  . 4W  .  .
+ .  .  . 3S  .  .  .  .  . 0E  . 0W  .  .  .  .  . 3W  .  .  .
+ .  .  .  . 2N  .  .  .  .  . 1W  .  .  .  .  . 1S  .  .  .  .
+6N  .  .  .  . 1E  .  .  .  .  .  .  .  .  . 2W  .  .  .  . 2W
+4E 1N  .  .  .  . 2W  .  .  .  .  .  .  . 2E  .  .  .  . 0E 4N
+ . 2N 1W  .  .  .  . 1E  .  .  .  .  . 6W  .  .  .  . 2N 7W  .
+VARIABLES:
+SOLUTION: Despite Sam Loyd's claim, actually this postmaster invented the 'fifteen puzzle': Noyes Chapman

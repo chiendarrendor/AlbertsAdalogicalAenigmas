@@ -109,6 +109,18 @@ public enum Direction
         }
     }
 
+    // requires that x1,y1, and x2,y2 be distinct, and on either the same horizontal or vertical line.
+    public static Direction fromToOrthogonalNotAdjacent(int x1,int y1,int x2, int y2) {
+        if (x1 == x2) {
+            if (y1 < y2) return Direction.SOUTH;
+            if (y1 > y2) return Direction.NORTH;
+        }
+        if (y1 == y2) {
+            if (x2 > x1) return Direction.EAST;
+            if (x2 < x1) return Direction.WEST;
+        }
+        throw new RuntimeException("alignmentDirection called on invalid points! " + x1 + "," + y1 + " " + x2 + ","  + y2);
+    }
 
 
     public static Direction fromTo(int x1, int y1, int x2, int y2)
