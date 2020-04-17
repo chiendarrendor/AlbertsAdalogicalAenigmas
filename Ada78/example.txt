@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+OOHZLWK
+W.T.Y.K
+IBCHCAY
+GE.B.ZD
+GOEBCIN
+A.V.D.W
+DJINKAN
+CODE:LABELS
+.......
+.1.3.3.
+.......
+..2.3..
+.......
+.5.4.4.
+.......
+CODE:REGIONS
+aaabbcc
+aeebccc
+aefbbci
+aefhhhi
+adfghji
+ddfggjj
+dddggjj
