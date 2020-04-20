@@ -1,0 +1,52 @@
+10 20
+# . (prefix) = gray
+#  [A-Z0-9] symbol
+#  [rb] optional color for symbol
+CODE:STRIPS
+  .  .  R  .  E  .  T  T  .  .
+  D  .  O  .  .  H  I  .  G  T
+  R  D  . Eb  E .S  Y  .  J  .
+  S  I  . Ib  1  .  D  .  .  S
+  T  .  .  A  V  .  .  O  .  O
+  .  . Lb  .  U  M  .  E  .  M
+  .  5  .  M  U  . .G  N  O  .
+  .  P  .  . Ur  F  .  S  O  .
+  .  . Dr  .  .  E  .  D  M  .
+  .  .  L Jb  .  S  T  .  R  E
+  .  U Ab  .  S  . Jr  .  .  E
+  T  .  . Vb  .  .  O  .  J  T
+  .  .  U  .  .  X  .  .  A  .
+  .  .  L  . .R  U  . Nb  .  .
+  .  .  L  O  .  .  C  .  .  H
+  H  .  .  H  .  U  .  P  .  4
+  .  O  .  M  .  .  E  .  .  D
+  .  R  E  .  E  .  O  O .4  1
+  S  L  .  U  P  .  O  H  .  S
+  .  T  E  .  L  .  E  .  G  R
+VARIABLES:
+TOPSTRIP:..L.RU.N..
+TOPREVERSED:false
+SEARCHCOUNT:10
+SEARCH0:4OOMETERS
+SEARCH1:1OOMETERS
+SEARCH2:HURDLES
+SEARCH3:15OOMETERS
+SEARCH4:JAVELIN
+SEARCH5:SHOTPUT
+SEARCH6:LONGJUMP
+SEARCH7:HIGHJUMP
+SEARCH8:DISCUS
+SEARCH9:POLEVAULT
+
+#              100 meters
+#              long jump
+#              shot put
+#              high jump
+#              400 meters
+
+#              hurdles
+#              discus
+#              pole vault
+#              javelin
+#              1500 meters
+
