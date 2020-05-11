@@ -1,4 +1,6 @@
 
+import grid.letter.LetterRotate;
+
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
@@ -8,10 +10,13 @@ public class Ada7
 {
 	public static BoardReader br = null;
 	private static JLabel statusBox = null;
+	private static JLabel solutionBox = null;
+	private static JLabel cluetypeBox = null;
 
 	private static class DrawPanel extends JPanel // implements KeyListener
 	{
 		private static final int OFFSET=20;
+		private static final int INSET=3;
 		private static final int CSIZE=30;
 		private static final int TEXTXFUDGE = 12;
 		private static final int TEXTYFUDGE = 22;
@@ -24,7 +29,7 @@ public class Ada7
 		private void FillCell(Graphics g,int x, int y, Color c)
 		{
 			g.setColor(c);
-			g.fillRect(OFFSET+x*CSIZE+1,OFFSET+y*CSIZE+1,CSIZE-1,CSIZE-1);
+			g.fillRect(OFFSET+x*CSIZE+1+INSET,OFFSET+y*CSIZE+1+INSET,CSIZE-1-INSET*2,CSIZE-1-INSET*2);
 		}	
 	
 		public DrawPanel() 
@@ -34,8 +39,9 @@ public class Ada7
 		}
 		
 		public Dimension getPreferredSize() { return new Dimension(700,450); }
-		public void paint(Graphics g)
-		{			
+		public void paint(Graphics g1)
+		{
+			Graphics2D g = (Graphics2D)g1;
 			int width = getWidth();
 			int height = getHeight();
 			g.setColor(getBackground());
@@ -66,17 +72,21 @@ public class Ada7
 					if (br.theBoard.isSpecial[x][y]) FillCell(g,x,y,Color.lightGray);
 					g.setColor(Color.black);
 					int num = br.numbers.GetCellNumber(x,y);
-					if (num != -1) DrawStringInCell(g,x,y,""+num);
+					if (num != -1) DrawStringInCell(g,x,y,""+num+br.rawshades[x][y]);
 					
 					if (x < br.theBoard.width - 1) 
 					{
+						g.setStroke(new BasicStroke(5));
 						g.setColor(br.theBoard.cells[x][y].id == br.theBoard.cells[x+1][y].id ? Color.lightGray : Color.black);
 						g.drawLine(ulx+CSIZE,uly,ulx+CSIZE,uly+CSIZE);
+						g.setStroke(new BasicStroke(1));
 					}
 					if (y < br.theBoard.height - 1) 
 					{
+						g.setStroke(new BasicStroke(5));
 						g.setColor(br.theBoard.cells[x][y].id == br.theBoard.cells[x][y+1].id ? Color.lightGray : Color.black);
 						g.drawLine(ulx,uly+CSIZE,ulx+CSIZE,uly+CSIZE);
+						g.setStroke(new BasicStroke(1));
 					}
 				}
 			}			
@@ -97,14 +107,21 @@ public class Ada7
 		System.out.println("");	
 	}
 	
-	private static void createAndShowGUI()
+	private static void createAndShowGUI(String status)
 	{
 		JFrame frame = new JFrame("Adalogical Enigma 7 Board Solver");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel mainPanel = new JPanel(new BorderLayout());
-		statusBox = new JLabel("STATUS");
-		mainPanel.add(statusBox,BorderLayout.SOUTH);
+		JPanel boxpanel = new JPanel();
+		boxpanel.setLayout(new BoxLayout(boxpanel,BoxLayout.Y_AXIS));
+		mainPanel.add(boxpanel,BorderLayout.SOUTH);
+
+		statusBox = new JLabel(status);
+		boxpanel.add(statusBox);
+
+		solutionBox = new JLabel(br.solution);
+		boxpanel.add(solutionBox);
 		
 		DrawPanel dp = new DrawPanel();
 		mainPanel.add(dp,BorderLayout.CENTER);
@@ -124,31 +141,42 @@ public class Ada7
 	
 	public static void main(String[] args)
 	{
-		br = new BoardReader("ada7.txt");
+		if (args.length != 1) {
+			System.out.println("Bad Command Line");
+			System.exit(1);
+		}
+
+		br = new BoardReader(args[0]);
 		
 		Solver s = new Solver(br.numbers);
 		s.Run();
 
 		br.numbers = s.solutions.firstElement();
-		
-		for (int x = 0 ; x < br.numbers.getWidth() ; ++x)
-		{
-			int colsum = 0;
-			for (int y = 0 ; y < br.numbers.getHeight() ; ++y)
-			{
-				if (br.theBoard.isSpecial[x][y]) colsum += br.numbers.GetCellNumber(x,y);
+		StringBuffer sb = new StringBuffer();
+
+		if (br.cluetype.equals("sumcolumn")) {
+			for (int x = 0; x < br.numbers.getWidth(); ++x) {
+				int colsum = 0;
+				for (int y = 0; y < br.numbers.getHeight(); ++y) {
+					if (br.theBoard.isSpecial[x][y]) colsum += br.numbers.GetCellNumber(x, y);
+				}
+				if (colsum == 0) sb.append("-");
+				else sb.append((char) (colsum + 'A' - 1));
 			}
-			if (colsum == 0) System.out.print("-");
-			else System.out.print((char)(colsum+'A'-1));
+		} else if (br.cluetype.equals("mod3")) {
+			for (int y = 0 ; y < br.numbers.getHeight() ; ++y) {
+				for (int x = 0 ; x < br.numbers.getWidth() ; ++x) {
+					if (br.numbers.GetCellNumber(x,y) % 3 != 0) continue;
+					if (br.rawshades[x][y] == '.') continue;
+					sb.append(LetterRotate.Rotate(br.rawshades[x][y],br.numbers.GetCellNumber(x,y)));
+				}
+			}
+		} else {
+			sb.append("unknown clue type: " + br.cluetype);
 		}
-		System.out.println("");
-		
-		
-		
-		
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() { 
-			public void run() { createAndShowGUI(); }
+			public void run() { createAndShowGUI(sb.toString()); }
 		});		
 	}
 }

@@ -5,6 +5,9 @@ public class BoardReader
 {
 	AdaBoard theBoard = null;
 	Position numbers = null;
+	String cluetype = null;
+	String solution = null;
+	char rawshades[][];
 
 	public BoardReader(String filename)
 	{
@@ -34,6 +37,7 @@ public class BoardReader
 					int width = Integer.parseInt(dims[0]);
 					int height = Integer.parseInt(dims[1]);
 					theBoard = new AdaBoard(width,height);
+					rawshades = new char[width][height];
 				}
 				else if (line.equals("regions:"))
 				{
@@ -42,6 +46,14 @@ public class BoardReader
 				else if (line.equals("shades:"))
 				{
 					processingWhat = "shades";
+				}
+				else if (line.startsWith("solution")) {
+					String[] stuff = line.split(":");
+					solution = stuff[1].trim();
+				}
+				else if (line.startsWith("cluetype")) {
+					String[] stuff = line.split(":");
+					cluetype = stuff[1].trim();
 				}
 				else if (line.equals("numbers:"))
 				{
@@ -71,6 +83,7 @@ public class BoardReader
 						{
 							theBoard.isSpecial[i][shadesCurline] = true;
 						}
+						rawshades[i][shadesCurline] = line.charAt(i);
 					}
 					++shadesCurline;
 				}

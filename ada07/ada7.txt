@@ -1,4 +1,6 @@
 21 12
+cluetype:sumcolumn
+solution:Ocean wave from a quake...TSUNAMI!
 regions:
 AAAbbVVVUSRJJJJ00pZZZ
 Acc()-_+UUR!!#00ppvvv
