@@ -77,13 +77,14 @@ public final class AStar {
 
 
         while(!queue.isEmpty()) {
-            System.out.println("Queue Size: " + queue.size());
+            System.out.println("Queue Size: " + queue.size() + " best grade: " + bestgrade);
             final WorkNode<T> curnode = queue.poll();
 
             if (!curnode.isValid()) continue;
 
             if (curnode.grade > bestgrade) {
                 best = curnode;
+                bestgrade = curnode.grade;
             }
 
             if (curnode.isSolution()) {
