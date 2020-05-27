@@ -91,7 +91,7 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
             if (rs == RecursionStatus.DEAD) continue;
             if (rs == RecursionStatus.DONE)
             {
-                addSolution(curitem);
+                if (ApplyLogic(curitem) != LogicStatus.CONTRADICTION)   addSolution(curitem);
                 continue;
             }
 
@@ -103,7 +103,7 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
             if (rs == RecursionStatus.DEAD) continue;
             if (rs == RecursionStatus.DONE)
             {
-                addSolution(curitem);
+                if (ApplyLogic(curitem) != LogicStatus.CONTRADICTION) addSolution(curitem);
                 continue;
             }
 
