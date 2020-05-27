@@ -1,0 +1,25 @@
+7 7
+CODE:REGIONS
+aadffkL
+addffkk
+adffggk
+bdffgjj
+bbehhhj
+bceehii
+ccceeei
+CODE:LETTERS
+.HZAY.K
+E.PSGNH
+SS.E.ET
+.ERTDLG
+CM..BZN
+UHHRE.S
+.TLOTEK
+CODE:CLUES
+4....3.
+.3.....
+..4.3..
+2......
+..51...
+.....1.
+3......

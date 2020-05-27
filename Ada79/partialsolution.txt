@@ -1,0 +1,40 @@
+This solver, while correct, takes a very long time to come to the solution (several hours on my Gigabyte P55 gaming laptop)...
+
+for testing purposes, I took an earlier arrived at solution and encoded part of it thusly
+    makerectangle(b,0,0,2,0);
+        makerectangle(b,0,2,3,4);
+        makerectangle(b,0,6,1,7);
+        makerectangle(b,0,9,2,9);
+        makerectangle(b,0,11,1,13);
+        makerectangle(b,2,14,2,14);
+        makerectangle(b,0,15,1,15);
+        makerectangle(b,5,0,6,5);
+        makerectangle(b,3,6,4,8);
+        makerectangle(b,3,10,5,13);
+        makerectangle(b,3,15,4,15);
+        makerectangle(b,8,0,8,0);
+        makerectangle(b,8,3,9,6);
+        makerectangle(b,9,8,11,10);
+        makerectangle(b,6,7,7,9);
+        makerectangle(b,7,11,8,12);
+        makerectangle(b,9,13,9,13);
+        makerectangle(b,6,14,8,15);
+        makerectangle(b,10,0,13,2);
+        makerectangle(b,11,4,13,6);
+        makerectangle(b,11,12,14,13);
+        makerectangle(b,10,15,14,15);
+        makerectangle(b,15,0,16,1);
+        makerectangle(b,14,3,14,3);
+        makerectangle(b,15,4,16,6);
+        makerectangle(b,14,7,14,8);
+        makerectangle(b,13,9,13,10);
+        makerectangle(b,15,9,19,11);
+        makerectangle(b,16,13,18,15);
+        makerectangle(b,18,0,19,0);
+        makerectangle(b,17,2,20,3);
+        makerectangle(b,18,5,19,5);
+        makerectangle(b,17,7,20,7);
+        makerectangle(b,20,14,27,15);
+        makerectangle(b,21,8,23,12);
+
+This addition to the base board makes it solve in a few seconds, allowing me to diagnose the 2-solution bug I found.
