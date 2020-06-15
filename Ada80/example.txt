@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+.JRENYR
+DY.G.N.
+PR..CYX
+C.OM.PX
+KCQ.ZCF
+.K.SQF.
+U.JB.RP
+CODE:ANIMALS
+G......
+..G.F.G
+..FG...
+.G..G..
+...F...
+G.F...G
+.G..F..
+CODE:POSTS
+.@.....
+@.@.@..
+...@...
+.@.....
+..@.@..
+@..@.@.
+.......
