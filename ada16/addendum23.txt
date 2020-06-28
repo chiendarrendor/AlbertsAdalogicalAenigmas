@@ -1,0 +1,31 @@
+21 12
+CODE:LETTERS
+...Z.P.Q.JWKUMFXEDITO
+..FT.EANKPPORQJI.JTIK
+.IBEASDBNAO..SNR..R.F
+UHCFSR.HWOQV.UPWIANMQ
+UJ.RT.E.W..JJN.WAH.OF
+J...I...E.D.O.D.P...A
+ZN.AQ.Q.S..ZK...UC.OF
+ABSKSDJGPMSJA.Z.ZHER.
+IKU.BJO.NMPEZJADSEE.S
+.HNARTA..PAJEAS..Q.P.
+PWWINFUE.E..DOPKEXA.U
+.P.LSVIFDR..JQZ.AK.A.
+CODE:FEATURES
+***.*.*.*............
+**..*...........*....
+S..........**...**.*.
+......*.....*........
+..*..*O*.**...*...*..
+.***.***.*O*.*O*.***.
+..*..*.*.**..***..*..
+.............*.*....E
+...*...*...........*.
+*......**......**.*.*
+........*.**.......*.
+*.*.......**...*..*.*
+VARIABLES:
+START:E
+SOLUTION: It carried a rover named "Sojourner" to Mars: the PATHFINDER
+
