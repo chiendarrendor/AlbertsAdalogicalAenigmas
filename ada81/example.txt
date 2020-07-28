@@ -1,0 +1,29 @@
+5 6
+CODE:DOMAINS
+E . E . S
+S E . S .
+. E . . S
+E . S S .
+S S . . S
+. . E . .
+CODE: LETTERS
+EYIRS
+UMRNI
+MDNAP
+DYDAV
+SSMVP
+TULPU
+CODE:ROWCLUES
+....2
+1....
+.....
+2...3
+.....
+....2
+CODE:COLCLUES
+12...
+.....
+.....
+.....
+.....
+.121.
