@@ -48,13 +48,14 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
 
         for (FlattenSolvableTuple<T> tuple : tuples)
         {
-
+            if (debug) System.out.println("Operating on Tuple " + tuple.code);
             Vector<Object> antimoves = new Vector<>();
 
             for (int i = 0; i < tuple.choices.size(); ++i)
             {
                 T child = tuple.choices.elementAt(i);
                 Object antimove = tuple.antimoves.elementAt(i);
+                if (debug) System.out.println("  processing tuple child with antimove " + antimove);
 
                 RecursionStatus rs = recursiveApplyLogic(child);
                 if (rs != RecursionStatus.DEAD) continue;
