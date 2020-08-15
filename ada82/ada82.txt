@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+ZLZBI.GQHDNE.AUAIAYLB
+JGDKHFLOWHKZGMXGZLJJX
+BQZEXZ.IBOUQF..T.I.PM
+ZAHA.ADXFM.LKAOEXNWG.
+HIDNOPZ.FLOGZJIV.H.WL
+LIN.VJ.WKCCYNKJMLUXIF
+QZ.IV.MYCYNNTZZ.ZOMPO
+X.WNXHYWZFJIV.QIMWPEG
+FSO.AHLAFQTL.AQYFKSTF
+VV.OZMJYLX.PMHT.XT.IO
+X.MQI.V.MY.HCJRYQVIYQ
+WZSHVPMFQH.KIAZRBE.LR
+CODE:CLUES
+.....@......@........
+S.SE......S..........
+.S.E..@....E.@@.@.@..
+....@.....@.........@
+.......@.....E..@.@..
+S..@..@..S.E..E..S...
+..@..@.....E...@S....
+.@....E..E...@....E..
+...@..E.....@.S..S..S
+S.@.......@....@S.@S.
+.@...@.@..@..........
+..E.......@.......@..
+VARIABLES:
+SOLUTION: "Moderation in temper is always a virtue, but moderation in principles is always a vice" -- Thomas Paine
