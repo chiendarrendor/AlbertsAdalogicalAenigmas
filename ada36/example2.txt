@@ -1,0 +1,19 @@
+7 7
+CODE:LETTERS
+BRHC.LP
+MDK.KM.
+Z.JAOOU
+HOA.KNH
+XCDYD.N
+.QF.PTG
+LS.GGLW
+CODE:CLUES
+  .  .  .  .  4  .  .
+  .  .  .  2  .  .  8
+  .  6  .  .  .  .  .
+  .  .  .  5  .  .  .
+  .  .  .  .  .  3  .
+  7  .  .  3  .  .  .
+  .  .  2  .  .  .  .
+VARIABLES:
+SOLUTION: Illness of a shut-in: Cabin Fever
