@@ -20,6 +20,26 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
 {
     public enum RecursionStatus { DEAD, DONE, GO };
 
+    // a test function that will repeat the set of logic that is run, other than the guessing.
+    public void testRecursion(T thing) {
+        while(true) {
+            RecursionStatus rs = recursiveApplyLogic(thing);
+            System.out.println("RAL 1: " + rs);
+            if (rs != RecursionStatus.GO) break;
+
+            LogicStatus ats = applyTupleSuccessors(thing);
+            System.out.println("ATS: " + ats);
+            if (ats != LogicStatus.LOGICED) break;
+
+            RecursionStatus rs2 = recursiveApplyLogic(thing);
+            System.out.println("RAL 1: " + rs2);
+            if (rs2 != RecursionStatus.GO) break;
+        }
+    }
+
+
+
+
     // applies logic until
     // a) solution is reached (returns DONE)
     // b) contradiction is reached (returns DEAD)
