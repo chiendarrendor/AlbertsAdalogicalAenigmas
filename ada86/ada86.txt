@@ -1,0 +1,14 @@
+18 10
+CODE:TILES
+TE    .  GW   .   .    .  .   .  AEWS  .  .   .  .   . QWS   .    . TW
+ .    .   .   .   . DEWS  .   .     .  .  .   . SE   .   .   .    .  .
+ . RNSE   .   .   .    .  . OWS     .  . AS   .  . BWS   .   . QEWS  .
+ .  INE   .  CE   .    . NS   .     .  .  .   .  .   .   .  EW    .  .
+ .    . MNE   . BSE    .  . RWN     .  O  . VES  .   .   .   .    . JS
+VS    .   .   .   .  CNW  .   . WNSEW  . MN   .  . ZNE   . YNS    .  .
+ .    . TES   .   .    .  .   .     .  .  .  ZW  .   .  ON   .  IEN  .
+ . JEWS   .   . BNW    .  .  CN     .  . QE   .  .   .   .   . BEWN  .
+ .    .   .   .   .   ZN  .   .     .  .  .   . NW   .   .   .    .  .
+SN    .   . CNE   .    .  .   .     . ZW  .   .  .   .   .  QN    . PN
+VARIABLES:
+SOLUTION: The group set up by Agnes Baden-Powell and her brother: GIRL GUIDES

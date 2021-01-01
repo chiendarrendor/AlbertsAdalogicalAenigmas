@@ -1,0 +1,7 @@
+5 5
+CODE:TILES
+    .  LSE    .   .  BWS
+    .  QS     .  IS  .
+    .  TNE   QE  CS  .
+   HE  .      .   .  .
+   .   .      . AWEN PN
