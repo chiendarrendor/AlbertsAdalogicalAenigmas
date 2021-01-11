@@ -1,10 +1,20 @@
+import grid.letter.LetterRotate;
+import grid.puzzlebits.Direction;
+import grid.spring.FixedSizePanel;
+import grid.spring.GridFrame;
+import grid.spring.GridPanel;
+import grid.spring.SinglePanelFrame;
+
 import java.awt.image.*;
 import java.awt.*;
 import java.util.*;
+import java.util.List;
+
 
 public class Ada12
 {
 	static Board theBoard;
+	static String[] lines = new String[] {"Adalogical Aenigma","#12 Solver"};
 
 	private static class MyListener implements GridPanel.GridListener
 	{
@@ -13,6 +23,7 @@ public class Ada12
 		public boolean drawGridNumbers() { return true; }
 		public boolean drawGridLines() { return true; }
 		public boolean drawBoundary() { return true; }
+		public String[] getAnswerLines() { return lines; }
 		public boolean drawCellContents(int x,int y,BufferedImage bi)
 		{
 			Board.CellInfo ci = theBoard.cells[x][y];
@@ -24,7 +35,7 @@ public class Ada12
 			
 			int w = bi.getWidth() - 2*INSET;
 			int h = bi.getHeight() - 2*INSET;
-			
+
 			switch(ci.type)
 			{
 				case TARGET: 
@@ -38,7 +49,7 @@ public class Ada12
 				case UNKNOWN:
 					break;
 				case PATH:
-					g.setColor(Color.blue);
+					g.setColor(Color.cyan);
 					g.fillRect(ulx,uly,w,h);
 					break;
 			}
@@ -49,7 +60,11 @@ public class Ada12
 				g.drawOval(ulx,uly,w,h);
 				GridPanel.DrawStringInCell(bi,Color.black,ci.tokenString());			
 			}
-		
+
+			if (theBoard.hasLetter(x,y)) {
+				GridPanel.DrawStringInCorner(bi, Color.BLACK,""+theBoard.getLetter(x,y), Direction.NORTHWEST);
+			}
+
 		
 			return true;
 		}
@@ -82,7 +97,7 @@ public class Ada12
 				if (rawV.elementAt(i).y < minY) minY = rawV.elementAt(i).y;
 				if (rawV.elementAt(i).y > maxY) maxY = rawV.elementAt(i).y;
 			}
-			System.out.println(" X: " + minX + " to " + maxX + " Y: " + minY + " to " + maxY);
+			//System.out.println(" X: " + minX + " to " + maxX + " Y: " + minY + " to " + maxY);
 			int xTrans = -minX;
 			int yTrans = -minY;
 			int xScale = drawWidth / (maxX - minX);
@@ -101,7 +116,7 @@ public class Ada12
 			{
 				Point p1 = myV.elementAt(i);
 				Point p2 = myV.elementAt(i+1);
-				if (!pendowns.elementAt(i+1)) continue;
+				if (!pendowns.elementAt(i)) continue;
 				g.drawLine(p1.x,p1.y,p2.x,p2.y);
 			}
 		}
@@ -116,14 +131,16 @@ public class Ada12
 
 	public static void main(String[] args)
 	{
-		theBoard = new Board("ada12.txt");
-		
-		
+		if (args.length != 1) {
+			System.out.println("Bad Command Line");
+			System.exit(1);
+		}
+
+		theBoard = new Board(args[0]);
+
 		Vector<Board> queue = new Vector<Board>();
 		Vector<Board> solutions = new Vector<Board>();
-		
 		queue.add(theBoard);
-		
 		while(queue.size() > 0)
 		{
 			System.out.println("queue size: " + queue.size() + " solution size: " + solutions.size());
@@ -146,33 +163,47 @@ public class Ada12
 					break;
 			}
 		}
-		
-		// 7 (currently) gets me an image that looks like stonehenge, which fits the solution word space
-		theBoard = solutions.elementAt(7);
-		
-		//theBoard = solutions.elementAt(0);
-		for (String s : theBoard.why)
-		{
-			System.out.println(s);
-		}
-		
-		
-		
-		Point p = new Point(0,0);
-		Vector<Point> vectorPoints = new Vector<Point>();
-		Vector<Boolean> pendowns = new Vector<Boolean>();
-		for (Board.DrawVector dv : theBoard.vectors)
-		{
-			Point dp = dv.getVector();
-			p.x += dp.x;
-			p.y += dp.y;
-			vectorPoints.add(new Point(p.x,p.y));
-			pendowns.add(dv.pendown);
+
+		System.out.println("# of Solutions: " + solutions.size());
+
+		if (solutions.size() == 1) {
+			theBoard = solutions.elementAt(0);
+			lines[0] = "--unused--";
+			lines[1] = theBoard.getSolution();
+
+			if (theBoard.hasDrawVectorStage()) {
+				Point p = new Point(0, 0);
+				Vector<Point> vectorPoints = new Vector<Point>();
+				Vector<Boolean> pendowns = new Vector<Boolean>();
+				vectorPoints.add(new Point(0, 0));
+				for (Board.DrawVector dv : theBoard.vectors) {
+					Point dp = dv.getVector();
+					p.x += dp.x;
+					p.y += dp.y;
+					vectorPoints.add(new Point(p.x, p.y));
+					pendowns.add(dv.pendown);
+					//System.out.println("Draw: " + dp.x + "," + dp.y + " " + (dv.pendown ? "pendown" : "penup"));
+				}
+				SinglePanelFrame spf = new SinglePanelFrame("Adalogical Aenigma #12 Vectors", new VectorPanel(600, 600, vectorPoints, pendowns));
+			} else {
+				StringBuffer sb = new StringBuffer();
+				for (int y = 0 ; y < theBoard.height ; ++y) {
+					for (int x = 0 ; x < theBoard.width ; ++x) {
+						Board.CellInfo ci = theBoard.cells[x][y];
+						if (!ci.containsToken) continue;
+						if (!theBoard.hasLetter(x,y)) continue;
+						int size = Math.abs(ci.tokenOriginalPosition.y - ci.tokenCurrentPosition.y) +
+								Math.abs(ci.tokenOriginalPosition.x - ci.tokenCurrentPosition.x);
+						sb.append(LetterRotate.Rotate(theBoard.getLetter(x,y),size));
+					}
+					lines[0] = sb.toString();
+				}
+			}
 		}
 		
 		
 		GridFrame gf = new GridFrame("Adalogical Aenigma #12 Board",1024,768,new MyListener());
 		
-		SinglePanelFrame spf = new SinglePanelFrame("Adalogical Aenigma #12 Vectors",new VectorPanel(600,600,vectorPoints,pendowns));	
+
 	}
 }

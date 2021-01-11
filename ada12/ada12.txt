@@ -1,4 +1,5 @@
 21 12
+CODE:CELLS
 5P  . .  . . E @ . . 3V . .  .  .  3 . .  .  Y .  .
  .  R .  . . . . . .  . . .  @  .  . 4 .  .  . . 3H
  .  . .  . W . 1 . .  . . J  .  .  . . Q  .  . 2  .
@@ -11,4 +12,6 @@
  .  . @  . @ . 2 . .  . . . 3C  .  . . .  . 2Z .  S
  .  5 .  . . . . . 5  . . .  .  .  . . 2  .  . .  .
  M  . .  . . 2 . . .  . . @  .  .  2 . . 2O  . .  .
-K OS BG IN GR FIQ FY Q KY JQ DFY PQ HS E KN A LS GT C (U) K JXY EJN DS P GHQ FQ FN L GL KT
+VARIABLES:
+VECTORS: K OS BG IN GR FIQ FY Q KY JQ DFY PQ HS E KN A LS GT C (U) K JXY EJN DS P GHQ FQ FN L GL KT
+SOLUTION:STONEHENGE

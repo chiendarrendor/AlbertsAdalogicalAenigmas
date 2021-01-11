@@ -1,4 +1,7 @@
 
+import grid.file.GridFileReader;
+import sun.security.krb5.internal.PAData;
+
 import java.util.*;
 import java.util.regex.*;
 import java.awt.Point;
@@ -8,6 +11,7 @@ public class Board
 {
 	int width;
 	int height;
+	GridFileReader gfr;
 	
 	enum CellType { TARGET, NONTARGET, UNKNOWN, PATH };
 	enum ResultType { LOGIC, STYMIED, CONTRADICTION };
@@ -44,8 +48,10 @@ public class Board
 			containsToken = right.containsToken;
 			tokenMoveDist = right.tokenMoveDist;
 			tokenCode = right.tokenCode;
-			tokenOriginalPosition = right.tokenOriginalPosition == null ? null : new Point(right.tokenOriginalPosition.x,right.tokenOriginalPosition.y);
-			tokenCurrentPosition = right.tokenCurrentPosition == null ? null : new Point(right.tokenCurrentPosition.x,right.tokenCurrentPosition.y);
+			tokenOriginalPosition = right.tokenOriginalPosition == null ? null :
+					new Point(right.tokenOriginalPosition.x,right.tokenOriginalPosition.y);
+			tokenCurrentPosition = right.tokenCurrentPosition == null ? null :
+					new Point(right.tokenCurrentPosition.x,right.tokenCurrentPosition.y);
 		}
 		
 		public String tokenString()
@@ -102,6 +108,8 @@ public class Board
 	{
 		width = right.width;
 		height = right.height;
+		gfr = right.gfr;
+
 		cells = new CellInfo[width][height];
 		for (int y = 0 ; y < height ; ++y)
 		{
@@ -126,7 +134,10 @@ public class Board
 	
 	
 	
-	
+	public String getSolution() { return gfr.getVar("SOLUTION"); }
+	public boolean hasDrawVectorStage() { return gfr.hasVar("VECTORS"); }
+	public char getLetter(int x,int y) { return gfr.getBlock("LETTERS")[x][y].charAt(0); }
+	public boolean hasLetter(int x,int y) { return gfr.hasBlock("LETTERS") && getLetter(x,y) != '.'; }
 	public boolean isOnBoard(Point p) { return isOnBoard(p.x,p.y); }
 	public boolean isOnBoard(int x,int y) { return x >= 0 && x < width && y >= 0 && y < height; }
 	public Point GetRMIPoint(Point p) { return new Point(width - 1 - p.x,height - 1 - p.y); }
@@ -200,7 +211,7 @@ public class Board
 	
 	Point[] deltas = new Point[] { new Point(1,0),new Point(-1,0),new Point(0,1),new Point(0,-1) };
 	
-	private static class PointPair
+	public static class PointPair
 	{
 		CellInfo token;
 		Point dest;
@@ -218,7 +229,12 @@ public class Board
 				
 		if (!tokcell.cantStop() && tokcell.isPotentialTarget(0)) result.add(new PointPair(tokcell,origin,null));
 		if (tokcell.endsPath()) return result;
-		
+
+		// A case comes up here where a token that is on the central line of an odd-sized dimension
+		// can self-intersect...any cell that we leave behind creates a CANTSTOP in the RMI
+		Set<Point> extraCantStops = new HashSet<>();
+		extraCantStops.add(GetRMIPoint(origin));
+
 		for (Point delta : deltas)
 		{
 			int ctr = 1;
@@ -237,7 +253,7 @@ public class Board
 					break;
 				}
 				
-				if (here.cantStop())
+				if (here.cantStop() || extraCantStops.contains(newP))
 				{
 				}
 				else if (tokcell.isPotentialTarget(ctr))
@@ -250,6 +266,7 @@ public class Board
 					break;
 				}
 
+				extraCantStops.add(GetRMIPoint(newP));
 				++ctr;
 			}
 		}	
@@ -341,7 +358,10 @@ public class Board
 		{
 			if (tokcell.tokenOriginalPosition != null) continue;
 			Vector<PointPair> mySuccessors = TokenSuccessors(tokcell);
-			if (mySuccessors.size() < mincount) successors = mySuccessors;
+			if (mySuccessors.size() < mincount) {
+				successors = mySuccessors;
+				mincount = mySuccessors.size();
+			}
 		}
 		if (successors == null) return result;
 		
@@ -355,104 +375,68 @@ public class Board
 		}
 		return result;
 	}
-		
-	
-	
-	
-	
-	
-	
-	
+
 	public Board(String filename)
 	{
-		try
-		{
-			BufferedReader reader = new BufferedReader(new FileReader(filename));
-			String line = null;
-			int ycount = 0;
-			Pattern pattern = Pattern.compile("^([0-9]+)?([A-Z])?$");
-			Pattern vpatterndown = Pattern.compile("^[A-Z]+$");
-			Pattern vpatternup = Pattern.compile("^\\(([A-Z]+)\\)$");
-			Map<Character,CellInfo> byCode = new HashMap<Character,CellInfo>();
-			
-			while((line = reader.readLine()) != null)
-			{	
-				line = line.trim();
-				if (cells == null)
-				{
-					String[] dims = line.split(" ");
-					if (dims.length != 2) throw new RuntimeException("first line does not contain two ints");
-					width = Integer.parseInt(dims[0]);
-					height = Integer.parseInt(dims[1]);
-					cells = new CellInfo[width][height];
-				}
-				else if (ycount < height)
-				{
-					String[] lineEnts = line.split(" +");
-					if (lineEnts.length != width) throw new RuntimeException("wrong # of elements " + line);
-					for (int x = 0 ; x < width ; ++x)
-					{
-						if (lineEnts[x].equals(".")) cells[x][ycount] = new CellInfo();
-						else if (lineEnts[x].equals("@")) 
-						{
-							cells[x][ycount] = new CellInfo(-1,'@',x,ycount);
-							tokens.add(cells[x][ycount]);
-						}
-						else
-						{
-							Matcher m = pattern.matcher(lineEnts[x]);
-							if (!m.find()) throw new RuntimeException("bad line element " + lineEnts[x]);
-							int dist = -1;
-							char code = '@';
-							if (m.group(1) != null && !m.group(1).equals("")) dist = Integer.parseInt(m.group(1));
-							if (m.group(2) != null && !m.group(2).equals("")) code = m.group(2).charAt(0);
-							cells[x][ycount] = new CellInfo(dist,code,x,ycount);
-							
-							if (code != '@') byCode.put(code,cells[x][ycount]);
-							
-							tokens.add(cells[x][ycount]);
-						}
-					}
-					++ycount;
-				}
-				else
-				{
-					String[] lineparts = line.split(" ");
-					for (String rawel : lineparts)
-					{
-						DrawVector dv = new DrawVector();
-						vectors.add(dv);
-						Matcher mdown = vpatterndown.matcher(rawel);
-						Matcher mup = vpatternup.matcher(rawel);
-						String el = null;
-						if (mdown.find())
-						{
-							el = rawel;
-							dv.pendown = true;
-						}
-						else if (mup.find())
-						{
-							el = mup.group(1);
-							dv.pendown = false;
-						}
-						else
-						{
-							throw new RuntimeException("Illegal vector element " + rawel);
-						}
-						
-						for(char c : el.toCharArray())
-						{
-							if (!byCode.containsKey(c)) throw new RuntimeException("No such token marked " + c);
-							dv.tokens.add(byCode.get(c));
-						}
-					}
+		Pattern pattern = Pattern.compile("^([0-9]+)?([A-Z])?$");
+		Pattern vpatterndown = Pattern.compile("^[A-Z]+$");
+		Pattern vpatternup = Pattern.compile("^\\(([A-Z]+)\\)$");
+		Map<Character,CellInfo> byCode = new HashMap<Character,CellInfo>();
+
+		gfr = new GridFileReader(filename);
+		width = gfr.getWidth();
+		height = gfr.getHeight();
+		cells = new CellInfo[width][height];
+
+		for (int y = 0 ; y < height ; ++y) {
+			for (int x = 0 ; x < width ; ++x) {
+				String s = gfr.getBlock("CELLS")[x][y];
+				if (s.equals(".")) {
+					cells[x][y] = new CellInfo();
+				} else if (s.equals("@")) {
+					cells[x][y] = new CellInfo(-1,'@',x,y);
+					tokens.add(cells[x][y]);
+				} else {
+					Matcher m = pattern.matcher(s);
+					if (!m.find()) throw new RuntimeException("bad line element " + s);
+					int dist = -1;
+					char code = '@';
+					if (m.group(1) != null && !m.group(1).equals("")) dist = Integer.parseInt(m.group(1));
+					if (m.group(2) != null && !m.group(2).equals("")) code = m.group(2).charAt(0);
+					cells[x][y] = new CellInfo(dist,code,x,y);
+
+					if (code != '@') byCode.put(code,cells[x][y]);
+
+					tokens.add(cells[x][y]);
 				}
 			}
 		}
-		catch(Exception e)
-		{
-			throw new RuntimeException(e);
+
+		if (gfr.hasVar("VECTORS")) {
+			String[] vparts = gfr.getVar("VECTORS").trim().split(" ");
+			for (String rawel : vparts) {
+				DrawVector dv = new DrawVector();
+				vectors.add(dv);
+				Matcher mdown = vpatterndown.matcher(rawel);
+				Matcher mup = vpatternup.matcher(rawel);
+				String el = null;
+				if (mdown.find()) {
+					el = rawel;
+					dv.pendown = true;
+				} else if (mup.find()) {
+					el = mup.group(1);
+					dv.pendown = false;
+				} else {
+					throw new RuntimeException("Illegal vector element " + rawel);
+				}
+
+				for (char c : el.toCharArray()) {
+					if (!byCode.containsKey(c)) throw new RuntimeException("No such token marked " + c);
+					dv.tokens.add(byCode.get(c));
+				}
+			}
 		}
 	}
+
 }
 		

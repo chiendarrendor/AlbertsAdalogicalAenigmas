@@ -1,0 +1,17 @@
+7 7
+CODE:CELLS
+ . . . @ . @ .
+ 4 . . . . @ .
+ . . . 2 . @ .
+ . . . . . @ 3
+ . . @ . 4 . .
+ . . . 2 . . .
+ . 1 . @ . . .
+CODE:LETTERS
+ZFZ.K.T
+.RYBL.M
+PRP.K.S
+AETCJ..
+JQ.R.OF
+KEH.FHX
+H.R.TIB
