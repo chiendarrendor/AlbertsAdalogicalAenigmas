@@ -1,0 +1,104 @@
+# this problem proved to be very difficult for the computer to solve.
+# after solving it with this hybrid auto/manual mechanism, I determined that the
+# two places that the algorithm was insufficient were:
+# a) determining whether all the final shapes of a partially complete region would overlap existing complete regions
+#    (this logic step was very common for the 1x1, 1x2, and 2x2 ell shapes)
+# b) visualizing that all possible paths between known cells of a pattern would cause another pattern's cells to be cut off
+
+
+
+# proven
+pattern X 19 14 outside
+pattern X 19  3 outside
+pattern F 23 10 outside
+pattern F 22 10 outside
+pattern L 17  9 outside
+pattern A 18 13 outside
+pattern I 20 17 outside
+pattern I 25 13 outside
+pattern I 27 15 outside
+pattern I 24 14 outside
+pattern I 17 18 outside
+
+pattern G 24 10 inside
+pattern V 9 4 outside
+pattern Y 15 1 outside
+pattern U 24 6 outside
+pattern U 19 6 outside
+pattern U 23 5 outside
+pattern U 21 5 outside
+pattern U 20 5 outside
+pattern Q 22 15 outside
+pattern Q 20 14 outside
+pattern N 26 13 outside
+pattern O 22 15 outside
+pattern O 22 14 outside
+pattern O 21 13 outside
+pattern A 18 14 outside
+pattern I 19 11 inside
+pattern I 18 11 inside
+pattern N 27 14 outside
+pattern A 19 11 inside
+pattern B 21 11 outside
+pattern M 19 11 outside
+pattern Q 19 14 outside
+pattern V 5 3 outside
+pattern F 21 11 inside
+pattern F 22 11 outside
+pattern G 19 11 outside
+pattern F 20 10 inside
+pattern A 18 11 outside
+pattern C 22 11 inside
+pattern I 17 11 inside
+pattern M 17 10 outside
+pattern M 16 12 outside
+pattern M 17 11 outside
+pattern M 18 11 outside
+
+pattern M 18 10 inside
+pattern J 20 12 inside
+pattern M 19 12 outside
+pattern L 20 10 inside
+pattern L 21 10 inside
+pattern L 21 11 inside
+pattern P 20 10 inside
+pattern P 21 10 inside
+pattern P 22 10 inside
+pattern X 21 11 inside
+pattern X 22 11 inside
+pattern Q 20 12 inside
+pattern Q 19 12 inside
+pattern Q 18 12 inside
+pattern I 15 12 outside
+pattern N 20 12 inside
+pattern P 22 11 inside
+pattern N 20 13 inside
+pattern N 20 14 inside
+pattern U 20 12 inside
+pattern U 19 11 inside
+pattern U 20 13 inside
+pattern E 19 11 inside
+pattern E 18 11 inside
+pattern E 17 11 inside
+pattern D 21 11 inside
+pattern D 21 12 inside
+pattern X 19 11 inside
+pattern I 17 12 inside
+pattern I 16 12 inside
+pattern N 21 14 inside
+pattern N 21 15 outside
+pattern Y 21 8 inside
+pattern Y 22 8 inside
+pattern Y 23 8 inside
+pattern C 23 11 inside
+pattern N 22 11 outside
+pattern N 22 14 inside
+pattern N 22 15 inside
+
+
+#pattern J 19 11 inside
+#pattern J 20 12 inside
+
+
+run
+

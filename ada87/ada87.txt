@@ -1,0 +1,31 @@
+21 12
+CODE:TAGS
+....A....B.C...D....E
+F..G....H...I.....J..
+.J....J...G.....K..L.
+.....M.......I.......
+...L.......N..O...P..
+.N..Q..R....S.......R
+T.......P....A..U..A.
+..G...Q..F.......O...
+.......L.......V.....
+.U..D.....B...J....M.
+..W.....M...R....B..J
+B....X...Y.X....F....
+CODE:LETTERS
+ENYB.AXOX.G.JKZ.ANQJ.
+.AQ.TVKL.FIU.RLMJN.WI
+K.OVGH.SOJ.HKIAH.AF.N
+DMDWA.JDDVWHI.KWSWJBT
+CXK.AYIHGHY.BT.XFG.NB
+O.MC.YQ.MVHK.XETMCCW.
+.BZAJGZL.EVIB.PO.LL.Q
+RA.XMX.JY.JIXKNOP.YFY
+DKXLAAH.ARKZZTA.YHJDA
+N.LM.HPMZE.XKE.PBAQ.X
+DO.CLZKD.DWI.JLFT.UZ.
+.MULZ.DIO.C.ZTSB.OZRB
+VARIABLES:
+SOLUTION: He developed a crystal morphology diagram relating shapes to the temperatures and moisture conditions wherein they formed: Ukichiro Nakaya
+
+
