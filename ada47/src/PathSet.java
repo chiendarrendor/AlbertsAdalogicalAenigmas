@@ -3,6 +3,7 @@ import grid.puzzlebits.Direction;
 
 import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by chien on 9/4/2017.
@@ -44,7 +45,8 @@ public class PathSet
     private Board b;
     private CellPointers[][] cells;
     Set<Path> paths = new HashSet<>();
-    private Set<Point> dirty = new HashSet<>();
+    Set<Point> dirty = new HashSet<>();
+
 
 
     public PathSet(Board b)
@@ -125,7 +127,7 @@ public class PathSet
             return;
         }
         paths.remove(p2);
-        p1.Merge(d1,p2,p);
+        p1.Merge(d1,d2,p2,p);
         cells[p1.endOne().x][p1.endOne().y].setDirection(p1,p1.endOneDir());
         cells[p1.endTwo().x][p1.endTwo().y].setDirection(p1,p1.endTwoDir());
 

@@ -1,0 +1,17 @@
+7 7
+CODE:LETTERS
+LLALOCN
+R.V.M.U
+IRIHTET
+.E.E.L.
+AEHBMAT
+C.S.C.I
+GGNITUF
+CODE:CLUES
+.......
+.|.-.n.
+.......
+L.|.r.n
+.......
+.r.|.L.
+.......

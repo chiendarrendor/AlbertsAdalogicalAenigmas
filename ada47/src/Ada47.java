@@ -1,87 +1,18 @@
 import grid.letter.LetterRotate;
-import grid.logic.flatten.FlattenLogicer;
 import grid.puzzlebits.Direction;
 import grid.puzzlebits.Turns;
 import grid.spring.GridFrame;
-import grid.spring.GridPanel;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.Collections;
 import java.util.Vector;
 
 public class Ada47
 {
-    private static class MyListener implements GridPanel.GridListener
-    {
-        Board b;
-        String[] lines;
-
-        public MyListener(Board b,String[] lines) { this.b = b; this.lines = lines;}
-
-
-        public int getNumXCells()
-        {
-            return b.getWidth();
-        }
-        public int getNumYCells()
-        {
-            return b.getHeight();
-        }
-        public boolean drawGridNumbers()
-        {
-            return true;
-        }
-        public boolean drawGridLines()
-        {
-            return true;
-        }
-        public boolean drawBoundary()
-        {
-            return true;
-        }
-        public String[] getAnswerLines() { return lines; }
-
-
-        public boolean drawCellContents(int cx, int cy, BufferedImage bi)
-        {
-            Graphics2D g = (Graphics2D)bi.getGraphics();
-            if(b.hasLetter(cx,cy))  GridPanel.DrawStringInCorner(bi, Color.BLACK,""+b.getLetter(cx,cy), Direction.NORTHWEST);
-
-            g.setColor(Color.BLACK);
-            g.setStroke(new BasicStroke(5));
-            int cenx = bi.getWidth()/2;
-            int ceny = bi.getHeight()/2;
-
-            if (b.hasPath(cx,cy,Direction.NORTH)) g.drawLine(cenx,ceny,cenx,0);
-            if (b.hasPath(cx,cy,Direction.SOUTH)) g.drawLine(cenx,ceny,cenx,bi.getHeight());
-            if (b.hasPath(cx,cy,Direction.WEST)) g.drawLine(cenx,ceny,0,ceny);
-            if (b.hasPath(cx,cy,Direction.EAST)) g.drawLine(cenx,ceny,bi.getWidth(),ceny);
-
-            g.setColor(Color.red);
-            g.setStroke(new BasicStroke(1));
-            int INSET = 5;
-            int unxi = bi.getWidth() - INSET;
-            int unyi = bi.getHeight() - INSET;
-            if (b.hasWall(cx,cy,Direction.NORTH)) g.drawLine(INSET,INSET,unxi,INSET);
-            if (b.hasWall(cx,cy,Direction.SOUTH)) g.drawLine(INSET,unyi,unxi,unyi);
-            if (b.hasWall(cx,cy,Direction.EAST)) g.drawLine(unxi,INSET,unxi,unyi);
-            if (b.hasWall(cx,cy,Direction.WEST)) g.drawLine(INSET,INSET,INSET,unyi);
-
-
-            if (b.getSolverID() == 74) {
-                if (b.hasNumericClue(cx,cy)) {
-                    GridPanel.DrawStringInCorner(bi,Color.BLACK,""+b.getNumericClue(cx,cy),Direction.SOUTHEAST);
-                }
-            }
-
-
-
-            return true;
-        }
-    }
 
     public static String getClue47(Board b) {
+        int llx = 0;
+        int lly = b.getHeight() - 1;
         StringBuffer lsb = new StringBuffer();
         StringBuffer rsb = new StringBuffer();
         StringBuffer ssb = new StringBuffer();
@@ -91,16 +22,16 @@ public class Ada47
         mycells.addAll(p.cells);
 
         mycells.remove(0);
-        int sidx = mycells.indexOf(new Point(0,11));
-        int nidx = mycells.indexOf(new Point(0,10));
+        int sidx = mycells.indexOf(new Point(llx,lly));
+        int nidx = mycells.indexOf(new Point(llx,lly-1));
         if (sidx > nidx) Collections.reverse(mycells);
-        while(mycells.indexOf(new Point(0,11)) > 0)
+        while(mycells.indexOf(new Point(llx,lly)) > 0)
         {
             mycells.add(mycells.remove(0));
         }
 
-        sidx = mycells.indexOf(new Point(0,11));
-        nidx = mycells.indexOf(new Point(0,10));
+        sidx = mycells.indexOf(new Point(llx,lly));
+        nidx = mycells.indexOf(new Point(llx,lly));
 
         for (int i = 0 ; i < mycells.size() ; ++i)
         {
@@ -177,7 +108,7 @@ public class Ada47
 
         s.Solve(b);
         System.out.println("# of Solutions: " + s.GetSolutions().size());
-        if (s.GetSolutions().size() != 1) System.exit(1);
+        if (s.GetSolutions().size() < 1) System.exit(1);
         b = s.GetSolutions().iterator().next();
 
         String rawclue = null;

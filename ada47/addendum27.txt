@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+WNEBKF.XBTD.OLEP.BISB
+OQD.BXIF.BFXR.HLFBB.P
+N.PE.MP.MP.KKEJ.XQLOA
+QX.RMOILPOKRX.LOR.JBP
+O.QFK.MR.LR.KJK..O.H.
+EEB.AX.OI.XKO.KAGTDTD
+IDNLEZQ.RWH.RH.DX.EFK
+.X.G..KBU.FE.EA.OFS.F
+SKA.QRN.GKFCXHFIKE.AO
+BFRBJ.LRKO.YX.AQ.IY.B
+I.PLCBE.NXXJ.VFEL.ORV
+SPNP.TITD.ERLQ.PCKXTA
+CODE:CLUES
+......r....n....n....
+...|....L....|.....r.
+.+..r..|..r....r.....
+..-..........r...L...
+.n...L..r..|...nr.r.q
+...n..L..L...L.......
+.......|...L..|..L...
+|.-.Lq...q..r..r...L.
+...r...q..........r..
+.....|....n..r..|..r.
+.-.....n....|....|...
+....q....q....-......
+VARIABLES:
+SOLUTION: Singer of "The road goes ever on and on, down from the door where it began..." -- Bilbo Baggins, from 'Lord of the Rings' by J.R.R. Tolkien

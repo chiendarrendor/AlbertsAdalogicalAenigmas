@@ -1,7 +1,9 @@
 import grid.puzzlebits.Direction;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -9,8 +11,12 @@ import java.util.Vector;
  */
 public class Path
 {
+    private static int nextPathId = 0;
+
+    private int pathid;
     boolean isClosed = false;
     Vector<Point> cells = new Vector<>();
+    List<String> logs = new ArrayList();
 
     Point endOne() { return cells.firstElement(); }
     Direction endOneDir()
@@ -38,26 +44,40 @@ public class Path
 
 
 
-    public void reverse() { Collections.reverse(cells); }
+    public void reverse() { Collections.reverse(cells); logs.add("Reversing"); }
 
 
-    public void Merge(Direction dir, Path other,Point basis)
+    public void Merge(Direction dir1,Direction dir2, Path other,Point basis)
     {
-        if (!endTwo().equals(basis) || endTwoDir() != dir) reverse();
-        if (!other.endOne().equals(basis) ) other.reverse();
+        if (!endTwo().equals(basis) || endTwoDir() != dir1) reverse();
+        if (!endTwo().equals(basis) || endTwoDir() != dir1) throw new RuntimeException("Reversing Path this didn't help!");
 
-        if (!endTwo().equals(basis)  || !other.endOne().equals(basis)) throw new RuntimeException("mr?");
+        if (!other.endOne().equals(basis) || other.endOneDir() != dir2) other.reverse();
+        if (!other.endOne().equals(basis) || other.endOneDir() != dir2) throw new RuntimeException("Reversing Path other didn't help!");
+
+        StringBuffer sb = new StringBuffer();
+        other.cells.stream().forEach(p->sb.append(" " + p));
+
+
+        logs.add("Merging path " + other.pathid + ": " + sb.toString());
 
         // remove the duplicate point and merge
         cells.remove(cells.size()-1);
         cells.addAll(other.cells);
+
+        StringBuffer sb2 = new StringBuffer();
+        cells.stream().forEach(p->sb2.append(" " + p));
+        logs.add("  Merged Path: " + sb2);
     }
 
     public Path(Point p1,Point p2)
     {
         cells.add(p1);
         cells.add(p2);
+        pathid = ++nextPathId;
+        logs.add("Path #" + pathid + " " + p1 + "->" + p2);
     }
 
-    public Path(Path right) { cells.addAll(right.cells); isClosed = right.isClosed; }
+    public Path(Path right) { cells.addAll(right.cells); isClosed = right.isClosed; pathid = right.pathid; logs.addAll(right.logs); }
+    public int getPathId() { return pathid; }
 }

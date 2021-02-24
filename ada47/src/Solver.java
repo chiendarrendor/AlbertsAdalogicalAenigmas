@@ -7,7 +7,7 @@ import grid.logic.flatten.FlattenLogicer;
  */
 public class Solver extends FlattenLogicer<LogicBoard>
 {
-    private LogicStep<LogicBoard> pathLogicStep;
+    LogicStep<LogicBoard> pathLogicStep;
 
 
     public Solver(LogicBoard b)
