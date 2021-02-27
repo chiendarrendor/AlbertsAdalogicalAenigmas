@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+UA.JCWD
+FQARCNO
+LSDYQP.
+DYI.LOF
+.RCBHJJ
+PDMTKTC
+RPQP.RQ
+CODE:REGIONS
+aabpppr
+agoopqr
+cggooqs
+cghiqqt
+dhhhmmn
+efhjjnn
+effjkll
+CODE:ARROWS
+..S....
+.......
+......W
+...N...
+E......
+.......
+....N..
