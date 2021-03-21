@@ -1,0 +1,21 @@
+7 8
+CODE:LETTERS
+ETIAKBT
+HOFEAAU
+RTNURNS
+HRIALAL
+IUONVVT
+TRGWEEO
+FETNTHL
+ITBCUOY
+CODE:REGIONS
+aaeeekk
+aaehhhk
+bbehhkk
+bbhhhhj
+ccfhfij
+ccfffij
+dcdggii
+dddggii
+VARIABLES:
+SOLUTION: If thrown, it returns to you: BOOMERANG!

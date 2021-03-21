@@ -19,6 +19,15 @@ import java.util.Vector;
 public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
 {
     public enum RecursionStatus { DEAD, DONE, GO };
+    public interface IntermediateCallback<Q extends FlattenSolvable<Q>> {
+        public void foundOne(Q state);
+    }
+    IntermediateCallback<T> callback = null;
+    int maxdepth = Integer.MAX_VALUE;
+
+    public FlattenLogicer() {}
+    public FlattenLogicer(IntermediateCallback<T> callback,int maxdepth) { this.callback = callback; this.maxdepth = maxdepth; }
+
 
     // a test function that will repeat the set of logic that is run, other than the guessing.
     public void testRecursion(T thing) {
@@ -105,6 +114,7 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
         while(queue.size() > 0)
         {
             System.out.println("Queue Size:" + queue.size() + " solution size: " + numSolutions());
+            if (queue.size() > maxdepth) break;
             T curitem = queue.remove(0);
 
             System.out.println("First Stage Apply Logic");
@@ -130,11 +140,18 @@ public class FlattenLogicer<T extends FlattenSolvable<T>> extends LogicerBase<T>
 
             System.out.println("Dispatching on result of applyTupleSuccessors");
 
+
+
+
+
             switch(ls)
             {
                 case LOGICED: queue.add(curitem); break;
                 case CONTRADICTION: break;
-                case STYMIED: queue.addAll(curitem.guessAlternatives());  break;
+                case STYMIED:
+                    queue.addAll(curitem.guessAlternatives());
+                    if (callback != null) callback.foundOne(curitem);
+                    break;
             }
 
         }

@@ -7,6 +7,27 @@ public class EdgeContainer<T>
         public int y;
         public Direction d;
         public CellCoord(int x,int y,Direction d) { this.x = x; this.y = y; this.d = d; }
+        public CellCoord(EdgeCoord ec) {
+            x = ec.x;
+            y = ec.y;
+            if (ec.isV) {
+                d = Direction.EAST;
+                --x;
+                if (x < 0) {
+                    ++x;
+                    d = Direction.WEST;
+                }
+            } else {
+                d = Direction.SOUTH;
+                --y;
+                if (y < 0) {
+                    ++y;
+                    d = Direction.NORTH;
+                }
+            }
+        }
+
+
         @Override public boolean equals(Object o) {
             if (o == null) return false;
             if (!this.getClass().equals(o.getClass())) return false;
@@ -30,6 +51,13 @@ public class EdgeContainer<T>
         public int y;
         public boolean isV;
         public EdgeCoord(int x,int y,boolean isV) { this.x = x; this.y = y; this.isV = isV; }
+        public EdgeCoord(CellCoord cc) {
+            x = cc.x;
+            y = cc.y;
+            isV = cc.d == Direction.EAST || cc.d == Direction.WEST;
+            if (cc.d == Direction.EAST) ++x;
+            if (cc.d == Direction.SOUTH) ++y;
+        }
         @Override public boolean equals(Object o) {
             if (o == null) return false;
             if (!this.getClass().equals(o.getClass())) return false;
@@ -49,30 +77,11 @@ public class EdgeContainer<T>
     }
 
     public static CellCoord getCellCoord(int x,int y, boolean isV) {
-        Direction d;
-        if (isV) {
-            d = Direction.EAST;
-            --x;
-            if (x < 0) {
-                ++x;
-                d = Direction.WEST;
-            }
-        } else {
-            d = Direction.SOUTH;
-            --y;
-            if (y < 0) {
-                ++y;
-                d = Direction.NORTH;
-            }
-        }
-        return new CellCoord(x,y,d);
+        return new CellCoord(new EdgeCoord(x,y,isV));
     }
 
     public static EdgeCoord getEdgeCoord(int x,int y, Direction d) {
-        boolean isV = d == Direction.EAST || d == Direction.WEST;
-        if (d == Direction.EAST) ++x;
-        if (d == Direction.SOUTH) ++y;
-        return new EdgeCoord(x,y,isV);
+        return new EdgeCoord(new CellCoord(x,y,d));
     }
 
 
