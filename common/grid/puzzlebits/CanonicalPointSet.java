@@ -13,7 +13,7 @@ public class CanonicalPointSet {
     int width;
     int height;
     boolean[][] grid;
-    Set<String> equivalences = new HashSet<>();
+    Set<String> equivalences = null;
 
     public CanonicalPointSet(Collection<Point> points) {
         int maxx = Integer.MIN_VALUE;
@@ -28,12 +28,17 @@ public class CanonicalPointSet {
             if (p.y < miny) miny = p.y;
         }
 
-        width = maxx-minx+1;
-        height = maxy-miny+1;
+        width = maxx - minx + 1;
+        height = maxy - miny + 1;
         grid = new boolean[width][height];
         for (Point p : points) {
-            grid[p.x-minx][p.y-miny] = true;
+            grid[p.x - minx][p.y - miny] = true;
         }
+    }
+
+    private void makeEquivalances() {
+        if (equivalences != null) return;
+        equivalences = new HashSet<>();
 
         equivalences.add(toString());
         equivalences.add(stringOfGrid(width,height,mirror(width,height,grid),'/'));
@@ -50,7 +55,12 @@ public class CanonicalPointSet {
 
 
     public boolean equivalent(CanonicalPointSet other) {
+        makeEquivalances();
         return equivalences.contains(other.toString());
+    }
+    public Collection<String> equivalances() {
+        makeEquivalances();
+        return equivalences;
     }
 
     public int getWidth() { return width; }
