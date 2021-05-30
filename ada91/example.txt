@@ -1,0 +1,23 @@
+5 5
+CODE:LETTERS
+XVICS
+PQPOC
+SKPSN
+MVSTH
+DGHOF
+CODE:UPDOWNCLUES
+. 1 2 3 .
+. . . . .
+. . . . .
+. . . . .
+. 4 . . .
+CODE:LEFTRIGHTCLUES
+. . . . .
+. . . . .
+. . . . 4
+. . . . .
+3 . . . 3
+VARIABLES:
+MAXNUM:5
+BLOCKCOUNT:1
+BLOCK1: 0 0
