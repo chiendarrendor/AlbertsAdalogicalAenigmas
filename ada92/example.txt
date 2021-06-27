@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+K..QJSK
+.B.FV.B
+ENO.F..
+...K.ZH
+QKKYBPH
+X.B.U.S
+IBU.CR.
+CODE:SOLDIERS
+.1?....
+?.3..?.
+...2.13
+3?2.4..
+.......
+.5.1.2.
+...2..?
+CODE:REGIONS
+aahhhhh
+addhhih
+bdeehhh
+bbeeehh
+bbbeefh
+bcbbffg
+bbbbbgg
