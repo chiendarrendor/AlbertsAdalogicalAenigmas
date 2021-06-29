@@ -25,5 +25,8 @@ V5  .  .  .  .  .  .  . >4  .  .  .  .  .  .  . ^5  .  .  .  .
  .  .  .  .  .  . ^2  .  .  .  .  .  . >2  .  .  .  .  .  .  .
  .  .  . ^2  .  .  .  . ^5  .  .  .  .  .  . <5  .  .  . ^3  .
 >3  .  .  .  . >2  .  .  .  .  . ^5  .  .  .  .  . <3  .  .  .
+VARIABLES:
+SOLUTION: Saint said to have driven the snakes out of Ireland: Saint Patrick!
+
 
 

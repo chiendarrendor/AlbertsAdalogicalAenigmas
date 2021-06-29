@@ -1,0 +1,29 @@
+21 12
+CODE:LETTERS
+.JCDHEN.ERGEO.NRCEOL.
+OK.QMLOEO...NSHOQR.AM
+GPGJTC.EBIRBQI.ANDZDF
+WSRG.RUGCBEPOHSG.LKKO
+BSZNHEGRIEAHNTLQDIIMH
+FR.AEMPAOADYJDDABH.OW
+NT.WQIDITHTTEEHDYC.NU
+TRAMAJHLPGOMIKNOAESOD
+ABOD.CTAMJCCNOAJ.ETMI
+INRLRN.WGWEBPL.BNLHON
+LI.RFOAJR...SRDAPG.PT
+.PSOWEO.ENAOT.URGRER.
+CODE:ARROWS
+>4  .  .  .  .  .  . <1  .  .  .  .  . V2  .  .  .  .  .  . V2
+ .  .  X  .  .  .  .  .  . V3 V3 V3  .  .  .  .  .  .  X  .  .
+ .  .  .  .  .  . >4  .  .  .  .  .  .  . V2  .  .  .  .  .  .
+ .  .  .  . ^2  .  .  .  .  .  .  .  .  .  .  . ^3  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  . >2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . >3  .  .
+ .  . >2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . <5  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  . <3  .  .  .  .  .  .  .  .  .  .  . >5  .  .  .  .
+ .  .  .  .  .  . >3  .  .  .  .  .  .  . V5  .  .  .  .  .  .
+ .  . >2  .  .  .  .  .  . ^3 ^3 ^3  .  .  .  .  .  . >3  .  .
+^2  .  .  .  .  .  . <0  .  .  .  .  . ^3  .  .  .  .  .  . ^2
+VARIABLES:
+SOLUTION:His tomb held the first known Ouroboros motif: Tutankhamun
