@@ -6,11 +6,12 @@ import java.awt.image.BufferedImage;
 
 public class Ada46
 {
-    private static class MyListener implements GridPanel.GridListener
+    private static class MyListener implements GridPanel.GridListener, GridPanel.EdgeListener
     {
         Board b;
+        String[] lines;
 
-        public MyListener(Board b) { this.b = b; }
+        public MyListener(Board b, String[] lines) { this.b = b; this.lines = lines; }
 
         public int getNumXCells()
         {
@@ -32,6 +33,27 @@ public class Ada46
         {
             return true;
         }
+        @Override public String[] getAnswerLines() { return lines; }
+
+        @Override
+        public EdgeDescriptor onBoundary()
+        {
+            return new EdgeDescriptor(Color.black,5);
+        }
+
+        @Override
+        public EdgeDescriptor toEast(int x, int y)
+        {
+            return new EdgeDescriptor(Color.black, b.regionId(x,y) == b.regionId(x+1,y) ? 1 : 5);
+        }
+
+        @Override
+        public EdgeDescriptor toSouth(int x, int y)
+        {
+            return new EdgeDescriptor(Color.black, b.regionId(x,y) == b.regionId(x,y+1) ? 1 : 5);
+        }
+
+
 
         @Override
         public boolean drawCellContents(int cx, int cy, BufferedImage bi)
@@ -63,40 +85,21 @@ public class Ada46
 
             return true;
         }
+
+
     }
-
-    private static class MyEdgeListener implements GridPanel.EdgeListener
-    {
-        Board b;
-        public MyEdgeListener(Board b)
-        {
-            this.b = b;
-        }
-
-        @Override
-        public EdgeDescriptor onBoundary()
-        {
-            return new EdgeDescriptor(Color.black,5);
-        }
-
-        @Override
-        public EdgeDescriptor toEast(int x, int y)
-        {
-            return new EdgeDescriptor(Color.black, b.regionId(x,y) == b.regionId(x+1,y) ? 1 : 5);
-        }
-
-        @Override
-        public EdgeDescriptor toSouth(int x, int y)
-        {
-            return new EdgeDescriptor(Color.black, b.regionId(x,y) == b.regionId(x,y+1) ? 1 : 5);
-        }
-    }
-
 
     public static void main(String[] args) {
-        LogicBoard b = new LogicBoard("ada46.txt");
+        if (args.length != 1) {
+            System.out.println("Bad Command Line");
+            System.exit(1);
+        }
+
+
+        LogicBoard b = new LogicBoard(args[0]);
 
         Solver s = new Solver(b);
+        String[] lines = new String[] { "Adalogical Aenigma" , "#46 Solver"};
 
         s.Solve(b);
 
@@ -104,13 +107,19 @@ public class Ada46
 
         for (int i = 1 ; i < 8 ; ++i)
         {
-            SolutionScanner.scan(b,i,true,true);
-            SolutionScanner.scan(b,i,true,false);
+            System.out.println(SolutionScanner.scan(b,i,true,true));
+            System.out.println(SolutionScanner.scan(b,i,true,false));
         }
 
+        lines[0] = SolutionScanner.scan(b,3,true,true);
+        lines[1] = b.gfr.getVar("SOLUTION");
 
 
-        GridFrame gf = new GridFrame("Aenigma #46 solver",1200,800,new MyListener(b),new MyEdgeListener(b));
+
+        MyListener myl = new MyListener(b,lines);
+
+
+        GridFrame gf = new GridFrame("Aenigma #46 solver",1200,800,myl,myl);
 
 
     }

@@ -83,13 +83,13 @@ public class LogicBoard extends Board implements FlattenSolvable<LogicBoard>
 
 
     @Override
-    public void applyMove(Object o)
+    public boolean applyMove(Object o)
     {
         MyMove mm = (MyMove)o;
         IntegerSet is = getPossibles(mm.x,mm.y);
         if (mm.negative) is.remove(mm.num);
         else is.removeAllBut(mm.num);
-
+        return true;
     }
 
     @Override

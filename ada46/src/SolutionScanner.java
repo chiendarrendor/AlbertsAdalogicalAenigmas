@@ -7,9 +7,10 @@ import java.awt.*;
  */
 public class SolutionScanner
 {
-    public static void scan(LogicBoard b, int i, boolean uselargest,boolean readhorizontal)
+    public static String scan(LogicBoard b, int i, boolean uselargest,boolean readhorizontal)
     {
-        System.out.print("SolutionScanner " + i + " " + uselargest + ": ");
+        StringBuffer sb = new StringBuffer();
+        sb.append("SolutionScanner " + i + " " + uselargest + ": ");
 
         int outermax = readhorizontal ? b.getHeight() : b.getWidth();
         int innermax = readhorizontal ? b.getWidth() : b.getHeight();
@@ -38,11 +39,11 @@ public class SolutionScanner
                     }
                 }
 
-                System.out.print(LetterRotate.Rotate(b.getLetter(x,y),extreme));
+                sb.append(LetterRotate.Rotate(b.getLetter(x,y),extreme));
 //                System.out.print("(" + x + "," + y + ")");
             }
         }
-        System.out.println("");
+        return sb.toString();
 
     }
 }

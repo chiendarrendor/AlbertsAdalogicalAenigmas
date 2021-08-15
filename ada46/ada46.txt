@@ -38,4 +38,6 @@ JJKKKQQadcgg.p..4.78@
 LM.KPP..ddghhqq.5778.
 LMM.PO..d.fhiiqr55889
 LNNNOOOeeeffi.qrsss.9
+VARIABLES:
+SOLUTION: In chaos theory, a fractal set of values towards which a system evolves: STRANGE ATTRACTOR
 
