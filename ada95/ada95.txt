@@ -1,0 +1,42 @@
+21 12
+CODE:LETTERS
+RCTFWAKPJACPFMNZXZSGS
+R.HM.KLNGM.DAIYO.RY.G
+JYLHG.YXKPKDBAR.TCPRG
+RCO.YMNMTEXBWQBGAGRSE
+TQSLLCWNC...VKHFBRGUJ
+TYKDQAGWLBHBXTM.QCCB.
+TCJBX.YGURCXLMNCHRH.S
+HYCUPBGRE...PFIRDRSCF
+V.QT.MD.QFALKKLKNWSVT
+ZQRKDHWHQQIV.QRBCPTOK
+M..RU.BSHA.XNSM.GHH.B
+ATXKHP.RUHDMZZSMDPSZF
+CODE:NUMBERS
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  1  .  .  2  .  .  .  .  .  3  .  .  .  .  .  1  .  .  2  .
+ .  .  .  .  .  4  .  .  .  .  .  .  .  .  .  5  .  .  .  .  .
+ .  .  .  6  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  6  7  8  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  9  .  .  .  . 10
+ .  .  .  .  . 11  .  .  .  .  .  .  .  .  .  .  .  .  . 12  .
+ .  .  .  .  .  .  .  .  . 13 14 13  .  .  .  .  .  .  .  .  .
+ . 15  .  . 14  .  . 16  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  . 17  .  .  .  .  .  .  .  .
+ .  2 18  .  .  1  .  .  .  .  3  .  .  .  .  2  .  .  .  1  .
+ .  .  .  .  .  . 19  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+CODE:DOTS
+ .  .  . NE  .  .  .  . NE  .  . NE  .  .  .  . NE  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . NE  .  .  .  .
+NW  .  . NE  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . NE
+ .  .  .  .  .  . NE NE  .  .  .  .  . NE  .  .  .  .  .  .  .
+ .  .  . NE  .  . NE  .  .  .  . NE  .  .  .  .  .  . NE  .  .
+ .  .  .  .  .  .  .  .  .  .  . NE  .  .  .  .  .  .  .  .  .
+ .  .  .  .  . NE  .  .  . NE  .  .  .  .  .  .  .  .  .  .  .
+NW  .  . NE  .  . NE  . NE  . NE  .  . NE  .  .  .  .  .  .  .
+NE  .  .  .  .  .  .  .  .  .  .  . NE  .  .  .  .  .  .  . NE
+ .  . NE  .  .  .  .  .  . NE  . NE  .  .  .  .  .  .  .  .  .
+ .  .  . SE  .  .  .  . SE  .  . SE  .  .  .  . SE  .  .  .  .
+VARIABLES:
+SOLUTION: The creation of a salamander-shaped district led to a well known cartoon, most likely drawn by this painter: Elkanah Tisdale

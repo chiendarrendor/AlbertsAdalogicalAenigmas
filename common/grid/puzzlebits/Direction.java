@@ -62,7 +62,7 @@ public enum Direction
             case NORTHEAST: return SOUTHWEST;
             case SOUTHEAST: return NORTHWEST;
             case NORTHWEST: return SOUTHEAST;
-            case SOUTHWEST: return NORTHWEST;
+            case SOUTHWEST: return NORTHEAST;
             default: throw new RuntimeException("Bwah?");
         }
     }

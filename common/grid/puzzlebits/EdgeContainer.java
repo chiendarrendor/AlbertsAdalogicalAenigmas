@@ -1,5 +1,9 @@
 package grid.puzzlebits;
 
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
 public class EdgeContainer<T>
 {
     public static class CellCoord {
@@ -74,6 +78,21 @@ public class EdgeContainer<T>
             result = 31 * result + (isV ? 1 : 0);
             return result;
         }
+
+        private List<Point> adjacents = null;
+        public List<Point> getAdjacentCells() {
+            if (adjacents == null) {
+                adjacents = new ArrayList<>();
+                if (isV) {
+                    adjacents.add(new Point(x,y));
+                    adjacents.add(new Point(x-1,y));
+                } else {
+                    adjacents.add(new Point(x,y));
+                    adjacents.add(new Point(x,y-1));
+                }
+            }
+            return adjacents;
+        }
     }
 
     public static CellCoord getCellCoord(int x,int y, boolean isV) {
@@ -102,6 +121,7 @@ public class EdgeContainer<T>
     public interface Creator<K> { public K op(int x,int y,boolean isV); }
     public interface Copier<K> { public K op(int x,int y, boolean isV, K old); }
     public interface Operator<K> { public void op(int x,int y,boolean isV,K old); }
+    public interface BooleanOperator<K> { public boolean op(int x,int y,boolean isV,K old); }
 
     Copier<T> copier;
 
@@ -124,8 +144,41 @@ public class EdgeContainer<T>
         }
     }
 
+    public boolean booleanForEachEdge(BooleanOperator<T> lam)
+    {
+        for (int y = 0 ; y <= height ; ++y)
+        {
+            for (int x = 0 ; x <= width ; ++x)
+            {
+                if (y < height) {
+                    boolean result = lam.op(x,y,true,vedges[x][y]);
+                    if (!result) return false;
+                }
+                if (x < width) {
+                    boolean result = lam.op(x,y,false,hedges[x][y]);
+                    if (!result) return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
     public int getWidth() { return width; }
     public int getHeight() { return height; }
+
+    public boolean inBounds(int x, int y, Direction d) {
+        return x >= 0 && y >= 0 && x < getWidth() && y < getHeight();
+    }
+
+    public boolean inBounds(int x,int y, boolean isV) {
+        if (isV) {
+            return x >= 0 && x <= getWidth() && y >= 0 && y < getHeight();
+        } else {
+            return y >= 0 && y <= getHeight() && x >= 0 && x < getWidth();
+        }
+    }
 
     /**
      * Given an edge-domain coordinate, is this edge an outer edge?

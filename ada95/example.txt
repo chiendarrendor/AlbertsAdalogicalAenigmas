@@ -1,0 +1,25 @@
+7 7
+CODE:LETTERS
+LHAYPLN
+Q.DSM.V
+COXQCED
+.B.F.MD
+YWQRHDW
+C.D.MMI
+JQPPBKB
+CODE:NUMBERS
+.......
+.1...1.
+.......
+2.3.4..
+.......
+.3.5...
+.......
+CODE:DOTS
+ . NE NE  .  .  .  .
+SW  .  . SE  .  .  .
+ . SW  .  .  .  .  .
+ .  .  .  .  .  .  .
+ . SE  .  .  .  .  .
+ .  .  .  .  .  . SE
+SE  .  .  .  .  .  .

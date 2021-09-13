@@ -33,36 +33,32 @@ public interface MultiFlattenSolvable<T> extends FlattenSolvable<T>
 
     // implement only the above methods!
 
-
-    @Override
-    default public List<FlattenSolvableTuple<T>> getSuccessorTuples()
-    {
+    default public List<FlattenSolvableTuple<T>> getTupleList(boolean onlyone) {
         Vector<FlattenSolvableTuple<T>> result = new Vector<>();
-
-        for (int x = 0 ; x < getWidth() ; ++x)
-        {
-            for (int y = 0 ; y < getHeight() ; ++y)
-            {
-                List<FlattenSolvableTuple<T>> fstlist = getTuplesForCell(x,y);
+        for (int x = 0 ; x < getWidth() ; ++x) {
+            for (int y = 0; y < getHeight(); ++y) {
+                List<FlattenSolvableTuple<T>> fstlist = getTuplesForCell(x, y);
                 if (fstlist == null) continue;
+                if (fstlist.size() == 0) continue;
                 result.addAll(fstlist);
+                if (onlyone) return result;
             }
         }
         return result;
     }
 
+
+
+
+    @Override
+    default public List<FlattenSolvableTuple<T>> getSuccessorTuples()
+    {
+        return getTupleList(false);
+    }
+
     @Override
     default public List<T> guessAlternatives()
     {
-        for (int x = 0 ; x < getWidth() ; ++x)
-        {
-            for (int y = 0; y < getHeight(); ++y)
-            {
-                List<FlattenSolvableTuple<T>> fstlist = getTuplesForCell(x,y);
-                if (fstlist == null || fstlist.size() == 0) continue;
-                return fstlist.get(0).choices;
-            }
-        }
-        throw new ContainerRuntimeException("guessAlternatives called on solved board!",null,this);
+        return getTupleList(true).get(0).choices;
     }
 }
