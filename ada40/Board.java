@@ -1,3 +1,5 @@
+import grid.file.GridFileReader;
+import grid.logic.LogicStatus;
 import org.w3c.dom.css.Rect;
 
 import java.awt.*;
@@ -103,8 +105,10 @@ public class Board
 			for (int y = 0 ; y < height ; ++y)
 			{
 				String s = gfr.getBlock("NUMBERS")[x][y];
+				String wall = gfr.getBlock("WALLS")[x][y];
 
-				if (s.equals(".")) cells[x][y] = new CellInfo(CellInfo.UNKNOWN,-1,x,y);
+				if (wall.equals("@")) cells[x][y] = new CellInfo(CellInfo.WALL,-1,x,y);
+				else if (s.equals(".")) cells[x][y] = new CellInfo(CellInfo.UNKNOWN,-1,x,y);
 				else
 				{
 					int size = Integer.parseInt(s);

@@ -1,4 +1,6 @@
 
+import grid.logic.LogicStatus;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
