@@ -1,0 +1,5 @@
+The approach in old works for the example, but on the larger puzzle, the vastly increased number of possible paths prove infeasible to
+calculate ahead of time.
+
+The new solution is to create a living tree of the paths, and expand it out as we go; hopefully this will limit the number of
+simultaneous live paths to something feasible.

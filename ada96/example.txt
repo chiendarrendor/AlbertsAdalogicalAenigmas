@@ -1,0 +1,17 @@
+6 6
+CODE:LETTERS
+.TZSL.
+LDATNI
+.QHUAH
+O.YVEZ
+WBZOVC
+.DLRI.
+CODE:KNIGHTS
+@....1
+......
+@.....
+.@....
+......
+1....4
+VARIABLES:
+PUZZLENAME: Adalogical Aenigma #96 example puzzle
