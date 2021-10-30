@@ -164,13 +164,13 @@ public class GridPanel extends FixedSizePanel
 
 	public class DrawParams
 	{
-		int INSET = 50;
-		int numXCells = listener.getNumXCells();
-		int numYCells = listener.getNumYCells();
-		int screenWidth = getFixedWidth();
-		int screenHeight = getFixedHeight();
-		int cellWidth = (screenWidth - 2 * INSET) / numXCells;
-		int cellHeight = (screenHeight - 2 * INSET) / numYCells;
+		public int INSET = 50;
+		public int numXCells = listener.getNumXCells();
+		public int numYCells = listener.getNumYCells();
+		public int screenWidth = getFixedWidth();
+		public int screenHeight = getFixedHeight();
+		public int cellWidth = (screenWidth - 2 * INSET) / numXCells;
+		public int cellHeight = (screenHeight - 2 * INSET) / numYCells;
 
 		public void repaint() { GridPanel.this.repaint(); }
 	}

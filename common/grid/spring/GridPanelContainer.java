@@ -50,15 +50,21 @@ public class GridPanelContainer extends JPanel
 			gp.repaint();
 		}
 	}	
-	
-	public GridPanelContainer(int width, int height,GridPanel.GridListener listener)
-	{
-		this(width,height,listener,null);
-	}
-	
-	public GridPanelContainer(int width, int height,GridPanel.GridListener listener,GridPanel.EdgeListener edgeListener)
+
+	private GridPanelFactory gpf = new GridPanelFactoryImpl();
+
+
+	public GridPanelContainer(GridPanelFactory gpf,int width, int height,GridPanel.GridListener listener) { this(gpf,width,height,listener,null); }
+	public GridPanelContainer(int width, int height,GridPanel.GridListener listener,GridPanel.EdgeListener edgeListener) { this(null,width,height,listener,edgeListener); }
+	public GridPanelContainer(int width, int height,GridPanel.GridListener listener) { this(null,width,height,listener,null); }
+
+	public GridPanelContainer(GridPanelFactory i_gpf,int width, int height,GridPanel.GridListener listener,GridPanel.EdgeListener edgeListener)
 	{
 		super(new BorderLayout());
+
+		if (i_gpf != null) {
+			gpf = i_gpf;
+		}
 
 		gl = listener;
 
@@ -66,8 +72,8 @@ public class GridPanelContainer extends JPanel
 		{
 			mgl = (GridPanel.MultiGridListener)listener;
 		}
-		
-		gp = new GridPanel(width,height,listener,edgeListener);
+
+		gp = gpf.getGridPanel(width, height, listener, edgeListener);
 		add(gp, BorderLayout.CENTER);
 		add(answer,BorderLayout.SOUTH);
 
