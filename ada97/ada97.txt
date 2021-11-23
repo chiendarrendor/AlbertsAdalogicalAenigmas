@@ -1,0 +1,44 @@
+21 12
+CODE:REGIONS
+abbbbffhhhhiinnnnnnno
+aabbfffhhhiiinnyynzzn
+aacdffgghiiinnyyyzzzn
+accdddgggiinnnyyzzznn
+eccedddgggppnnnnzzAAn
+eeeeeddeggppnnnnnnAnn
+eejeeeeeeppssnvvnnnnn
+ejjlleeeeppsssvvvnwwn
+eelllmmeeeqqsssvvvwwx
+elllmmmeeqqqrssttvwxx
+ellemmeeqqqrrrtttuuxx
+keeeeeeeqqrrrrttuuuux
+CODE:LETTERS
+..HSWOT.AIWESEIUESBUH
+TBEE.TDNASOOOLPVNISLH
+FLY.SS.BG.SLSR.ODETGY
+E.HEADAEENO.CFEA.ESUO
+.LENUHDAYRETEOATLE.ET
+SYHEEEYRMOCMGTMYBTASR
+AEOHGOELE.H.EA.NHAHSE
+D.DINNGEHSUNBRUEIE.HV
+EUTDOUVFATOUTIDOGMIUH
+E.AB.TCETHWINOAASRE.W
+RSEGMNSS.ELODE.SNESPE
+HVTREAIRNS.SNPHL.REOI
+CODE:NUMBERS
+43.....7.............
+....3................
+...3..9..7....4......
+.4.........4....8....
+3.................3..
+.....................
+.........3.6..6......
+.1................3..
+.....................
+.6..5..............5.
+........8.....6......
+..........4.....4....
+VARIABLES:
+TITLE:Adalogical Aenigma #97 Real
+SOLUTION: He said, "No guest is so welcome in a friends house that he will not become a nuisance after three days" -- Titus Maccius Plautus
+
