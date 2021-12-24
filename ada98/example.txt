@@ -1,0 +1,22 @@
+5 5
+CODE:SHADES
+...@.
+@....
+...@@
+.@@..
+..@..
+CODE:CLUES
+.....
+.4...
+.....
+....3
+.....
+VARIABLES:
+GRIDNAME:Adalogical Aenigma #98 Example
+MAXNUM:4
+MINNUM:1
+SOLUTIONNUMBERS:2 3
+SOLUTIONCLUE:CDGIT
+BOXSIZE:5
+NUMBOXES:1
+BOX0:0 0
