@@ -1,0 +1,31 @@
+21 12
+CODE:CLUES
+..2..1...............
+...1.......3.3...1...
+.3......1..........3.
+..1.2.....1..1..1....
+.3...................
+....2....2.2...2.2..1
+1.1.....3....3.....3.
+....3.1.......1......
+1......1..1......1...
+..3..2..3...1..3..1..
+1...3................
+..................1..
+CODE:LETTERS
+CU.YT.OUYEVCOOSUXMBUE
+JVR.OZTNDIU.G.GEI.JPN
+M.NZYPIZ.PNTPHPZPGU.W
+FQ.M.LGOCO.NZ.JC.JUXV
+B.QLWDJPJAOHOMRPJAZIZ
+GIWT.DWUV.V.WPS.Z.QQ.
+.X.ZYZPP.PNHF.NDZSU.P
+DMNK.E.ZQFXFDX.EXVFLF
+.YBCJBD.BZ.IZQZSN.SEY
+ZY.OQ.ZP.ONZ.PG.TW.OQ
+.LNN.OSDDNJUWMXLMBQOB
+XZIJXONQWXOICUVEZM.BT
+VARIABLES:
+SOLUTIONTYPE:ADDENDUM32
+NAME:Adalogical Addendum #32 Real
+SOLUTION: Addendum's 'numerus' in Latin: TRIGINTA DUO
