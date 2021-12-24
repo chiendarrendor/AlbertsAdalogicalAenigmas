@@ -48,6 +48,18 @@ public class GridFileReader
 		if (!hasVar(var)) return null;
 		return vars.get(var);
 	}
+
+	public int getIntVar(String var) {
+		return toInt(getVar(var));
+	}
+
+	public int[] getIntArrayVar(String var) {
+		String[] parts = getVar(var).split("\\s+");
+		int[] result = new int[parts.length];
+		for (int i = 0 ; i < parts.length; ++i) result[i] = toInt(parts[i]);
+		return result;
+	}
+
 	
 	public static int toInt(String s)
 	{
