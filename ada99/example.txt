@@ -1,0 +1,28 @@
+7 7
+CODE:LETTERS
+B.URB.D
+YRPPINT
+ZANENUE
+Q.EBLLR
+PCCQA.D
+.WX.AHQ
+LEEMOET
+CODE:NUMBERS
+.3...2.
+.......
+.......
+.1.....
+.....2.
+1..1...
+.......
+CODE:REGIONLINKS
+E . . . S . .
+. S . . W . .
+S . . E . E .
+. . . . E . .
+S . S . . S .
+. . . . . . S
+. . . . . . .
+VARIABLES:
+NAME: Adalogical Aenigma #99 example
+
