@@ -1,3 +1,9 @@
+import grid.file.GridFileReader;
+import grid.logic.LogicStatus;
+import grid.spring.GridPanel;
+import grid.spring.HorizontalCenterPanel;
+import grid.spring.SinglePanelFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,12 +28,14 @@ public class Ada41
     public static class MyGridListener implements GridPanel.GridListener
     {
         Board b;
-        public MyGridListener(Board b) { this.b = b;}
+        String lines[];
+        public MyGridListener(Board b, String[] lines ) { this.b = b; this.lines = lines;}
         public int getNumXCells() { return b.getWidth(); }
         public int getNumYCells() { return b.getHeight(); }
         public boolean drawGridNumbers() { return true; }
         public boolean drawGridLines() { return true; }
         public boolean drawBoundary() { return true; }
+        public String[] getAnswerLines() { return lines; }
 
         // draws an arrow in the given direction from the given start location.
         public void DrawArrow(int length,int height,int x,int y,Board.ArrowDir dir,Graphics2D g)
@@ -68,7 +76,7 @@ public class Ada41
             if (b.hasLetter(cx,cy)) { GridPanel.DrawStringUpperLeftCell(bi,Color.black, ""+b.getLetter(cx,cy)); }
             if (b.getCellType(cx,cy) != Board.CellType.EMPTY)
             {
-                g.setColor(b.getCellType(cx,cy) == Board.CellType.WHITE ? Color.white : Color.black);
+                g.setColor(b.getCellType(cx,cy).getColor());
                 g.fillRect(0,0,bi.getWidth(),bi.getHeight());
 
                 Board.ArrowInfo ai = b.getArrowInfo(cx,cy);
@@ -101,29 +109,29 @@ public class Ada41
             }
             else
             {
-                /*
+
                 int QINSET=8;
                 if (b.getULQuadCell(cx,cy) != Board.CellType.EMPTY)
                 {
-                    g.setColor(b.getULQuadCell(cx,cy) == Board.CellType.WHITE ? Color.white : Color.black);
+                    g.setColor(b.getULQuadCell(cx,cy).getColor());
                     g.fillRect(0+QINSET,0+QINSET,bi.getWidth()/2-2*QINSET,bi.getHeight()/2-2*QINSET);
                 }
                 if (b.getURQuadCell(cx,cy) != Board.CellType.EMPTY)
                 {
-                    g.setColor(b.getURQuadCell(cx,cy) == Board.CellType.WHITE ? Color.white : Color.black);
+                    g.setColor(b.getURQuadCell(cx,cy).getColor());
                     g.fillRect(bi.getWidth()/2+QINSET,0+QINSET,bi.getWidth()/2-2*QINSET,bi.getHeight()/2-2*QINSET);
                 }
                 if (b.getLLQuadCell(cx,cy) != Board.CellType.EMPTY)
                 {
-                    g.setColor(b.getLLQuadCell(cx,cy) == Board.CellType.WHITE ? Color.white : Color.black);
+                    g.setColor(b.getLLQuadCell(cx,cy).getColor());
                     g.fillRect(0+QINSET,bi.getHeight()/2+QINSET,bi.getWidth()/2-2*QINSET,bi.getHeight()/2-2*QINSET);
                 }
                 if (b.getLRQuadCell(cx,cy) != Board.CellType.EMPTY)
                 {
-                    g.setColor(b.getLRQuadCell(cx,cy) == Board.CellType.WHITE ? Color.white : Color.black);
+                    g.setColor(b.getLRQuadCell(cx,cy).getColor());
                     g.fillRect(bi.getWidth()/2+QINSET,bi.getHeight()/2+QINSET,bi.getWidth()/2-2*QINSET,bi.getHeight()/2-2*QINSET);
                 }
-                */
+
 
                 g.setStroke(new BasicStroke(5));
                 Board.EdgeInfo ei = b.getEastEdgeInfo(cx, cy);
@@ -171,6 +179,7 @@ public class Ada41
             return thisCell != otherCell;
         }
 
+        public EdgeDescriptor onBoundary() { return new EdgeDescriptor(Color.BLACK,5); }
 
         public EdgeDescriptor toEast(int x, int y)
         {
@@ -322,14 +331,20 @@ public class Ada41
         public AnalyzePathButtonListener(Board b) { this.b = b; }
         @Override public void actionPerformed(ActionEvent e)
         {
-            b.walkPath(0,11, Board.ArrowDir.EAST);
+            Point p = b.getStartPoint();
+            b.walkPath(p.x,p.y, Board.ArrowDir.EAST);
         }
     }
 
 
     public static void main(String[] args)
     {
-        GridFileReader gfr = new GridFileReader("ada41.txt");
+        if (args.length != 1) {
+            System.out.println("Bad Command Line");
+            System.exit(1);
+        }
+
+        GridFileReader gfr = new GridFileReader(args[0]);
 
         Board b = new Board(gfr);
         LogicStatus lstat = b.scanQuads();
@@ -339,8 +354,10 @@ public class Ada41
             System.exit(1);
         }
 
+        String[] lines = new String[] { "Adalogical Aenigma", "#41" , "Solver" };
 
-        MyGridListener mgl = new MyGridListener(b);
+
+        MyGridListener mgl = new MyGridListener(b,lines);
         MyEdgeListener mel = new MyEdgeListener(b);
         GridPanel gp = new GridPanel(1300,800,mgl,mel);
         gp.addMouseListener(new BoardClickListener(b,gp));

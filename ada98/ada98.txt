@@ -38,4 +38,4 @@ BOX1:8 0
 BOX2:16 0
 BOX3:4 5
 BOX4:12 5
-SOLUTION: highest coaster on Earth: the KINGDA KA at Six Flags Great Adventure in New Jersey, USA 
+SOLUTION: highest coaster on Earth: the KINGDA KA at Six Flags Great Adventure in New Jersey, USA

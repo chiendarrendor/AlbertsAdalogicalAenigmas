@@ -1,0 +1,42 @@
+21 12
+CODE:LETTERS
+O.EAM.GICRAANOAY.RCR.
+RTNMA.DTE.LINFLAAMOE.
+KNRANLECN.PLI.RTMOCRC
+TO.PDERRNORET.NUA.UBO
+SW.IES.AEHCYEPCFI.SNN
+ENUISF.YFT.EOLOUOGSAU
+BPSCNOTINL.BWL.TMISHA
+ETH.IPNENAVDOP.HES.EA
+IEA.TMF.ECYERVYAEA.HN
+FHARGAF.IAS.TUBYLPTLD
+.TRIGISEWTT.RHR.MELOA
+.BYT.XERCCSNEGA.PAJ.S
+CODE:COLORS
+.G...G..........G...G
+.....G...B..........G
+.........B...G.......
+..B..........G...W...
+..B...B..........W...
+......B...G..........
+..........G...W......
+...B..........W...W..
+...B...G..........W..
+.......G...W.........
+G..........W...G.....
+G...G..........G...G.
+CODE:NUMBERS
+  . 9v  .  .  . 2v  .  .  .  .  .  .  .  .  .  . 4v  .  .  . 2<
+  .  .  .  .  . 2<  .  .  . 5v  .  .  .  .  .  .  .  .  .  . 10<
+  .  .  .  .  .  .  .  .  . 1<  .  .  . 2<  .  .  .  .  .  .  .
+  .  . 1^  .  .  .  .  .  .  .  .  .  . 2<  .  .  . 1>  .  .  .
+  .  . 3v  .  .  . 1<  .  .  .  .  .  .  .  .  .  . 1v  .  .  .
+  .  .  .  .  .  . 2<  .  .  . 3v  .  .  .  .  .  .  .  .  .  .
+  .  .  .  .  .  .  .  .  .  . 6<  .  .  . 3^  .  .  .  .  .  .
+  .  .  . 1<  .  .  .  .  .  .  .  .  .  . 1>  .  .  . 3^  .  .
+  .  .  . 1<  .  .  . 0v  .  .  .  .  .  .  .  .  .  . 6<  .  .
+  .  .  .  .  .  .  . 0v  .  .  . 6>  .  .  .  .  .  .  .  .  .
+ 5>  .  .  .  .  .  .  .  .  .  . 2^  .  .  . 6^  .  .  .  .  .
+ 5>  .  .  . 7^  .  .  .  .  .  .  .  .  .  . 4<  .  .  . 5<  .
+VARIABLES:
+STARTPOINT: 1 11

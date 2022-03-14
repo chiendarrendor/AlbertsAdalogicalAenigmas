@@ -1,8 +1,13 @@
+import grid.file.GridFileReader;
+import grid.logic.LogicStatus;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by chien on 2/26/2017.
@@ -10,10 +15,18 @@ import java.util.Vector;
 public class Board
 {
     GridFileReader gfr;
+    Point startPoint;
 
     public enum CellType
     {
-        EMPTY, BLACK, WHITE
+        EMPTY(null),
+        BLACK(Color.black),
+        WHITE(Color.white),
+        GRAY(Color.DARK_GRAY);
+
+        private Color mycolor;
+        private CellType(Color c) { mycolor = c;}
+        public Color getColor() { return mycolor; }
     }
 
     ;
@@ -59,6 +72,12 @@ public class Board
         arrows = new ArrowInfo[getWidth()][getHeight()];
         quadcells = new CellType[getWidth() * 2][getHeight() * 2];
 
+        String spparts[] = gfr.getVar("STARTPOINT").split(" ");
+        startPoint = new Point(Integer.parseInt(spparts[0]),Integer.parseInt(spparts[1]));
+
+
+        Pattern arrowPattern = Pattern.compile("^(\\d+)(.)$");
+
         for (int x = 0; x < getWidth(); ++x)
         {
             for (int y = 0; y < getHeight(); ++y)
@@ -74,13 +93,20 @@ public class Board
                     case "W":
                         celltypes[x][y] = CellType.WHITE;
                         break;
+                    case "G":
+                        celltypes[x][y] = CellType.GRAY;
+                        break;
                     default:
                         throw new RuntimeException("Illegal char in COLORS block: " + gfr.getBlock("COLORS")[x][y]);
                 }
                 String s = gfr.getBlock("NUMBERS")[x][y];
                 if (s.equals(".")) continue;
+
+                Matcher m = arrowPattern.matcher(s);
+                if (!m.matches()) throw new RuntimeException("Illegal Arrow Designator " + s);
+
                 ArrowDir ad = ArrowDir.NORTH;
-                switch (s.charAt(1))
+                switch (m.group(2).charAt(0))
                 {
                     case '^':
                         ad = ArrowDir.NORTH;
@@ -97,7 +123,7 @@ public class Board
                     default:
                         throw new RuntimeException("Illegal dir character in NUMBERS: " + s);
                 }
-                arrows[x][y] = new ArrowInfo(ad, Integer.parseInt(s.substring(0, 1)));
+                arrows[x][y] = new ArrowInfo(ad, Integer.parseInt(m.group(1)));
             }
         }
         initEdges();
@@ -134,6 +160,9 @@ public class Board
         return gfr.getBlock("LETTERS")[x][y].charAt(0);
     }
 
+    public Point getStartPoint() {
+        return startPoint;
+    }
 
     public CellType getCellType(int x, int y)
     {
@@ -402,6 +431,7 @@ public class Board
             for (int y = 0; y < getHeight(); ++y)
             {
                 if (getCellType(x, y) == CellType.EMPTY) continue;
+                if (getCellType(x,y) == CellType.GRAY) continue;
                 expandCellToQuads(x, y, getCellType(x, y));
             }
         }
@@ -574,7 +604,7 @@ public class Board
         {
             cx += dX(curdir);
             cy += dY(curdir);
-            if (cx == 0 && cy == 11) break;
+            if (cx == sx && cy == sy) break;
 
             ArrowDir fromdir = curdir.opposite();
 
