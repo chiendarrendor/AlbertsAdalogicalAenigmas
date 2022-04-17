@@ -25,3 +25,7 @@ CODE:FRAGS
 .......+.....-....+..
 ....-.....+..........
 ................-...+
+VARIABLES:
+NAME:Adalogical Aenigma #48
+CLUETYPE:ADA48
+SOLUTION: What is poetry?  Is it a mosaic of coloured stones which curiously are wrought into a pattern?  Rather glass, that's taught by patient labor, any HUE TO TAKE

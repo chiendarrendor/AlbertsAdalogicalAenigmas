@@ -1,0 +1,31 @@
+21 12
+CODE:LETTERS
+.MNRIEH..HSS.ZKLH.KEH
+DYKRRD.PMSMLHSRAED.SE
+Q.EQUCJJI.LOMUDTFSLMH
+MTR.UBMPIZWRF.GHGQBCD
+QDSRA.FYFPBRGQ.RFGHAO
+QSZQQQRAAL..ZSB.GWMK.
+.ETRZ.PDP..GSXDFMHPCS
+ESAIZE.SQJYPBGT.NBGDN
+CRMQQGM.LMDRFCNDS.JSC
+ZOMFHRDYCEL.CUGUHSR.H
+SD.ODQFFMHPCNR.GJJBNK
+QDS.MHDC.GQS..KKZTDI.
+CODE:FRAGS
++......|-...|....+...
+......-...........+..
+.+.......-...........
+...+.........-.......
+.....+........+......
+..........||...-....+
+-....-...||..........
+......+........-.....
+.......+.........-...
+...........+.......|.
+..-...........+......
+...-....|...+|......-
+VARIABLES:
+NAME: Adalogical Addendum #34 revisiting Adalogical Aenigma #48
+CLUETYPE:ADDENDUM34
+SOLUTION:Among well-known works by this Dutch artist is study of regular division of the plane with reptiles: M. C. ESCHER!

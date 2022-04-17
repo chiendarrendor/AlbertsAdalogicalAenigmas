@@ -12,7 +12,8 @@ import java.util.Vector;
 /**
  * Created by chien on 10/1/2017.
  */
-public class Board extends StandardFlattenSolvable<Board>
+
+public class Board implements StandardFlattenSolvable<Board>
 {
     GridFileReader gfr;
     Cell[][] cells;
@@ -62,6 +63,7 @@ public class Board extends StandardFlattenSolvable<Board>
     public Cell getCell(int x,int y) { return cells[x][y];}
     public Region getRegion(char rid) { return regions.get(rid); }
 
+    public boolean inBounds(Point p) { return gfr.inBounds(p); }
 
     @Override
     public boolean isComplete()
@@ -86,10 +88,11 @@ public class Board extends StandardFlattenSolvable<Board>
 
 
     @Override
-    public void applyMove(Object o)
+    public boolean applyMove(Object o)
     {
         MyMove mm = (MyMove)o;
         getCell(mm.x,mm.y).setImpossible(mm.badid);
+        return true;
     }
 
     @Override

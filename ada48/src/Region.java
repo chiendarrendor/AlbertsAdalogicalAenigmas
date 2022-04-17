@@ -8,7 +8,7 @@ import java.util.Set;
 public class Region
 {
     private enum RegionType { HOR,VERT,EQUAL};
-    static char nextRegion = 'a';
+    static char nextRegion = 'A';
 
     Set<Rectangle> possibles = new HashSet<>();
     char rid;
