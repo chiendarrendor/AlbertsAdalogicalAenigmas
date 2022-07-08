@@ -25,3 +25,8 @@ CODE:PATHS
 \//\/\///\/////\///\\
 \//\\\\\\\\\\\///\//\
 \\/\\\\////\///\\\///
+VARIABLES:
+START: 2 0
+END: 4 12
+NAME: Adalogical Aenigma #39
+SOLUTION: A maze with only one path and no branching is usually called a LABYRINTH

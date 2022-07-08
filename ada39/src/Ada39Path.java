@@ -2,25 +2,41 @@
 import java.awt.image.*;
 import java.awt.*;
 import java.util.*;
+
+import grid.file.GridFileReader;
+import grid.letter.LetterRotate;
+import grid.spring.GridFrame;
+import grid.spring.GridPanel;
 import org.jgrapht.*;
+import org.jgrapht.alg.shortestpath.FloydWarshallShortestPaths;
 import org.jgrapht.graph.*;
 import org.jgrapht.alg.*;
 import java.awt.Point;
 import java.util.*;
+import java.util.List;
 
 public class Ada39Path
 {
+	private static Point getGFRPoint(GridFileReader gfr, String name) {
+		String pair = gfr.getVar(name);
+		String[] parts = pair.split(" ");
+		return new Point(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]));
+	}
+
+
 	public static class MyListener implements GridPanel.GridListener
 	{
 		private GridFileReader gfr;
 		private Set<Point> ipe;
-		public MyListener(GridFileReader gfr,Set<Point> ipe) { this.gfr = gfr; this.ipe = ipe;}
+		String[] lines;
+		public MyListener(GridFileReader gfr,Set<Point> ipe,String[] lines) { this.gfr = gfr; this.ipe = ipe; this.lines = lines;}
 		
 		public int getNumXCells() { return gfr.getWidth(); }
 		public int getNumYCells() { return gfr.getHeight(); }
 		public boolean drawGridNumbers() { return true; }
 		public boolean drawGridLines() { return true; }
-		public boolean drawBoundary() { return true; }		
+		public boolean drawBoundary() { return true; }
+		@Override public String[] getAnswerLines() { return lines; }
 
 		public boolean drawCellContents(int cx,int cy, BufferedImage bi)
 		{
@@ -66,7 +82,12 @@ public class Ada39Path
 		
 	public static void main(String[] args)
 	{
-		GridFileReader gfr = new GridFileReader("ada39.txt");
+		if (args.length != 1) {
+			System.out.println("Bad Command Line");
+			System.exit(1);
+		}
+
+		GridFileReader gfr = new GridFileReader(args[0]);
 		// So we are going to make a graph, where a point exists for every intersection of the 
 		// grid, with indexing thus:
 		// (0,0) ---- (1,0)
@@ -117,16 +138,25 @@ public class Ada39Path
 		}
 		
 		FloydWarshallShortestPaths<Point,Edge> fwsp = new FloydWarshallShortestPaths<Point,Edge>(mygraph);
-		java.util.List<Edge> edges = fwsp.getShortestPath(new Point(2,0),new Point(4,12)).getEdgeList();
+		Point start = getGFRPoint(gfr,"START");
+		Point end = getGFRPoint(gfr,"END");
+		String[] lines = new String[] { "Adalogical", "Aenigma", "#39 pather"};
+
+		GraphPath<Point,Edge> path = fwsp.getPath(start,end);
+		List<Edge> edges = path.getEdgeList();
 		
 		Set<Point> inpathEdges = new HashSet<Point>();
-		
+
+		StringBuffer sb = new StringBuffer();
 		for (Edge e: edges)
 		{
-			System.out.print(LetterRotate.Rotate(e.c,e.s == '/' ? 1 : -1));
+			sb.append(LetterRotate.Rotate(e.c,e.s == '/' ? 1 : -1));
 			inpathEdges.add(new Point(e.x,e.y));
 		}
-		System.out.println("");
+		lines[0] = gfr.getVar("NAME");
+		lines[1] = sb.toString();
+		lines[2] = gfr.getVar("SOLUTION");
+
 				
 		
 		
@@ -134,6 +164,6 @@ public class Ada39Path
 		
 		
 		
-		GridFrame gf = new GridFrame("Adalogical Aenigma #39",1300,768,new MyListener(gfr,inpathEdges));
+		GridFrame gf = new GridFrame("Adalogical Aenigma #39",1300,768,new MyListener(gfr,inpathEdges,lines));
 	}
 }

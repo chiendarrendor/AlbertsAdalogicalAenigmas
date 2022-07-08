@@ -1,0 +1,32 @@
+21 12
+CODE:LETTERS
+FCMHEEDZOTQHJKNACOGJH
+FCFGMOZBETJZMKQDNFZCU
+UNMPSVLDPMBBTCGDSJMZH
+TFBUGBTRPJTFZODHEEQRT
+TQGVDNMXHZJKPJZZZJJHF
+JHMPARMBHCPSOSSSQSCOW
+MOZTDNESRXTCAAFFEUHQX
+HVMKFTPZZTBHBQWWNGUJN
+KMSCISSRKFQMZHFTPDMDT
+BJBXMDLHENIFTBREZDFRM
+KZSHTNKSNFUTMFLBPMZSB
+XOPMUBNQQTNZMUZXCBSZW
+CODE:PATHS
+\////\/\\\///////\\\/
+///\\\/\\/\/\////\/\\
+\/\\////\//\\\/\/\///
+/\\\/\\/\/\\\\/\/\\/\
+\\\\/\\\\\\/\\/\/\\\\
+\\\\//\\//\\\\\\///\\
+\\/\\/////////\\\\///
+\///\/\//\\/\/\\//\\/
+//\/\/\//\//\/\\\////
+\\\/\/\///\/////////\
+/////////\\\\\/\\///\
+/\\\\\//////\\/\/\/\\
+VARIABLES:
+START: 21 0
+END: 3 12
+NAME: Adalogical Addendum #35
+SOLUTION: It is pitch black; you are likely to BE EATEN BY A GRUE
